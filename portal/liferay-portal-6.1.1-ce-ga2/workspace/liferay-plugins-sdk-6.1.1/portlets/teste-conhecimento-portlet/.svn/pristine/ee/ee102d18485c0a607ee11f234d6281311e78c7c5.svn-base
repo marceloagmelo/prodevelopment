@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.com.prodevelopment.testeconhecimento.model.Pergunta">
+		<field name="id" type="long" />
+		<field name="descricao" type="String" localized="true" />
+		<field name="justificativaResposta" type="String" localized="true" />
+		<field name="pontuacao" type="double" />
+		<field name="dataInclusao" type="Date" />
+		<field name="dataAlteracao" type="Date" />
+		<field name="testeId" type="long" />
+		<field name="userIdInclusao" type="long" />
+		<field name="userIdAlteracao" type="long" />
+	</model>
+	<model name="br.com.prodevelopment.testeconhecimento.model.Resposta">
+		<field name="id" type="long" />
+		<field name="descricao" type="String" localized="true" />
+		<field name="correta" type="boolean" />
+		<field name="dataInclusao" type="Date" />
+		<field name="dataAlteracao" type="Date" />
+		<field name="perguntaId" type="long" />
+		<field name="userIdInclusao" type="long" />
+		<field name="userIdAlteracao" type="long" />
+	</model>
+	<model name="br.com.prodevelopment.testeconhecimento.model.Resposta_Usuario">
+		<field name="id" type="long" />
+		<field name="correta" type="boolean" />
+		<field name="dataInclusao" type="Date" />
+		<field name="testeUsuarioId" type="long" />
+		<field name="respostaId" type="long" />
+	</model>
+	<model name="br.com.prodevelopment.testeconhecimento.model.Teste">
+		<field name="uuid" type="String" />
+		<field name="id" type="long" />
+		<field name="titulo" type="String" localized="true" />
+		<field name="descricao" type="String" localized="true" />
+		<field name="dataInclusao" type="Date" />
+		<field name="dataAlteracao" type="Date" />
+		<field name="ativo" type="boolean" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userIdInclusao" type="long" />
+		<field name="userIdAlteracao" type="long" />
+	</model>
+	<model name="br.com.prodevelopment.testeconhecimento.model.Teste_Usuario">
+		<field name="id" type="long" />
+		<field name="nome" type="String" />
+		<field name="email" type="String" />
+		<field name="dataInclusao" type="Date" />
+		<field name="dataFinalizacao" type="Date" />
+		<field name="totalRespostaCorreta" type="int" />
+		<field name="totalRespostaErrada" type="int" />
+		<field name="totalPontuacao" type="double" />
+		<field name="testeId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+</model-hints>

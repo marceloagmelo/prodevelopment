@@ -1,0 +1,38 @@
+<%
+PortletURL rowURL = renderResponse.createRenderURL();
+rowURL.setParameter("jspPage", "/html/atividade/cadastro.jsp");
+rowURL.setParameter(Constantes.CAMPO_ATIVIDADE_ID, String.valueOf(atividade.getAtividadeId()));
+rowURL.setParameter(Constantes.ACAO, Constantes.VIEW);
+rowURL.setParameter("backURL", currentURL);
+%>
+<liferay-ui:search-container-column-text name="label.nome" buffer="buffer"
+	orderable="true" orderableProperty="nome">
+<%
+buffer.append("<div class='ver_dados'>");
+buffer.append("<a href='");
+buffer.append(rowURL);
+buffer.append("'>");
+buffer.append(atividade.getNome(locale));
+buffer.append("</a>");
+buffer.append("</div>");
+%>	
+</liferay-ui:search-container-column-text>
+<%
+if (!prefSomenteEsseSite) {
+	nomeSite = GroupUtil.getNomeSite(atividade.getGroupId());
+%>
+<liferay-ui:search-container-column-text name="label.nomeSite"
+	buffer="buffer">
+<%
+buffer.append("<div class='ver_dados'>");
+buffer.append("<a href='");
+buffer.append(rowURL);
+buffer.append("'>");
+buffer.append(nomeSite);
+buffer.append("</a>");
+buffer.append("</div>");
+%>	
+</liferay-ui:search-container-column-text>
+<%
+}
+%>

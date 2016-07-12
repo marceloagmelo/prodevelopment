@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="br.com.prodevelopment.appcomercial.servico.model.impl.FuncionarioModelImpl">
+		<attributes>
+			<id name="funcionarioId" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="createUserId" />
+			<basic name="modifiedUserId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nome" />
+			<basic name="apelido" />
+			<basic name="observacao" />
+			<basic name="rg" />
+			<basic name="rgOrgaoEmissor" />
+			<basic name="rgDataEmissao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="cpf" />
+			<basic name="sexo" />
+			<basic name="estadoCivil" />
+			<basic name="dataNascimento">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endComLogradouro" />
+			<basic name="endComDescricao" />
+			<basic name="endComCep" />
+			<basic name="endComBairro" />
+			<basic name="endComCidade" />
+			<basic name="endComUf" />
+			<basic name="endComPais" />
+			<basic name="endResLogradouro" />
+			<basic name="endResDescricao" />
+			<basic name="endResCep" />
+			<basic name="endResBairro" />
+			<basic name="endResCidade" />
+			<basic name="endResUf" />
+			<basic name="endResPais" />
+			<basic name="telComDdd" />
+			<basic name="telComNumero" />
+			<basic name="telComRamal" />
+			<basic name="telResDdd" />
+			<basic name="telResNumero" />
+			<basic name="telCelDdd" />
+			<basic name="telCelNumero" />
+			<basic name="endEmail" />
+			<basic name="dataEntrada">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dataSaida">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="existeUser" />
+			<basic name="userId" />
+			<transient name="createUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="modifiedUserUuid" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="br.com.prodevelopment.appcomercial.servico.model.impl.FuncionarioImpl" name="Funcionario">
+		<table name="Funcionario" />
+		<attributes />
+	</entity>
+</entity-mappings>

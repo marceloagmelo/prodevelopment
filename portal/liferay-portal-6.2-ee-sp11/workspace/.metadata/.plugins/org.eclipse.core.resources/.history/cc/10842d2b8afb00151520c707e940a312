@@ -1,0 +1,23 @@
+name=Employee
+module-group-id=prodevelopment
+module-incremental-version=1
+tags=
+short-description=
+long-description=
+change-log=
+page-url=http://www.prodevelopment.com.br
+author=Marcelo Melo
+licenses=EE
+portal-dependency-jars=\
+    jstl-api.jar,\
+    jstl-impl.jar,\
+    commons-beanutils.jar,\
+    commons-collections.jar
+portal-dependency-tlds=c.tld
+long-description=
+liferay-versions=6.2.0,6.2.1,6.2.2,6.2.3,6.2.4,6.2.5+
+required-deployment-contexts=\
+    contatos-hook,\
+     municipio-ibge-hook
+security-manager-enabled=true
+security-manager-set-context-class-loader=true

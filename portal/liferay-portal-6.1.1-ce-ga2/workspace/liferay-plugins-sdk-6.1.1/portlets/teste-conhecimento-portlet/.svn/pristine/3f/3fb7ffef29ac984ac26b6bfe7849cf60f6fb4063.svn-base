@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="br.com.prodevelopment.testeconhecimento">
+
+  <author>Marcelo Melo</author>
+
+  <namespace>TC</namespace>
+
+  <entity name="Teste" uuid="true" uuid-accessor="true" local-service="true" remote-service="false">
+
+    <!-- PK Fields -->
+
+    <column name="id" type="long" primary="true" />
+
+    <!-- Other Fields -->
+
+    <column name="titulo" type="String"  localized="true" />
+    <column name="descricao" type="String" localized="true" />
+    <column name="dataInclusao" type="Date"></column>
+    <column name="dataAlteracao" type="Date"></column>
+    <column name="ativo" type="boolean"></column>
+
+    <!-- Foreign Keys -->
+
+    <column name="companyId" type="long" />
+    <column name="groupId" type="long" />
+
+    <!-- Foreign Keys -->
+
+    <column name="userIdInclusao" type="long" />
+    <column name="userIdAlteracao" type="long" />
+
+    <!-- Order -->
+    <order by="asc">
+            <order-column name="id"></order-column>
+    </order>
+
+    <!-- Finder Methods -->
+
+    <finder name="CompanyGroup" return-type="Collection">
+      <finder-column name="companyId" />
+      <finder-column name="groupId" />
+    </finder>
+
+    <finder name="Group" return-type="Collection">
+      <finder-column name="groupId" />
+    </finder>
+
+    <finder name="Company" return-type="Collection">
+      <finder-column name="companyId" />
+    </finder>
+
+    <!--  References -->
+    <reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+    <reference package-path="com.liferay.portal" entity="User" />
+
+  </entity>
+
+  <entity name="Pergunta" local-service="true" remote-service="false">
+
+    <!-- PK Fields -->
+
+    <column name="id" type="long" primary="true" />
+
+    <!-- Other Fields -->
+
+    <column name="descricao" type="String" localized="true" />
+    <column name="justificativaResposta" type="String" localized="true" />
+    <column name="pontuacao" type="double" />
+    <column name="dataInclusao" type="Date" />
+    <column name="dataAlteracao" type="Date" />
+
+    <!-- Foreign Keys -->
+
+    <column type="long" name="testeId"/>
+    <column name="userIdInclusao" type="long" />
+    <column name="userIdAlteracao" type="long" />
+
+    <!-- Order -->
+
+    <order by="asc">
+      <order-column name="id" case-sensitive="false" />
+    </order>
+
+    <!-- Finder Methods -->
+
+    <finder name="Teste" return-type="Collection">
+      <finder-column name="testeId" />
+    </finder>
+
+  </entity>
+
+  <entity name="Resposta" local-service="true" remote-service="false">
+
+    <!-- PK Fields -->
+
+    <column name="id" type="long" primary="true" />
+
+    <!-- Other Fields -->
+
+    <column name="descricao" type="String" localized="true" />
+    <column name="correta" type="boolean" />
+    <column name="dataInclusao" type="Date"></column>
+    <column name="dataAlteracao" type="Date"></column>
+
+    <!-- Foreign Keys -->
+
+    <column type="long" name="perguntaId"/>
+    <column name="userIdInclusao" type="long" />
+    <column name="userIdAlteracao" type="long" />
+
+    <!-- Order -->
+    <order by="asc">
+      <order-column name="id" case-sensitive="false" />
+    </order>
+
+    <!-- Finders -->
+
+    <finder name="Pergunta" return-type="Collection">
+      <finder-column name="perguntaId" />
+    </finder>
+
+
+  </entity>
+
+  <entity name="Teste_Usuario" local-service="true" remote-service="false">
+
+    <!-- PK Fields -->
+
+    <column name="id" type="long" primary="true" />
+
+    <!-- Other Fields -->
+
+    <column name="nome" type="String" />
+    <column name="email" type="String" />
+    <column name="dataInclusao" type="Date"></column>
+    <column name="dataFinalizacao" type="Date"></column>
+    <column name="totalRespostaCorreta" type="int" />
+    <column name="totalRespostaErrada" type="int" />
+    <column name="totalPontuacao" type="double" />
+
+    <!-- Foreign Keys -->
+
+	<column type="long" name="testeId"/>
+	<column name="userId" type="long" />
+
+    <!-- Order -->
+
+    <order by="asc">
+            <order-column name="id"></order-column>
+    </order>
+
+    <!-- Finder Methods -->
+
+    <finder name="Teste" return-type="Collection">
+      <finder-column name="testeId" />
+    </finder>
+
+    <!--  References -->
+    <reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+    <reference package-path="com.liferay.portal" entity="User" />
+
+  </entity>
+
+  <entity name="Resposta_Usuario" local-service="true" remote-service="false">
+
+    <!-- PK Fields -->
+
+    <column name="id" type="long" primary="true" />
+
+    <!-- Other Fields -->
+
+    <column name="correta" type="boolean" />
+    <column name="dataInclusao" type="Date"></column>
+
+    <!-- Foreign Keys -->
+
+	<column type="long" name="testeUsuarioId"/>
+	<column type="long" name="respostaId"/>
+
+    <!-- Order -->
+
+    <order by="asc">
+            <order-column name="id"></order-column>
+    </order>
+
+    <!-- Finder Methods -->
+
+    <finder name="TesteUsuario" return-type="Collection">
+      <finder-column name="testeUsuarioId" />
+    </finder>
+
+  </entity>
+</service-builder>

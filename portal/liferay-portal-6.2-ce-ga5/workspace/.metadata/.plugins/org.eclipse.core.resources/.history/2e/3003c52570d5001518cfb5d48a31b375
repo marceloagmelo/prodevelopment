@@ -1,0 +1,46 @@
+<%@ include file="init.jsp"%>
+
+<%
+	TypeTask typeTask = (TypeTask) request
+			.getAttribute(TypeTaskConstants.TYPE_TASK);
+	long typeTaskId = BeanParamUtil.getLong(typeTask, request,
+			TypeTaskConstants.TYPE_TASK_ID);
+
+	String labelName = "label-add-typetask";
+	if (Validator.isNotNull(typeTask)) {
+		if (TypeTaskConstants.VIEW.equals(action)) {
+			labelName = HtmlUtil.escape(typeTask.getName(locale));
+		} else {
+			labelName = LanguageUtil.format(pageContext,
+					"label-update-typetask.x",
+					HtmlUtil.escape(typeTask.getName(locale)));
+		}
+	}
+%>
+<div id="<portlet:namespace/>" class="typetask-portlet">
+
+<div id="breadcrumb">
+	<liferay-ui:breadcrumb showCurrentGroup="<%=false%>"
+		showCurrentPortlet="<%=false%>" showGuestGroup="<%=false%>"
+		showLayout="<%=false%>" showPortletBreadcrumb="<%=true%>" />
+</div>
+
+<liferay-ui:header backURL="<%=backURL%>" escapeXml="<%=false%>"
+	localizeTitle="<%=(typeTask == null)%>" title='<%=labelName%>' />
+
+<portlet:actionURL var="saveURL">
+	<portlet:param name="<%=TypeTaskConstants.PORTLET_ACTION%>"
+		value="<%=TypeTaskConstants.SAVE%>" />
+</portlet:actionURL>
+
+<%@ include file="mensagens.jspf"%>
+
+<aui:model-context bean="<%=typeTask%>" model="<%=TypeTask.class%>" />
+
+	<liferay-util:include page="/html/typetask/edit_typetask_tabs.jsp">
+		<liferay-util:param name="tabs1" value="edit" />
+		<liferay-util:param name="backURL" value="<%= backURL %>" />
+	</liferay-util:include>
+
+
+</div>

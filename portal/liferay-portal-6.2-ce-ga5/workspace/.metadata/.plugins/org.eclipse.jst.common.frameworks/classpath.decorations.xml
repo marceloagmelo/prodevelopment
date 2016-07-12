@@ -1,0 +1,33 @@
+<classpath>
+  <container id="municipio-ibge-hook!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="/home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/hooks/municipio-ibge-hook/docroot/WEB-INF/lib/municipio-ibge-hook-service.jar">
+      <source-attachment-path>/municipio-ibge-hook/docroot/WEB-INF/service</source-attachment-path>
+    </entry>
+  </container>
+  <container id="eTask-portlet!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="/home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/eTask-portlet/docroot/WEB-INF/lib/eTask-portlet-service.jar">
+      <source-attachment-path>/eTask-portlet/docroot/WEB-INF/service</source-attachment-path>
+    </entry>
+  </container>
+  <container id="eTicket-portlet!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="/home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/eTicket-portlet/docroot/WEB-INF/lib/eTicket-portlet-service.jar">
+      <source-attachment-path>/eTicket-portlet/docroot/WEB-INF/service</source-attachment-path>
+    </entry>
+  </container>
+  <container id="employee-portlet!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="/home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/lib/employee-portlet-service.jar">
+      <source-attachment-path>/employee-portlet/docroot/WEB-INF/service</source-attachment-path>
+    </entry>
+    <entry id="/municipio-ibge-hook/docroot/WEB-INF/lib/municipio-ibge-hook-service.jar">
+      <source-attachment-path>/municipio-ibge-hook/docroot/WEB-INF/service</source-attachment-path>
+    </entry>
+    <entry id="/contatos-hook/docroot/WEB-INF/lib/contatos-hook-service.jar">
+      <source-attachment-path>/contatos-hook/docroot/WEB-INF/service</source-attachment-path>
+    </entry>
+  </container>
+  <container id="contatos-hook!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="/home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/hooks/contatos-hook/docroot/WEB-INF/lib/contatos-hook-service.jar">
+      <source-attachment-path>/contatos-hook/docroot/WEB-INF/service</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

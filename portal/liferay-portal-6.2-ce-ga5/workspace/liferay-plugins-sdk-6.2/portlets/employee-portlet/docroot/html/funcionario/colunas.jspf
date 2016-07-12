@@ -1,0 +1,50 @@
+<%
+PortletURL rowURL = renderResponse.createRenderURL();
+rowURL.setParameter("jspPage", "/html/funcionario/cadastro.jsp");
+rowURL.setParameter(Constantes.FUNCIONARIO_ID, String.valueOf(funcionario.getFuncionarioId()));
+rowURL.setParameter(Constantes.ACAO, Constantes.VIEW);
+rowURL.setParameter("backURL", currentURL);
+%>
+<liferay-ui:search-container-column-text name="label.nome" buffer="buffer"
+	orderable="true" orderableProperty="nome">
+<%
+buffer.append("<div class='ver_dados'>");
+buffer.append("<a href='");
+buffer.append(rowURL);
+buffer.append("'>");
+buffer.append(funcionario.getNome());
+buffer.append("</a>");
+buffer.append("</div>");
+%>	
+</liferay-ui:search-container-column-text>
+<liferay-ui:search-container-column-text name="label.nomeReduzido"
+	buffer="buffer" orderable="true" orderableProperty="nomeReduzido">
+<%
+buffer.append("<div class='ver_dados'>");
+buffer.append("<a href='");
+buffer.append(rowURL);
+buffer.append("'>");
+buffer.append(funcionario.getNomeReduzido());
+buffer.append("</a>");
+buffer.append("</div>");
+%>	
+</liferay-ui:search-container-column-text>
+<%
+if (!prefFuncionarioSomenteEsseSite) {
+	nomeSite = GroupUtil.getNomeSite(funcionario.getGroupId());
+%>
+<liferay-ui:search-container-column-text name="label.nomeSite"
+	buffer="buffer">
+<%
+buffer.append("<div class='ver_dados'>");
+buffer.append("<a href='");
+buffer.append(rowURL);
+buffer.append("'>");
+buffer.append(nomeSite);
+buffer.append("</a>");
+buffer.append("</div>");
+%>	
+</liferay-ui:search-container-column-text>
+<%
+}
+%>

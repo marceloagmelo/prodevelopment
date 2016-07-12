@@ -1,0 +1,237 @@
+/**
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ *
+ * The contents of this file are subject to the terms of the Liferay Enterprise
+ * Subscription License ("License"). You may not use this file except in
+ * compliance with the License. You can obtain a copy of the License by
+ * contacting Liferay, Inc. See the License for the specific language governing
+ * permissions and limitations under the License, including but not limited to
+ * distribution rights of the Software.
+ *
+ *
+ *
+ */
+
+package br.com.prodevelopment.contato.service.impl;
+
+import br.com.prodevelopment.contato.TelefoneDDDInvalidoException;
+import br.com.prodevelopment.contato.TelefoneDDDObrigatotioException;
+import br.com.prodevelopment.contato.TelefoneNumeroInvalidoException;
+import br.com.prodevelopment.contato.TelefoneNumeroObrigatotioException;
+import br.com.prodevelopment.contato.TelefoneTipoObrigatotioException;
+import br.com.prodevelopment.contato.model.Telefone;
+import br.com.prodevelopment.contato.model.impl.TelefoneImpl;
+import br.com.prodevelopment.contato.service.base.TelefoneLocalServiceBaseImpl;
+import br.com.prodevelopment.contato.util.DateUtil;
+import br.com.prodevelopment.contato.util.Helper;
+
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.util.PortalUtil;
+
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/**
+ * The implementation of the telefone local service.
+ *
+ * <p>
+ * All custom service methods should be put in this class. Whenever methods are
+ * added, rerun ServiceBuilder to copy their definitions into the
+ * {@link br.com.prodevelopment.contato.service.TelefoneLocalService} interface.
+ *
+ * <p>
+ * This is a local service. Methods of this service will not have security
+ * checks based on the propagated JAAS credentials because this service can only
+ * be accessed from within the same VM.
+ * </p>
+ *
+ * @author Marcelo Melo
+ * @see br.com.prodevelopment.contato.service.base.TelefoneLocalServiceBaseImpl
+ * @see br.com.prodevelopment.contato.service.TelefoneLocalServiceUtil
+ */
+public class TelefoneLocalServiceImpl extends TelefoneLocalServiceBaseImpl {
+	/*
+	 * NOTE FOR DEVELOPERS:
+	 * 
+	 * Never reference this interface directly. Always use {@link
+	 * br.com.prodevelopment.contato.service.TelefoneLocalServiceUtil} to access
+	 * the telefone local service.
+	 */
+	public Telefone addTelefone(long companyId, long groupId,
+			long createUserId, String className, long classPK, String ddi,
+			String ddd, String numero, String ramal, int tipo, boolean principal)
+			throws SystemException, PortalException {
+
+		long classNameId = PortalUtil.getClassNameId(className);
+
+		validate(0, companyId, classNameId, classPK, tipo, ddd, numero,
+				principal);
+
+		Date now = DateUtil.getDataAtual();
+
+		// Criar objeto incrementando um novo ID
+		Telefone telefone = telefonePersistence.create(counterLocalService
+				.increment(Telefone.class.getName()));
+
+		// Atribui novos valores
+		telefone.setCompanyId(companyId);
+		telefone.setGroupId(groupId);
+		telefone.setCreateUserId(createUserId);
+		telefone.setCreateDate(now);
+		telefone.setClassNameId(classNameId);
+		telefone.setClassPK(classPK);
+		telefone.setDdi(ddi);
+		telefone.setDdd(ddd);
+		telefone.setNumero(numero);
+		telefone.setTipo(tipo);
+		telefone.setPrincipal(principal);
+
+		telefone.setNew(true);
+
+		telefone = telefonePersistence.update(telefone);
+
+		return telefone;
+	}
+
+	public Telefone update(long telefoneId, long companyId, String className,
+			long classPK, long modifieduserId, String ddi, String ddd,
+			String numero, String ramal, int tipo, boolean principal)
+			throws SystemException, PortalException {
+
+		long classNameId = PortalUtil.getClassNameId(className);
+
+		validate(telefoneId, companyId, classNameId, classPK, tipo, ddd,
+				numero, principal);
+
+		Date now = DateUtil.getDataAtual();
+
+		// Recuperar telefone
+		Telefone telefone = telefonePersistence.fetchByPrimaryKey(telefoneId);
+
+		// Atribui novos valores
+		telefone.setModifiedUserId(modifieduserId);
+		telefone.setModifiedDate(now);
+		telefone.setDdi(ddi);
+		telefone.setDdd(ddd);
+		telefone.setNumero(numero);
+		telefone.setTipo(tipo);
+		telefone.setPrincipal(principal);
+
+		telefone = telefonePersistence.update(telefone);
+
+		return telefone;
+
+	}
+
+	public void updateTelefones(long companyId, long groupId, long userId,
+			String className, long classPK, List<Telefone> telefones)
+			throws PortalException, SystemException {
+
+		Set<Long> telefoneIds = new HashSet<Long>();
+
+		for (Telefone telefone : telefones) {
+			long telefoneId = telefone.getTelefoneId();
+
+			String ddi = telefone.getDdi();
+			String ddd = telefone.getDdd();
+			String numero = telefone.getNumero();
+			String ramal = telefone.getRamal();
+			int tipo = telefone.getTipo();
+			boolean principal = telefone.isPrincipal();
+
+			if (telefoneId <= 0) {
+				telefone = addTelefone(companyId, groupId, userId, className,
+						classPK, ddi, ddd, numero, ramal, tipo, principal);
+
+				telefoneId = telefone.getTelefoneId();
+			} else {
+				update(telefoneId, companyId, className, classPK, userId, ddi,
+						ddd, numero, ramal, tipo, principal);
+			}
+
+			telefoneIds.add(telefoneId);
+		}
+
+		telefones = getTelefones(companyId, className, classPK);
+
+		for (Telefone telefone : telefones) {
+			if (!telefoneIds.contains(telefone.getTelefoneId())) {
+				deleteTelefone(telefone.getTelefoneId());
+			}
+		}
+	}
+
+	public Telefone deleteTelefone(long telefoneId) throws PortalException,
+			SystemException {
+
+		return telefonePersistence.remove(telefoneId);
+	}
+
+	public void deleteTelefones(long companyId, String className, long classPK)
+			throws SystemException {
+
+		long classNameId = PortalUtil.getClassNameId(className);
+
+		List<Telefone> enderecos = telefonePersistence.findByC_C_C(companyId,
+				classNameId, classPK);
+
+		for (Telefone telefone : enderecos) {
+			telefonePersistence.remove(telefone);
+		}
+	}
+
+	public List<Telefone> getTelefones(long companyId, String className,
+			long classPK) throws SystemException {
+
+		long classNameId = PortalUtil.getClassNameId(className);
+
+		return telefonePersistence.findByC_C_C(companyId, classNameId, classPK);
+	}
+
+	public Telefone createTelefone() throws SystemException {
+
+		return new TelefoneImpl();
+	}
+
+	protected void validate(long telefoneId, long companyId, long classNameId,
+			long classPK, int tipo, String ddd, String numero, boolean principal)
+			throws PortalException, SystemException {
+
+		if (tipo == 0) {
+			throw new TelefoneTipoObrigatotioException();
+		} else {
+			if (Validator.isNull(ddd)) {
+				throw new TelefoneDDDObrigatotioException();
+			}
+			if (!Helper.isInteger(ddd)) {
+				throw new TelefoneDDDInvalidoException();
+			}
+			if (Validator.isNull(numero)) {
+				throw new TelefoneNumeroObrigatotioException();
+			}
+			for (int i = 0; i < numero.length(); i++) {
+				if (!Character.isDigit(numero.charAt(i))) {
+					throw new TelefoneNumeroInvalidoException();
+				}
+			}
+		}
+
+		if (principal) {
+			List<Telefone> enderecos = telefonePersistence.findByC_C_C_P(
+					companyId, classNameId, classPK, principal);
+
+			for (Telefone telefone : enderecos) {
+				if ((telefoneId <= 0)
+						|| (telefone.getTelefoneId() != telefoneId)) {
+					telefone.setPrincipal(false);
+
+					telefonePersistence.update(telefone);
+				}
+			}
+		}
+	}
+}

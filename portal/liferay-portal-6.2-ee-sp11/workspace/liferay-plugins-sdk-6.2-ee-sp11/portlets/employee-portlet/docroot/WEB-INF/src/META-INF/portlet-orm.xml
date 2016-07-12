@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="br.com.prodevelopment.funcionario.model.impl.CargoModelImpl">
+		<attributes>
+			<id name="cargoId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="createUserId" />
+			<basic name="modifiedUserId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nome" />
+			<basic name="versao" />
+			<transient name="createUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="modifiedUserUuid" />
+			<transient name="nomeCurrentLanguageId" />
+			<transient name="nomeMap" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.com.prodevelopment.funcionario.model.impl.FuncionarioModelImpl">
+		<attributes>
+			<id name="funcionarioId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="createUserId" />
+			<basic name="modifiedUserId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nome" />
+			<basic name="nomeReduzido" />
+			<basic name="observacao" />
+			<basic name="rg" />
+			<basic name="rgOrgaoEmissor" />
+			<basic name="rgDataEmissao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="cpf" />
+			<basic name="sexo" />
+			<basic name="estadoCivil" />
+			<basic name="dataNascimento">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endComLogradouro" />
+			<basic name="endComNumero" />
+			<basic name="endComComplemento" />
+			<basic name="endComCep" />
+			<basic name="endComBairro" />
+			<basic name="endComCidade" />
+			<basic name="endComUf" />
+			<basic name="endComPais" />
+			<basic name="endResLogradouro" />
+			<basic name="endResNumero" />
+			<basic name="endResComplemento" />
+			<basic name="endResCep" />
+			<basic name="endResBairro" />
+			<basic name="endResCidade" />
+			<basic name="endResUf" />
+			<basic name="endResPais" />
+			<basic name="dataEntrada">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dataSaida">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="existeUser" />
+			<basic name="userId" />
+			<basic name="versao" />
+			<basic name="cargoId" />
+			<basic name="fotoId" />
+			<basic name="ativo" />
+			<basic name="salario" />
+			<transient name="createUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="modifiedUserUuid" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="br.com.prodevelopment.funcionario.model.impl.CargoImpl" name="Cargo">
+		<table name="Cargo" />
+		<attributes />
+	</entity>
+	<entity class="br.com.prodevelopment.funcionario.model.impl.FuncionarioImpl" name="Funcionario">
+		<table name="Funcionario" />
+		<attributes />
+	</entity>
+</entity-mappings>

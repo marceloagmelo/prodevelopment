@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+sdks=<?xml version\="1.0" encoding\="UTF-8"?>\n<sdks default\="liferay-plugins-sdk-6.2-ee-sp11">\n<sdk location\="/opt/liferay-developer-studio/liferay-plugins-sdk-6.2-ee-sp11" name\="liferay-plugins-sdk-6.2-ee-sp11" version\="6.2.10"/>\n<sdk location\="/home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ee-sp11/workspace/liferay-plugins-sdk-6.2-ee-sp11" name\="liferay-plugins-sdk-6.2-ee-sp11" version\="6.2.10"/>\n</sdks>

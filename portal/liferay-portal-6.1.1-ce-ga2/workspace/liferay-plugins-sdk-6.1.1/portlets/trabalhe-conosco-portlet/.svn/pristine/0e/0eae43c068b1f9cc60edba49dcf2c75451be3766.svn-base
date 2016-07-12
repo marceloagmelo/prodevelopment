@@ -1,0 +1,58 @@
+#
+# Título do portlet
+#
+javax.portlet.title=Trabalhe Conosco
+javax.portlet.short-title=Trabalhe Conosco
+javax.portlet.title.keywords=Trabalhe Conosco
+
+#
+category.prodevelopment=Prodevelopment
+
+#
+# Botões
+#
+botao.salvar=Salvar
+botao.cancelar=Cancelar
+botao.enviar=Enviar
+#
+# Labels
+#
+label.trabalheConosco.tituloPortlet=Trabalhe Conosco
+label.trabalheConosco.cargos=Cargos
+label.trabalheConosco.email=Email
+label.trabalheConosco.emails=Emails
+label.trabalheConosco.telefone=Telefone
+label.trabalheConosco.cargo=Cargo
+label.trabalheConosco.objetivo=Objetivo
+label.trabalheConosco.nome=Nome
+label.trabalheConosco.endereco=Endere&ccedil;o
+label.trabalheConosco.bairro=Bairro
+label.trabalheConosco.cidade=Cidade
+label.trabalheConosco.estado=Estado
+label.trabalheConosco.cep=CEP (Apenas n&uacute;mero)
+#
+label.selecione=Selecione
+#
+label.trabalheConosco.titulo.contato=CONTATO
+label.trabalheConosco.titulo.dados.profissionais=DADOS PROFISSIONAIS
+#
+label.trabalheConosco.preenchimento.obrigatorio=Preenchimento obrigat&oacute;rio.
+#
+# Mensagens
+#
+mensagem.trabalheConosco.naoConfigurado=Portlet n&atilde;o configurado.
+mensagem.trabalheConosco.enviado=Mensagem enviada com sucesso.
+mensagem.trabalheConosco.cargos.obrigatorio=Cargos obrigat&oacute;rios.
+mensagem.trabalheConosco.email.obrigatorio=Email obrigat&oacute;rio.
+mensagem.trabalheConosco.email.invalido=Email inválido.
+mensagem.trabalheConosco.ddd.obrigatorio=DDD obrigat&oacute;rio.
+mensagem.trabalheConosco.telefone.obrigatorio=Telefone obrigat&oacute;rio.
+mensagem.trabalheConosco.cargo.obrigatorio=Cargo obrigat&oacute;rio.
+mensagem.trabalheConosco.objetivo.obrigatorio=Objetivo obrigat&oacute;rio.
+mensagem.trabalheConosco.nomeUsuario.obrigatorio=Nome obrigat&oacute;rio.
+mensagem.trabalheConosco.endereco.obrigatorio=Endere&ccedil;o obrigat&oacute;rio.
+mensagem.trabalheConosco.cidade.obrigatoria=Cidade obrigat&oacute;ria.
+mensagem.trabalheConosco.estado.obrigatorio=Estado obrigat&oacute;rio.
+
+#
+mensagem.erro.bancoDados=Erro ao acessar o banco de dados.

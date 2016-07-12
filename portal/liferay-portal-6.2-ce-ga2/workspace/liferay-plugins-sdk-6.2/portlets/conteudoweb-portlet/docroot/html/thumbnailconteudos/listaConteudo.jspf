@@ -1,0 +1,133 @@
+<div class="thumbnails">
+<%
+	PortletURL renderURL = renderResponse.createRenderURL();
+	renderURL.setParameter("categoryId", categoryId);
+	renderURL.setParameter("structureId", structureId);
+	renderURL.setParameter("tag", tag);
+	
+	int qtdeRegistros = GetterUtil.getInteger(prefQtdeRegistros);
+	int qtdeRegistrosLinha = GetterUtil.getInteger(prefQtdeRegistrosLinha);
+
+	SearchContainer searchContainer = new SearchContainer(renderRequest, new DisplayTerms(renderRequest), null, SearchContainer.DEFAULT_CUR_PARAM, qtdeRegistros, renderURL, null, null);
+
+	DisplayTerms displayTerms = searchContainer.getDisplayTerms();
+	
+	List<JournalArticle> results = Search.buscarConteudos(keywords, themeDisplay.getCompanyId(),
+			themeDisplay.getScopeGroupId(),
+			GetterUtil.getLong(structureId),
+			searchContainer.getStart(), searchContainer.getEnd(),
+			categoryId, tag, prefOrdenacao);
+
+	int total = Search.getTotalConteudo(keywords, themeDisplay.getCompanyId(),
+			themeDisplay.getScopeGroupId(),
+			GetterUtil.getLong(structureId),
+			categoryId, tag);
+	
+	searchContainer.setTotal(total);
+
+	searchContainer.setResults(results);
+	
+	addPortletURLs = JournalUtil.getAddPortletURLs(liferayPortletRequest, liferayPortletResponse, classNameIds, classTypeIds, allCategoryIds, null, null);
+	
+	//boolean showSearch = ((!results.isEmpty()) && (prefExibirPesquisa));
+	boolean showSearch = prefExibirPesquisa;
+%>
+	<div class="lfr-meta-actions add-asset-selector">
+		<%@ include file="/html/common/acoes.jspf" %>
+	</div>
+
+	<c:if test="<%= showSearch %>">
+		<liferay-portlet:actionURL name="pesquisar" var="pesquisarURL" />
+			<aui:form action="<%= pesquisarURL.toString() %>" method="post" name="fm">
+
+				<aui:nav-bar>
+					<aui:nav-bar-search cssClass="pull-right">
+						<div class="form-search">
+							<liferay-ui:input-search
+								autoFocus="<%=windowState.equals(WindowState.MAXIMIZED)%>"
+								placeholder='<%=LanguageUtil.get(locale, "keywords")%>'/>
+						</div>
+				
+					</aui:nav-bar-search>
+				</aui:nav-bar>
+
+			</aui:form>
+	</c:if>
+<%	
+	int contador = 0;
+	boolean fecheiDiv = false;
+	for (int i = 0; i < results.size(); i++) {
+		
+		JournalArticle article = (JournalArticle) results.get(i);
+
+		PortletURL voltarURL = renderResponse.createRenderURL();
+		voltarURL.setParameter("articleId", article.getArticleId());
+		voltarURL.setParameter("backURL", currentURL);
+		
+				
+		String titulo = article.getTitle(locale);
+		long groupId = article.getGroupId();
+		double versao = article.getVersion();
+		String urlImagem = StringPool.BLANK;
+		if (article.isSmallImage()) {
+			if (Validator.isNotNull(article.getSmallImageURL())) {
+				urlImagem = themeDisplay.getPathImage() + article.getSmallImageURL();
+			} else {
+				urlImagem = "/image/journal/article?img_id=" + article.getSmallImageId();
+			}
+		}
+
+		if (contador == 0) {
+			fecheiDiv = false;
+%>
+		<div class="linha">
+<%
+		}
+%>
+		<c:set var="urlImagemPequena" value="${conteudo.urlImagemPequena }" />
+		<div class="celula">
+			<div class="imagem"><a href="<%=voltarURL.toString() %>"><img src="<%=urlImagem %>" /></a></div>
+			<div class="dados">
+				<h4 class="nome"><a href="<%=voltarURL.toString() %>"><%=HtmlUtil.escape(titulo) %></a></h4>
+				<c:choose>
+					<c:when test="<%=themeDisplay.isSignedIn()%>">
+						<liferay-portlet:renderURL
+							windowState="<%=WindowState.MAXIMIZED.toString()%>"
+							var="editURL" portletName="<%=PortletKeys.JOURNAL%>">
+							<portlet:param name="struts_action"
+								value="/journal/edit_article" />
+							<portlet:param name="redirect" value="<%=currentURL%>" />
+							<portlet:param name="originalRedirect" value="<%=currentURL%>" />
+							<portlet:param name="groupId" value="<%=String.valueOf(groupId) %>" />
+							<portlet:param name="articleId" value="<%=article.getArticleId() %>" />
+							<portlet:param name="version" value="<%=String.valueOf(versao) %>" />
+						</liferay-portlet:renderURL>
+	
+						<div class="acoes">
+							<div class="acao">
+								<liferay-ui:icon image="edit" message="edit-web-content"
+									url="<%=editURL%>" />
+							</div>
+						</div>
+					</c:when>
+				</c:choose>
+			</div>
+		</div>
+<%
+		contador++;
+		if (contador == qtdeRegistrosLinha) {
+			contador = 0;
+			fecheiDiv = true;
+%>
+		</div>
+<%
+		}
+	}
+	if (Constantes.S.equals(prefPaginacao)) {
+%>
+	<liferay-ui:search-paginator searchContainer="<%= searchContainer %>" type="simple" />
+<%		
+	}
+%>
+
+</div>

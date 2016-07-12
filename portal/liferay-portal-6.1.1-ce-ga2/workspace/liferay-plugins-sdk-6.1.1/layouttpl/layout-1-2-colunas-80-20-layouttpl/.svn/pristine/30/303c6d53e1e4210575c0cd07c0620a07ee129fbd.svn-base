@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE plugin-package PUBLIC "-//Liferay//DTD Plugin Package 6.1.0//EN" "http://www.liferay.com/dtd/liferay-plugin-package_6_1_0.dtd">
+
+<plugin-package>
+	<name>Layout 1 2 Colunas 80 20 Templates</name>
+	<module-id>liferay/layout-1-2-colunas-80-20-layouttpl/6.0.0.1/war</module-id>
+	<types>
+		<type>layout-template</type>
+	</types>
+	<short-description>
+		This plugin is a Layout 1 2 Colunas 80 20 layout template.
+	</short-description>
+	<change-log></change-log>
+	<page-url>http://www.prodevelopement.com.br</page-url>
+	<author>Prodevelopment.</author>
+	<licenses>
+		<license osi-approved="true">LGPL</license>
+	</licenses>
+	<liferay-versions>
+		<liferay-version>6.1.0+</liferay-version>
+	</liferay-versions>
+</plugin-package>

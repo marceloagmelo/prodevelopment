@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.1.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_1_0.dtd">
+
+<liferay-portlet-app>
+
+	<portlet>
+		<portlet-name>exibirconteudoportlet</portlet-name>
+		<icon>/icon.png</icon>
+		<configuration-action-class>br.com.prodevelopment.conteudo.exibir.action.ConfiguracaoActionImpl</configuration-action-class>
+		<instanceable>true</instanceable>
+		<header-portlet-css>
+			/css/exibirconteudo/main.css
+		</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/exibirconteudo/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>
+			exibirconteudoportlet-portlet
+		</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>listaconteudoportlet</portlet-name>
+		<icon>/icon.png</icon>
+		<configuration-action-class>br.com.prodevelopment.conteudo.lista.action.ConfiguracaoActionImpl</configuration-action-class>
+		<instanceable>true</instanceable>
+		<header-portlet-css>
+			/css/listaconteudo/main.css
+		</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/listaconteudo/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>
+			listaconteudoportlet-portlet
+		</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>ultimosconteudosportlet</portlet-name>
+		<icon>/icon.png</icon>
+		<configuration-action-class>br.com.prodevelopment.conteudo.ultimos.action.ConfiguracaoActionImpl</configuration-action-class>
+		<instanceable>true</instanceable>
+		<header-portlet-css>
+			/css/ultimosconteudos/main.css
+		</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/ultimosconteudos/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>
+			ultimosconteudosportlet-portlet
+		</css-class-wrapper>
+	</portlet>
+	<role-mapper>
+		<role-name>administrator</role-name>
+		<role-link>Administrator</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>guest</role-name>
+		<role-link>Guest</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>power-user</role-name>
+		<role-link>Power User</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>user</role-name>
+		<role-link>User</role-link>
+	</role-mapper>
+</liferay-portlet-app>

@@ -1,0 +1,15 @@
+<!-- Menu footer -->
+<div class="footer">
+	<footer id="footer" role="contentinfo">
+  		#set( $count = 0 )
+		
+  		#foreach ($nav_item in $nav_items)
+  			#if( $count > 0 )
+				<li><a href="$nav_item.getURL()" $nav_item.getTarget()><span>$nav_item.icon() $htmlUtil.escape($nav_item.getName())</span></a></li>
+			#end
+  			#set( $count = $count + 1 )
+  		#end
+		</ul>
+	</footer>
+</div>
+<!-- fim menu footer-->

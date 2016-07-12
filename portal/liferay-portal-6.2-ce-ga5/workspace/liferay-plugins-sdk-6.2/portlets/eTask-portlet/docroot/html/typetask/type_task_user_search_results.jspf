@@ -1,0 +1,39 @@
+<%
+	if (searchTerms.isAdvancedSearch()) {
+		total = UserLocalServiceUtil.searchCount(
+				company.getCompanyId(), searchTerms.getFirstName(),
+				searchTerms.getMiddleName(), searchTerms.getLastName(),
+				searchTerms.getScreenName(),
+				searchTerms.getEmailAddress(), searchTerms.getStatus(),
+				userParams, searchTerms.isAndOperator());
+
+		userSearchContainer.setTotal(total);
+
+		results = UserLocalServiceUtil.search(company.getCompanyId(),
+				searchTerms.getFirstName(),
+				searchTerms.getMiddleName(), searchTerms.getLastName(),
+				searchTerms.getScreenName(),
+				searchTerms.getEmailAddress(), searchTerms.getStatus(),
+				userParams, searchTerms.isAndOperator(),
+				userSearchContainer.getStart(),
+				userSearchContainer.getEnd(),
+				userSearchContainer.getOrderByComparator());
+	} else {
+		total = TypeTaskUsersUtil.searchUsersCount(
+				company.getCompanyId(), keywords,
+				searchTerms.getStatus(), typeTaskId,
+				typeUser,
+				userSearchContainer.getOrderByComparator());
+
+		userSearchContainer.setTotal(total);
+
+		results = TypeTaskUsersUtil.searchUsers(company.getCompanyId(),
+				searchTerms.getKeywords(), searchTerms.getStatus(),
+				typeTaskId, typeUser,
+				userSearchContainer.getStart(),
+				userSearchContainer.getEnd(),
+				userSearchContainer.getOrderByComparator());
+	}
+
+	userSearchContainer.setResults(results);
+%>

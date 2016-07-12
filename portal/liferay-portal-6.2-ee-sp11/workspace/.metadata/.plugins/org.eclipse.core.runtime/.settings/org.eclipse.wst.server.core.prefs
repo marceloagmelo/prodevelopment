@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<runtimes>\n  <runtime id\="Liferay v6.2 EE (Tomcat 7)" location\="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ee-sp11/tomcat-7.0.42" name\="Liferay v6.2 EE (Tomcat 7)" runtime-type-id\="com.liferay.studio.server.62.ee.tomcat.runtime.70" timestamp\="0"/>\n</runtimes>\n

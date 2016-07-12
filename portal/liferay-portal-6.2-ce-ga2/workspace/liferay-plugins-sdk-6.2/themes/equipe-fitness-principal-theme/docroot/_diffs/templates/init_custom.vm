@@ -1,0 +1,12 @@
+#set ($css_class = "${css_class} dockbar-split")
+
+#set ($site_name = "Equipe Fitness")
+#set ($show_breadcrumb = false)
+
+#set ($organizacao_classe_name = "com.liferay.portal.model.Organization")
+#set ($grupo = $page.getGroup())
+#set ($groupId = $grupo.getGroupId())
+#set ($orgId = $grupo.getOrganizationId())
+
+#set ($orgService = $serviceLocator.findService("com.liferay.portal.service.OrganizationLocalService"))
+#set ($telefoneService = $serviceLocator.findService("com.liferay.portal.service.PhoneLocalService"))

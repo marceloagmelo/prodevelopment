@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.1.0//EN" "http://www.liferay.com/dtd/liferay-display_6_1_0.dtd">
+
+<display>
+
+	<category name="category.prodevelopment">
+		<category name="category.pesquisaopiniao">
+			<portlet id="pesquisaopiniaocadastroportlet"></portlet>
+			<portlet id="pesquisaopiniaoconsultaportlet"></portlet>
+			<portlet id="pesquisaopiniaoresultadoportlet"></portlet>
+			<portlet id="pesquisaopiniaoexibirportlet"></portlet>
+		</category>
+	</category>
+</display>

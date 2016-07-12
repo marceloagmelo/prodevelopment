@@ -1,0 +1,42 @@
+.galeria_imagem_navegacao {
+  padding: 1px 8px;
+  text-align: left;
+  font-family: Verdana, Arial, Helvetica, sans-serif; }
+
+.galeria_imagem_navegacao .nomePasta {
+  font-size: 16px;
+  text-align: left; }
+
+.galeria_imagem_navegacao h3 {
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  padding-bottom: 3px; }
+
+.galeria_imagem_navegacao .conteudo {
+  font-size: 12px;
+  font-weight: normal;
+  display: block;
+  width: 270px;
+  padding: 0px;
+  margin: 0px;
+  line-height: 19px;
+  text-align: center;
+  vertical-align: middle; }
+
+.galeria_imagem_navegacao a.voltar {
+  display: block;
+  padding-right: 10px;
+  text-align: right;
+  border-top: 1px solid #CCCCCC; }
+
+.galeria_imagem_navegacao .conteudoTexto {
+  line-height: 18px;
+  text-align: justify; }
+
+.galeria_imagem_navegacao .conteudoTexto li {
+  list-style: none;
+  padding: 0 0 3px 0; }
+
+.galeria_imagem_navegacao .conteudoTexto ul {
+  margin-left: 1.5em; }
+

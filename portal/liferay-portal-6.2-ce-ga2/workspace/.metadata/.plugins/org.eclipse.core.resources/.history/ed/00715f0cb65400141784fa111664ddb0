@@ -1,0 +1,25 @@
+<%@ include file="init.jsp"%>
+
+<%
+SearchContainer searchContainer = (SearchContainer)request.getAttribute("liferay-ui:search:searchContainer");
+DisplayTerms displayTerms = searchContainer.getDisplayTerms();
+%>
+<liferay-ui:search-toggle
+	buttonLabel="Search"
+	displayTerms="<%= displayTerms %>"
+	id="toggle_id_student_search">
+	<aui:select name="<%=Constantes.CAMPO_DIA_SEMANA %>" label="label.diaSemana">
+		<%
+			for (String dia : AcademiaHorarioUtil.valoresDiasDaSemana) {
+							pageContext.setAttribute("diaDaSemana", String
+									.valueOf(AcademiaHorarioUtil
+											.getDiaDaSemana(Integer
+													.parseInt(dia) - 1)));
+		%>
+		<aui:option label="${diaDaSemana }"
+			selected="<%=dia.equals(diaDaSemana) %>" value="<%=dia %>" />
+		<%
+			}
+		%>
+	</aui:select>
+</liferay-ui:search-toggle>

@@ -1,0 +1,17 @@
+<liferay-ui:success key="typetask-saved-sucessfully"
+	message="typetask-saved-sucessfully" />
+<liferay-ui:success key="typetask-user-saved-sucessfully"
+	message="typetask-user-saved-sucessfully" />
+<liferay-ui:error
+	exception="<%=StructureDuplicateStructureKeyException.class%>"
+	focusField="<%=TypeTaskConstants.NAME%>"
+	message="structure-duplicate-structure-key" />
+<liferay-ui:error
+	exception="<%=RequiredTypeTaskNameException.class%>"
+	focusField="<%=TypeTaskConstants.NAME%>"
+	message="typetask-name-required" />
+<liferay-ui:error
+	exception="<%=StructureXsdException.class%>"
+	focusField="<%=TypeTaskConstants.NAME%>"
+	message="please-enter-a-valid-xsd" />
+

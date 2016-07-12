@@ -1,0 +1,7 @@
+<liferay-ui:success key="mensagem.funcionario.adicionado.sucesso"
+	message="mensagem.funcionario.adicionado.sucesso" />
+<liferay-ui:success key="mensagem.funcionario.alterado.sucesso"
+	message="mensagem.funcionario.alterado.sucesso" />
+<liferay-ui:success key="mensagem.portlet.configurado.sucesso"
+	message="mensagem.portlet.configurado.sucesso" />
+	

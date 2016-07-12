@@ -1,0 +1,15 @@
+<liferay-ui:success key="mensagem.pergunta.criada.sucesso"
+	message="mensagem.pergunta.criada.sucesso" />
+<liferay-ui:success key="mensagem.pergunta.alterada.sucesso"
+	message="mensagem.pergunta.alterada.sucesso" />
+<liferay-ui:success key="mensagem.pergunta.excluida.sucesso"
+	message="mensagem.pergunta.excluida.sucesso" />
+<liferay-ui:success key="mensagem.erro.bancoDados"
+	message="mensagem.erro.bancoDados" />
+<liferay-ui:error key="mensagem.pergunta.descricao.obrigatoria"
+	message="mensagem.pergunta.descricao.obrigatoria" />
+<liferay-ui:error key="mensagem.erro.gravar.bancoDados"
+	message="mensagem.erro.gravar.bancoDados" />
+<liferay-ui:error key="mensagem.pergunta.existe.respostaCadastrada"
+	message="mensagem.pergunta.existe.respostaCadastrada" />
+	

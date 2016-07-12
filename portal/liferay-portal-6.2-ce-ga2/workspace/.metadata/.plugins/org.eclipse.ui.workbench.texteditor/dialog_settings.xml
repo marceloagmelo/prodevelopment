@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="379" key="DIALOG_WIDTH"/>
+		<item value="135" key="DIALOG_Y_ORIGIN"/>
+		<item value="987" key="DIALOG_X_ORIGIN"/>
+		<item value="516" key="DIALOG_HEIGHT"/>
+		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="box" key="selection"/>
+		<list key="findhistory">
+			<item value="box"/>
+			<item value="include"/>
+			<item value="result"/>
+			<item value="advancedConfiguration"/>
+			<item value="displayOpenSearchResults"/>
+			<item value="searchContext"/>
+			<item value="portlet.search.search"/>
+			<item value="/search/search"/>
+		</list>
+		<list key="replacehistory">
+			<item value="urlPortal"/>
+			<item value=".topo"/>
+			<item value="distribuicao"/>
+			<item value="#1273c7"/>
+			<item value="#FE9A2E"/>
+			<item value="produto"/>
+			<item value="group"/>
+			<item value="prefs"/>
+		</list>
+	</section>
+</section>

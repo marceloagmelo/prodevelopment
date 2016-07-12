@@ -1,0 +1,92 @@
+/* example_6 css */
+#example_6 {
+	position: relative; /* important */
+	overflow: hidden; /* important */
+	width: 178px; /* important */
+	margin: auto;
+}
+
+#example_6_content {
+	position: absolute;
+	top: 0;
+	margin-left: 0;
+	margin-top: 50px;
+	width: 13440px;
+}
+
+#example_6_content #example_6_content li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#container_bd #example_6 ul li {
+	display: block;
+	float: left;
+	margin: 0;
+	border: none;
+}
+
+#container_bd #example_6 ul li img {
+	display: block;
+}
+
+#example_6_frame { /* imagens pequenas */
+	margin: 0px -5px 260px -5px;
+    position: relative;
+}
+#container_bd #example_6_frame ul li {
+	margin: 0 2px;
+}
+#container_bd #example_6_frame ul li img{
+	border: 1px solid #9cf;
+	padding: 2px;
+}
+
+#container_bd #example_6_frame ul li img:hover {border: 1px solid #369;}
+
+.accordion_toggler {
+	padding: 5px;
+	background: #369;
+	border-top: 1px solid #69c;
+	border-left: 1px solid #69c;
+	border-right: 1px solid #036;
+	border-bottom: 1px solid #036;
+	color: #fff;
+	cursor: pointer;
+}
+
+.accordion_content {
+	background: #fff;
+}
+
+.tumb {
+	padding-left:3px;
+}
+
+#lista {
+	list-style: none outside none;
+	margin-left: 0;
+}
+
+.tituloVideo {
+    font: 1em Helvetica-Neue,Verdana,Arial,sans-serif;
+    margin: 5px;
+    width: 170px;
+}
+
+.vermais {
+	clear: both;
+	font: bold .8em Helvetica-Neue,Verdana,Arial,sans-serif;
+	margin: 0;
+	text-align: right;
+	text-transform: uppercase;
+	margin: 0 15px 36px 0;
+}
+.vermais a {font: bold .8 Helvetica-Neue,Verdana,Arial,sans-serif;}
+.vermais a:hover {color: #1dacdf;}
+
+
+iframe {
+	border: 1px solid #004980;
+}

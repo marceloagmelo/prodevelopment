@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="teste-portlet">
+        <wb-resource deploy-path="/" source-path="/docroot"/>
+        <property name="context-root" value="teste-portlet"/>
+        <property name="java-output-path" value="/teste-portlet/docroot/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

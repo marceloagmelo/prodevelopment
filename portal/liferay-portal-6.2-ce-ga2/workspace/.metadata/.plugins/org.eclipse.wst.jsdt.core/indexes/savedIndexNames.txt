@@ -1,0 +1,23 @@
+INDEX VERSION 1.3+/home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2190321223.index
+2647473969.index
+2385271135.index
+1827698653.index
+3464633733.index
+2282031056.index
+334026146.index
+3706275703.index
+29148038.index
+4137562789.index
+851432344.index
+2171216110.index
+146901902.index
+824377088.index
+2493122855.index
+1909388276.index
+980821533.index
+1500531057.index
+1184614269.index
+796121443.index
+2070524043.index
+98250451.index

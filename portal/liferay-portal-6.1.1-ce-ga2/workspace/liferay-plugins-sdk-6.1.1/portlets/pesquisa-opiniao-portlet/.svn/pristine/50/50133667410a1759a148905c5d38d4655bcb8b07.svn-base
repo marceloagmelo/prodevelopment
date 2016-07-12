@@ -1,0 +1,34 @@
+<liferay-ui:panel id="panel-perguntas"
+	title='<%=LanguageUtil.get(pageContext, "label.perguntas")%>'
+	collapsible="true">
+
+	<%
+		for (PerguntaVO perguntaVO : listaPerguntaVO) {
+				String descricaoPergunta = perguntaVO
+						.getDescricaoCorrente().replaceAll("\n",
+								Constantes.BR);
+	%>
+	<liferay-ui:panel-container id="perguntas1" extended="true">
+		<liferay-ui:panel id="perguntas2" title='<%=descricaoPergunta%>'
+			extended="false">
+			<%
+				for (RespostaVO respostaVO : perguntaVO
+										.getRespostas()) {
+									String descricaoResposta = respostaVO
+											.getDescricaoCorrente().replaceAll(
+													"\n", Constantes.BR);
+			%>
+				<div class="visualizar_resposta">
+					<%=descricaoResposta%>
+				</div>
+				<%
+					}
+				%>
+			
+		</liferay-ui:panel>
+	</liferay-ui:panel-container>
+	<%
+		}
+	%>
+
+</liferay-ui:panel>

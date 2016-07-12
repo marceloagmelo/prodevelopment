@@ -1,0 +1,35 @@
+1455572639880	Rename type 'Constants'
+1455572668823	Rename type 'ConstantsTypeTask'
+1455573551927	Delete element
+1455573566007	Delete elements
+1455573683034	Delete elements
+1455573688934	Delete elements
+1455573854911	Rename package 'br.com.prodevelopment.etask.portlet.typetask.acion'
+1455573930697	Rename type 'TypeTicketActivityInterpreter'
+1455573942606	Rename type 'TypeTicketActivityKeys'
+1455574087090	Rename type 'TypeTicketComparator'
+1455574099996	Rename type 'TypeTicketNameComparator'
+1455574203903	Rename type 'TypePermission'
+1455574259504	Rename type 'TypeTicketDisplayTerms'
+1455574270186	Rename type 'TypeTicketSearch'
+1455574454714	Rename type 'TypeTicketTrashHandler'
+1455575127745	Rename type 'TypeTicketUtil'
+1455575209639	Rename resource 'typeticket.xml'
+1455575769035	Delete element
+1455660929122	Delete element
+1455664727328	Rename resource 'add-typetask.jsp'
+1455666994689	Delete element
+1455667006190	Rename resource 'add-typetask-form.jsp'
+1455673546531	Rename resource 'typetask-form.jsp'
+1455827832382	Delete elements
+1455829240012	Copy file
+1455829303351	Copy file
+1455829489066	Copy file
+1455829610406	Copy file
+1455841724500	Rename resource 'edit_typetask_edit.jspf'
+1455841730721	Rename resource 'edit_typetask_executors_available.jspf'
+1455841737123	Rename resource 'edit_typetask_executors_current.jspf'
+1455841745033	Rename resource 'edit_typetask_executors.jspf'
+1455841750628	Rename resource 'edit_typetask_managers_available.jspf'
+1455841757292	Rename resource 'edit_typetask_managers_current.jspf'
+1455841763154	Rename resource 'edit_typetask_managers.jspf'

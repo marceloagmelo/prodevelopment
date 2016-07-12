@@ -1,0 +1,37 @@
+<%@ include file="init.jsp"%>
+
+<%
+	SearchContainer searchContainer = (SearchContainer) request
+			.getAttribute("liferay-ui:search:searchContainer");
+	DisplayTerms displayTerms = searchContainer.getDisplayTerms();
+%>
+<liferay-ui:search-toggle buttonLabel="Search"
+	displayTerms="<%=displayTerms%>" id="toggle_id_student_search">
+	<aui:select name="<%=Constantes.CAMPO_DIA_SEMANA%>"
+		label="label.diaSemana">
+		<%
+			for (String dia : AcademiaHorarioUtil.valoresDiasDaSemana) {
+						pageContext
+								.setAttribute("diaDaSemana", String
+										.valueOf(AcademiaHorarioUtil
+												.getDiaDaSemana(Integer
+														.parseInt(dia) - 1)));
+		%>
+		<aui:option label="${diaDaSemana }"
+			selected="<%=dia.equals(diaDaSemana) %>" value="<%=dia %>" />
+		<%
+			}
+		%>
+	</aui:select>
+	<aui:select label="label.atividade"
+		name="<%=Constantes.CAMPO_ATIVIDADE_ID%>">
+		<aui:option label="label.selecione"
+			selected="${'0' eq selAtividadeId}" value="0" />
+		<c:forEach items="<%=listaAtividades%>" var="cboAtividade">
+			<aui:option label="${cboAtividade.nomeCurrentValue }"
+				selected="${cboAtividade.atividadeId eq selAtividadeId}"
+				value="${cboAtividade.atividadeId }" />
+		</c:forEach>
+	</aui:select>
+
+</liferay-ui:search-toggle>

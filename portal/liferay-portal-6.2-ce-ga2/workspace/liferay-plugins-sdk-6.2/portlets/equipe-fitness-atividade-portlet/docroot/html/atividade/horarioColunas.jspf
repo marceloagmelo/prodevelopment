@@ -1,0 +1,12 @@
+<liferay-ui:search-container-column-text name="label.diaSemana" buffer="buffer">
+<%
+String diaDaSemana = AcademiaHorarioUtil.getDiaDaSemana(academiaHorario.getDiaSemana()-1);
+diaDaSemana = LanguageUtil.get(pageContext, diaDaSemana);
+buffer.append(diaDaSemana);
+%>	
+</liferay-ui:search-container-column-text>
+<liferay-ui:search-container-column-text name="label.horaInicial"
+	property="horaInicial" />
+<liferay-ui:search-container-column-text name="label.horaFinal"
+	property="horaFinal" />
+	

@@ -1,0 +1,11 @@
+name=Contatos
+module-group-id=prodevelopment
+module-incremental-version=1
+tags=
+short-description=
+long-description=
+change-log=
+page-url=http://www.prodevelopment.com.br
+licenses=EE
+liferay-versions=6.2.0,6.2.1,6.2.2,6.2.3,6.2.4,6.2.5+
+security-manager-enabled=true

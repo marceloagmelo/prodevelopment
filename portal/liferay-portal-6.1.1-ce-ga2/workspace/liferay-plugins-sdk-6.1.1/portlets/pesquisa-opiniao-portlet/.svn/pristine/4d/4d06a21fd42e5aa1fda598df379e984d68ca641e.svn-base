@@ -1,0 +1,17 @@
+name=Pesquisa Opinião
+module-group-id=liferay
+module-incremental-version=1
+tags=
+short-description=
+change-log=
+page-url=http://www.prodevelopment.com.br
+author=Marcelo Melo (Prodevelopment).
+licenses=LGPL
+liferay-versions=6.1.1
+
+portal-dependency-jars=\
+    jstl-api.jar,\
+    jstl-impl.jar
+    
+portal-dependency-tlds=\
+    c.tld

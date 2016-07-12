@@ -1,0 +1,235 @@
+table.form_portlet_pesquisa td {
+  padding-right: 30px; }
+
+.search_bt_form {
+  border: 0 !important;
+  width: 26px !important;
+  height: 26px !important;
+  vertical-align: top !important;
+  padding: 0 !important;
+  background: url(../imagens/search.png) no-repeat !important; }
+
+.results-grid {
+  margin-top: 5px; }
+
+.pesquisa_titulo {
+  border-bottom: 2px solid #D3DADD;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #34404F; }
+
+.visualizar_resposta {
+  border-bottom: 2px solid #D3DADD; }
+
+/* pesquisa */
+.pesquisa {
+  padding: 0 9px; }
+
+.pesquisa .titulo {
+  border-bottom: 2px solid #D3DADD;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #34404F; }
+
+.pesquisa h3 {
+  color: #012768;
+  border-bottom: 2px solid #E4E4DE;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+  margin-bottom: 20px; }
+
+.pesquisa .participante {
+  margin-bottom: 35px;
+  border-bottom: 2px solid #E4E4DE; }
+
+.pesquisa .participante span {
+  color: #737373;
+  font-size: 10px; }
+
+.pesquisa p {
+  color: #737373;
+  font-size: 11px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  text-align: justify; }
+
+.pesquisa p input {
+  height: 12px;
+  width: 300px;
+  padding: 3px 1px; }
+
+.pesquisa h4 {
+  color: #005187;
+  font-size: 12px;
+  margin: 10px 0 2px 0; }
+
+.pesquisa .pergunta {
+  color: #005187;
+  font-size: 12px;
+  margin: 10px 0 2px 0;
+  padding-left: 20px;
+  background: url(../imagens/icon_question_blue.png) 4px 1px no-repeat;
+  font-weight: bold;
+  border-bottom: 2px solid #E4E4DE; }
+
+.pesquisa ul {
+  list-style: none;
+  margin: 5px 0 20px 25px; }
+
+.pesquisa li {
+  margin: 5px 0 4px 0;
+  color: #737373; }
+
+.pesquisa li input.radio {
+  margin: 2px 4px 0 -15px;
+  vertical-align: -2px; }
+
+.pesquisa .naveg {
+  text-align: right;
+  font-weight: bold;
+  border-top: 1px solid #EAEAEA;
+  padding-top: 5px;
+  margin-top: 10px; }
+
+.pesquisa .naveg a.voltar {
+  display: inline-block;
+  height: 16px;
+  background: #e4e4de url(../imagens/previous.png) 2px 2px no-repeat;
+  padding: 4px 4px 0 22px;
+  text-decoration: none;
+  margin-right: 4px; }
+
+.pesquisa .naveg a.avancar {
+  display: inline-block;
+  height: 16px;
+  background: #e4e4de url(../imagens/next.png) right 2px no-repeat;
+  padding: 4px 22px 0 4px;
+  text-decoration: none; }
+
+.pesquisa .naveg a:hover {
+  color: #fff; }
+
+.pesquisa .naveg a.botao {
+  display: inline-block;
+  height: 16px;
+  background: #6E798D;
+  padding: 4px 8px 0 8px;
+  text-decoration: none;
+  color: #fff; }
+
+.pesquisa .naveg a.botao:hover {
+  text-decoration: underline; }
+
+.pesquisa .naveg .resultado {
+  float: left;
+  color: #555555; }
+
+/* pesquisa estatistica */
+.pesquisa_estatistica .selecao {
+  color: #666666;
+  margin-bottom: 0px; }
+
+.pesquisa_estatistica .selecao p {
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 5; }
+
+.pesquisa_estatistica p.pergunta {
+  font-size: 12px;
+  font-weight: bold;
+  color: #005187;
+  margin: 14px 0 5px 0;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #ccc; }
+
+.pesquisa_estatistica div.resposta {
+  padding-left: 15px; }
+
+.pesquisa_estatistica div.resposta p {
+  font-size: 11px;
+  color: #737373;
+  float: left;
+  width: 440px;
+  margin-bottom: 6px;
+  border-bottom: 1px dashed #ccc; }
+
+.pesquisa_estatistica div.resposta span {
+  font-size: 11px;
+  color: #737373;
+  float: right;
+  padding-right: 4px;
+  border-bottom: 1px dashed #ccc; }
+
+.pesquisa_estatistica div.resposta span strong {
+  display: inline-block;
+  width: 42px;
+  text-align: right; }
+
+.pesquisa_estatistica div.resposta span strong.qtd {
+  width: 28px; }
+
+/* pesquisa relatorio */
+.pesquisa_consulta .selecao {
+  color: #666666;
+  margin-bottom: 0; }
+
+.pesquisa_consulta .selecao p {
+  font-size: 11px;
+  font-weight: bold; }
+
+.pesquisa_consulta .participante {
+  font-size: 11px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  margin-bottom: 8px; }
+
+.pesquisa_consulta .participante a {
+  text-decoration: none;
+  color: #404040; }
+
+.pesquisa_consulta .participante a:hover {
+  color: #204184; }
+
+.pesquisa_consulta .participante img {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  margin-right: 10px;
+  margin-bottom: -4px; }
+
+.pesquisa_consulta .resumo_pesquisa {
+  margin-bottom: 15px; }
+
+.pesquisa_consulta .resumo_teste {
+  margin-bottom: 15px; }
+
+.pesquisa_consulta p.pergunta {
+  font-size: 11px;
+  font-weight: bold;
+  color: #005187;
+  margin: 8px 0 4px 0;
+  padding-left: 20px;
+  background: url(../imagens/icon_question_blue.png) 4px 1px no-repeat; }
+
+.pesquisa_consulta p.resposta {
+  font-size: 11px;
+  color: #737373;
+  margin-bottom: 6px;
+  padding-left: 50px; }
+
+.pesquisa_consulta p.certa {
+  background: url(../imagens/icone_acerto.png) 32px 0px no-repeat; }
+
+.pesquisa_consulta p.errada {
+  background: url(../imagens/icone_erro.png) 32px 0px no-repeat; }
+
+.clear {
+  clear: both; }
+

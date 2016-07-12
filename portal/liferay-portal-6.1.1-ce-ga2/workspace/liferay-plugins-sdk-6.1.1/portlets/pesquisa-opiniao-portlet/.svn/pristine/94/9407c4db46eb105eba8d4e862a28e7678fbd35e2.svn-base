@@ -1,0 +1,72 @@
+#
+# Título do portlet
+#
+javax.portlet.title=Exibir Pesquisa de Opini&atilde;o
+javax.portlet.short-title=Exibir Pesquisa de Opini&atilde;o
+javax.portlet.title.keywords=Exibir Pesquisa de Opini&atilde;o
+#
+category.pesquisaopiniao=Pesquisa de Opini&atilde;o
+category.prodevelopment=Pro Development
+#
+# Botões
+#
+botao.anterior=Anterior
+botao.proxima=Pr&oacute;xima
+botao.finalizar=Finalizar Pesquisa
+botao.salvar=Salvar
+botao.cancelar=Cancelar
+botao.voltar=Voltar para o in&iacute;cio
+
+#
+# Mensagens
+#
+mensagem.pesquisaUsuario.nome.obrigatorio=Nome obrigat&oacute;rio.
+mensagem.pesquisaUsuario.email.obrigatorio=Email obrigat&oacute;rio.
+mensagem.pesquisaUsuario.selecione.resposta=Selecione uma resposta.
+#
+mensagem.pesquisaUsuario.jaRespondeu=Usu&aacute;rio j&aacute; respondeu pesquisa.
+#
+mensagem.pesquisa.erro=Erro no portlet pesquisa.
+#
+mensagem.portlet.naoConfigurado=Portlet configurada.
+#
+mensagem.pesquisaUsuario.finalizada.sucesso=Pesquisa finalizada com sucesso.
+#
+mensagem.erro.bancoDados=Erro ao acessar o banco de dados.
+mensagem.erro.gravar.bancoDados=Erro ao gravar no banco de dados.
+mensagem.erro.enviarEmail=Erro ao enviar o email.
+mensagem.erro.pesquisaNaoEncontrada=Erro pesquisa n&atilde;o encontrada, favor falar com o administrador.
+#
+mensagem.pesquisa.semPerguntas=N&atilde;o existem perguntas cadastrada.
+mensagem.pesquisa.semRespostas=N&atilde;o existem respostas cadastrada.
+#
+# Labels
+#
+label.pesquisaUsuario.nome=* Nome:
+label.pesquisaUsuario.email=* Email:
+label.pesquisaUsuario.preenchimentoObrigatorio=* Preenchimento obrigat&oacute;rio
+#
+label.pesquisaUsuario.anonima=Pesquisa an&ocirc;nima
+label.pesquisaUsuario.enviarEmail=Enviar email
+#
+label.pesquisaUsuario.pesquisa=Selecione
+#
+label.texto.pagina=P&aacute;gina
+label.texto.de=de
+#
+label.sim=Sim
+label.nao=N&atilde;o
+#
+label.configuracao=Configura&ccedil;&atilde;o
+#
+label.exibir.titulo=Exibir t&iacute;tulo
+#
+email.assunto=Pesquisa de Opini&atilde;o
+email.from=marcelo@prodevelopment.com.br
+#
+mensagem.email.obrigado.pesquisa.respondida=Obrigado por ter respondido a pesquisa
+mensagem.email.veja.respostas=Segue abaixo as suas respostas
+mensagem.email.pergunta=Pergunta
+mensagem.email.resposta=Resposta
+mensagem.email.atenciosamente=Atenciosamente
+mensagem.email.portal=Portal

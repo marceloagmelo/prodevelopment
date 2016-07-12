@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE layout-templates PUBLIC "-//Liferay//DTD Layout Templates 6.1.0//EN" "http://www.liferay.com/dtd/liferay-layout-templates_6_1_0.dtd">
+
+<layout-templates>
+	<custom>
+		<layout-template id="layout_1_2_colunas_80_20" name="1-2 Colunas (80/20)">
+			<template-path>/layout_1_2_colunas_80_20.tpl</template-path>
+			<wap-template-path>/layout_1_2_colunas_80_20.wap.tpl</wap-template-path>
+			<thumbnail-path>/layout_1_2_colunas_80_20.png</thumbnail-path>
+		</layout-template>
+	</custom>
+</layout-templates>

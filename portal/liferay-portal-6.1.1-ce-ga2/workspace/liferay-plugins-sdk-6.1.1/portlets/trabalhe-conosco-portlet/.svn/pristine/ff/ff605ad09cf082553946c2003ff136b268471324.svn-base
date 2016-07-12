@@ -1,0 +1,82 @@
+.trabalhe_conosco_desc_titulo {
+    border-bottom: 2px solid #D3DADD;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #34404F;
+}
+
+/* ---------- Trabalhe Conosco ---------- */
+.trabalhe_conosco {
+	width: 460px;
+	margin-top: 10px;
+}
+
+.trabalhe_conosco td.col_1 {
+	width: 33%;
+}
+
+.trabalhe_conosco th {
+	padding: 0 0 15px 4px;
+	font: bold 32px/45px Verdana, Arial, helvetica, sans-serif;
+	color: #006699;
+}
+.trabalhe_conosco td {
+	padding: 4px 4px 2px 4px;
+	font: 11px/14px Verdana, Arial, helvetica, sans-serif;
+	color: #666;
+}
+.trabalhe_conosco td.label {
+	text-align: right;
+	color: #000;
+}
+.trabalhe_conosco span.required {
+	color: #DB3F21;
+	font-weight: bold;
+}
+.trabalhe_conosco td.required {
+	font-style: italic;
+	font-size: 9px;
+	padding: 10px 4px 10px 4px;
+}
+.trabalhe_conosco td.secao {
+	padding: 10px 4px 2px 6px;
+	font: bold 14px/14px Verdana, Arial, helvetica, sans-serif;
+	color: #006699;
+	border-bottom: 1px solid #B0D7EB;
+}
+.trabalhe_conosco input.radio {
+	vertical-align: -2px;
+}
+.trabalhe_conosco input.texto {
+	background: none;
+	border: 1px solid #ccc;
+	padding: 2px;
+	font: 11px Verdana, Arial, helvetica, sans-serif;
+	color: #666;
+	width: 290px;
+}
+.trabalhe_conosco input.texto.tel1 {
+	width: 40px;
+	margin-right: 5px;
+}
+.trabalhe_conosco input.texto.tel2 {
+	width: 239px;
+}
+.trabalhe_conosco select.combo {
+	background: none;
+	border: 1px solid #ccc;
+	font: 11px Verdana, Arial, helvetica, sans-serif;
+	color: #666;
+	width: 296px;
+}
+.trabalhe_conosco textarea.resumo {
+	background: none;
+	border: 1px solid #ccc;
+	font: 11px Verdana, Arial, helvetica, sans-serif;
+	color: #666;
+	padding: 2px;
+	width: 290px;
+	height: 80px;
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="portal-ext">
+        <wb-resource deploy-path="/" source-path="/docroot/WEB-INF/ext-web/docroot"/>
+        <property name="context-root" value="portal-ext"/>
+        <property name="java-output-path" value="/portal-ext/build/classes"/>
+    </wb-module>
+</project-modules>

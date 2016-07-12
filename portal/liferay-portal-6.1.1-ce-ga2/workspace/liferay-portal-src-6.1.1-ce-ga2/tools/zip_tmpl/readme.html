@@ -1,0 +1,448 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Liferay 6.1 Enterprise Edition</title>
+	<style type="text/css" media="screen">
+		body {
+			background: #EEF4F9;
+			color: #474A4B;
+			font: 12px/16px 'Helvetica', Arial, sans-serif;
+			margin: 0;
+		}
+
+		blockquote {
+			margin: 1em 2.5em;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			clear: both;
+			display: block;
+			margin: 0 0 0.75em;
+
+		}
+
+		h1 {
+			font-size: 2.22em;
+			font-weight: normal;
+			line-height: 1;
+			margin: 0.75em 0 0.5em;
+		}
+
+		h2 {
+			font-size: 2em;
+			margin-bottom: 0.75em;
+		}
+
+		h3 {
+			font-size: 1.5em;
+			line-height: 1;
+			margin-bottom: 1em;
+		}
+
+		h4 {
+			font-size: 1.2em;
+			line-height: 1.25;
+			margin-bottom: 1.25em;
+		}
+
+		h5 {
+			font-size: 1em;
+			font-weight: bold;
+			margin-bottom: .5em;
+		}
+
+		h6 {
+			font-size: 1em;
+			font-weight: bold;
+		}
+
+		hr {
+			border: 0 solid #BFBFBF;
+			border-width: 0 0 1px;
+			height: 0;
+		}
+
+		ol,
+		ul {
+			padding: 0 0 0 2.5em;
+		}
+
+		ol,
+		p,
+		pre,
+		ul {
+			margin: 1em 0;
+		}
+
+		abbr {
+			border-bottom: 1px dotted #000;
+			border-bottom-color: inherit;
+		}
+
+		img {
+			border: 0;
+			vertical-align: text-bottom;
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+
+		p {
+			margin: 0 0 1.5em;
+		}
+
+		blockquote {
+			margin: 1.5em;
+			font-style: italic;
+		}
+
+		strong {
+			font-weight: bold;
+		}
+
+		em,
+		dfn {
+			font-style: italic;
+		}
+
+		abbr {
+			border-bottom: 1px dotted #666;
+		}
+
+		code {
+			font: 1em 'andale mono', 'lucida console', monospace;
+			line-height: 1.5;
+		}
+
+		a {
+			border-bottom: 1px dotted #446D77;
+			color: #446D77;
+			outline: none;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #CD171D;
+		}
+
+		p,
+		ul,
+		blockquote {
+			padding: 0 15px;
+		}
+
+		li {
+			line-height: 20px;
+		}
+
+		#wrapper {
+			margin: 0 auto 20px;
+			padding: 20px;
+			width: 550px;
+		}
+
+		.header a {
+			border: none;
+		}
+
+		.contents {
+			background: #FFF;
+			border: 1px solid #AAA;
+			border-radius: 5px;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			margin: 2em 0;
+			padding: 15px 15px 0;
+		}
+
+		.contents li ul,
+		.contents li ol {
+			margin: 0 10px;
+			padding: 0 10px;
+		}
+
+		.features li ol li {
+			list-style-type: lower-alpha;
+			padding: 0;
+		}
+
+		.image-left {
+			float: left;
+			margin-right: 10px;
+		}
+
+		.image-right {
+			float: right;
+			margin-left: 10px;
+		}
+
+		.note {
+			font-family: 'Trebuche MS', Verdana, sans-serif;
+			font-style: italic;
+		}
+
+		hr,
+		.hr {
+			border-top: 1px solid #FFF;
+			border-bottom: 1px solid #BABEC2;
+			margin: 2em 0;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+	<div class="header">
+		<a href="http://www.liferay.com"><img src="http://cdn.www.liferay.com/osb-theme/images/custom/heading.png" alt="www.liferay.com"></a>
+	</div>
+
+	<h1 id="top">Liferay 6.1 Enterprise Edition</h1>
+
+	<p>
+		Thank you for choosing Liferay Portal. This release further expands Liferay's ability to be used in an extremely broad range of applications for web sites, portals, and collaboration services. 
+	</p>
+
+	<div class="contents">
+		<h3>Contents</h3>
+
+		<ol type="I">
+			<li>
+				<a href="#features">New Features</a>
+			</li>
+			<li>
+				<a href="#resources">Customer Resources</a>
+
+				<ol>
+					<li>
+						<a href="#install">Documentation and Installation</a>
+					</li>
+					<li>
+						<a href="#licensing">License Keys</a>
+					</li>
+					<li>
+						<a href="#lesa">Liferay Enterprise Support Application (LESA)</a>
+					</li>
+					<li>
+						<a href="#bugs">Reporting Issues</a>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<a href="#enterprise">Enterprise and Mission Critical Deployments</a>
+			</li>
+			<li>
+				<a href="#license">Licensing and Trademark</a>
+			</li>
+		</ol>
+	</div>
+
+	<hr/>
+
+	<h2 id="features">I. New Features</h2>
+
+	<p>
+		Liferay Portal 6.1 EE includes many new features targeting end users (power users), systems administrators and developers for enterprise deployments. Key themes and features in the new Liferay Portal 6.1 EE include:
+	</p>
+	<p>
+		Anytime Access to the Enterprise
+
+		<ol type="I">
+			<li>
+				New Liferay Sync: Document sharing becomes a seamless experience with online and offline synchronization to desktop and mobile devices.
+			</li>
+			<li>
+				Third-party Integration: Documents can be accessed in one place through enterprise integration with Documentum, SharePoint, and other popular third-party CMIS repositories. 
+			</li>
+		</ol>
+	</p>
+	<p>
+		Better, Easier Content Organization
+
+		<ol type="I">
+			<li>
+				Advanced Content Management: Drag-and-drop document and media libraries centralize and simplify content management.
+			</li>
+			<li>
+				Dynamic Video and File Previews: Users can preview documents, images and videos before downloading them. 
+			</li>
+		</ol>
+	</p>
+	<p>
+		Flexible Multi-User Publishing
+
+		<ol type="I">
+			<li>
+				User Customizable Sites: Administrators can now designate certain pages and sections of a page to be personalized by users.
+			</li>
+			<li>
+				Multiple Website Versions: Multiple site versions can be edited simultaneously and scheduled for publication.
+			</li>
+			<li>
+				Affiliated Sites Management: Liferay pages and websites maintain links to their original site templates, making it easier to propagate changes to associated sites and pages. 
+			</li>
+		</ol>
+	</p>   
+	<p>
+		Enhanced Productivity
+
+		<ol type="I">
+			<li>
+				New Workflow and Forms Designers: Business users can use these powerful visual editors to create web forms and workflows interactively in the browser.
+			</li>
+			<li>
+				User Data Lists: Users can create custom lists online that can be tied to form submissions to model business processes such as inventory management, vacation requests, or sales order submissions.
+			</li>
+			<li>
+				Advanced Workflow: Workflow processes can be applied to documents to enhance and automate approval and editing processes.
+			</li>
+		</ol>
+	</p>
+
+	<p>
+		Additional documentation can be found on the <a href="http://www.liferay.com/documentation/liferay-portal/6.1/user-guide">Liferay 6.1 User Guide</a>.
+	</p>
+
+	<h2 id="resources">II. Customer Resources</h2>
+
+	<p>
+		The <a href="http://www.liferay.com/group/customer/home">Customer Portal</a> is the central location for access to Liferay software, updates, licenses and support for Liferay Customers.
+	</p>
+
+	<ol type="I">
+		<li id="install">
+			Documentation and Installation
+		</li>
+		<ol type="a">
+			<a href="http://www.liferay.com/documentation/"><img alt="Liferay Portal Administration Guide" class="image-right" src="http://www.manning.com/sezov/sezov_cover150.jpg" width="100"></a>
+
+			<li>
+				A <a href="http://www.liferay.com/web/guest/community/wiki/-/wiki/Main/Quick%20Installation%20Instructions">quick installation																															guide</a> is available on the Liferay Wiki.
+			</li>
+			<li>
+				<a href="http://www.liferay.com/documentation">Documentation</a> for Liferay is available on Liferay.com as well as from online publishers.
+			</li>
+			<li>
+				<a href="http://www.manning.com/sezov/">Liferay in Action</a> is available from Manning Publications and includes a definitive review of many Liferay features and capabilities.
+			</li>
+		</ol>
+		<li id="licensing">
+			License Keys
+		</li>
+		<ol type="a">
+			<li>
+				If you have not received or have a question about your license keys, please request your licenses through the <a href="http://www.liferay.com/support/license-form">license form</a>, a LESA ticket, or email <a href="mailto:provisioning@liferay.com">provisioning@liferay.com</a>.
+			</li>
+		</ol>
+		<li id="lesa">
+			Liferay Enterprise Support Application (LESA)
+		</li>
+		<ol type="a">
+			<li>
+				<p>
+					<a href="http://www.liferay.com/group/customer/support/lesa/overview">LESA</a> is Liferay's web based multifaceted custom support issue tracker.  LESA allows a quicker, visible escalation process while boasting an exceptional user interface that makes it easy to use.  Its ability to issue multiple assignees also means more people to work on a ticket at one time.
+				</p>
+				<p>
+					In order to access LESA, make sure you have a valid Liferay.com account with access to the Liferay Enterprise Support Application and Customer Portal.
+				</p>
+				<p>
+					If you do not have a Liferay.com account, please fill out the <a href="http://www.liferay.com/support/contact-form">contact form</a>. Our Liferay Support Administrator will contact you with your username and password; this account will be setup with access to LESA and the Customer Portal. If you encounter any issues accessing either LESA or the Customer portal, please email <a href="mailto:provisioning@liferay.com">provisioning@liferay.com</a>.
+				</p>
+
+			</li>
+		</ol>
+		<li id="bugs">
+			Reporting Issues
+		</li>
+		<ol type="a">
+			<li>
+				<p>
+					To learn the basics on how to report issues in LESA, please read the instructions below or watch the LESA Lifecast: <a href="http://www.liferay.com/group/customer/support/lesa/creating-tickets">Creating Tickets</a>.
+				</p>
+				<p>
+					If you encounter any issues when creating tickets, please email <a href="mailto:provisioning@liferay.com">provisioning@liferay.com</a>.
+				</p>
+			</li>
+		</ol>
+	</ol>
+
+	<h2 id="enterprise">III. Enterprise and Mission Critical Deployments</h2>
+
+	<ol type="I">
+		<li>
+			Preparing for Production
+		</li>
+		<ol type="i">
+			<li>
+				Liferay can be used in a variety of mission critical deployments. While Liferay EE meets many of the most demanding requirements, the following should be considered and evaluated prior to deployment.
+			</li>
+			<ol>
+				<li>
+					Review the following <a href="http://www.liferay.com/documentation/additional-resources/whitepapers">white papers</a>:
+				</li>
+				<ol type="a">
+					<li>
+						Advanced Liferay Architecture: Clustering and High Availability
+					</li>
+					<li>
+						Liferay EE Reference Architecture & Hardware Requirements
+					</li>
+					<li>
+						LPEE 6.0 Deployment Checklist
+					</li>
+					<li>
+						Liferay Application Integration Strategies
+					</li>
+					<li>
+						Identity Management in Liferay - Overview and Best Practices
+					</li>
+				</ol>
+				<li>
+					Request a review of Liferay's deployment services:
+				</li>
+				<ol type="a">
+					<li>
+						Liferay Quickstart Program
+					</li>
+					<li>
+						Liferay GoLive Program
+					</li>
+				</ol>
+				<li>
+					Liferay Professional Support Program
+				</li>
+				<ol type="a">
+					<li>
+						As Liferay Portal is used in an extremely broad range of use cases, Liferay provides professional services engagements for Liferay Portal EE to support many services such as, installation, customization, application development, integration, life-cycle management and more. Find additional information, contact <a href="mailto:sales@liferay.com">sales@liferay.com</a>.
+					</li>
+				</ol>
+			</ol>
+		</ol>
+	</ol>
+
+	<h2 id="license">IV. Licensing and Trademark</h2>
+
+	<ol type="I">
+		<li>
+			Liferay EE is licensed pursuant to the Subscription and Support Agreement between you (and/or your company) and Liferay (the "Agreement"). The Agreement contains all of the terms, conditions and restrictions governing your use of all Liferay software.
+		</li>
+		<li>
+			The Liferay Trademark includes the logo and name Liferay. Its use is governed by the Trademark policy posted at: <a href="http://liferay.com/trademark">Liferay.com/Trademark</a>. When using Liferay in any form, this policy should be reviewed to understand if your use requires permission from the Liferay community manager.
+		</li>
+	</ol>
+
+	<a href="#top">Top</a>
+</div>
+
+</body>
+
+</html>

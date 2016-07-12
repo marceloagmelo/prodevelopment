@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="br.com.prodevelopment.municipio" auto-namespace-tables="false">
+	<author>marcelo</author>
+	<namespace>municipio</namespace>
+
+	<entity name="Municipio" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="codigo" type="long" primary="true" />
+
+		<!-- Other fields -->
+
+		<column name="uf" type="String" />
+		<column name="cidade" type="String" />
+		<column name="bairro" type="String" />
+		<column name="logradouro" type="String" />
+		<column name="cep" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="cidade" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="UF" return-type="Collection">
+			<finder-column name="uf" />
+		</finder>
+		
+		<finder name="CIDADE" return-type="Collection">
+			<finder-column name="cidade" comparator="LIKE" />
+		</finder>
+		
+	</entity>
+</service-builder>

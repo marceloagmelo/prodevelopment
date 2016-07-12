@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<runtimes>\n  <runtime bundle-zip-location\="/home/marcelo/Downloads/liferay-portal-tomcat-6.2-ce-ga5-20151119152357409.zip" id\="Liferay v6.2 CE (Tomcat 7)" javadoc-url\="" location\="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62" name\="Liferay v6.2 CE (Tomcat 7)" runtime-type-id\="com.liferay.ide.server.62.tomcat.runtime.70" source-location\="/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip" timestamp\="0"/>\n</runtimes>\n

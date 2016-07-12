@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.com.prodevelopment.academiahorario.service.AcademiaHorarioLocalService" class="br.com.prodevelopment.academiahorario.service.impl.AcademiaHorarioLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.academiahorario.service.AcademiaHorarioService" class="br.com.prodevelopment.academiahorario.service.impl.AcademiaHorarioServiceImpl" />
+	<bean id="br.com.prodevelopment.academiahorario.service.persistence.AcademiaHorarioPersistence" class="br.com.prodevelopment.academiahorario.service.persistence.AcademiaHorarioPersistenceImpl" parent="basePersistence" />
+</beans>

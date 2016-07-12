@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+	
+	<portlet>
+		<portlet-name>exibirgaleriaimagem</portlet-name>
+		<display-name>Exibir Portlet</display-name>
+		<portlet-class>
+			br.com.prodevelopment.galeriaimagem.exibir.portlet.ExibirPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/exibir/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>content.exibir.Language</resource-bundle>
+		<portlet-info>
+			<title>Exibir</title>
+			<short-title>Exibir</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+			<qname xmlns:x="http://prodevelopment.com.br/events">x:galeriaimagem.exibir</qname>
+		</supported-processing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>exibirgalerianavegacao</portlet-name>
+		<display-name>Navegacao Portlet</display-name>
+		<portlet-class>
+			br.com.prodevelopment.galeriaimagem.navegacao.portlet.NavegacaoPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/navegacao/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>content.navegacao.Language</resource-bundle>
+		<portlet-info>
+			<title>Navegacao</title>
+			<short-title>Navegacao</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-publishing-event>
+			<qname xmlns:x="http://prodevelopment.com.br/events">x:galeriaimagem.exibir</qname>
+		</supported-publishing-event>
+		
+	</portlet>
+	
+	<event-definition>
+		<qname xmlns:x="http://prodevelopment.com.br/events">x:galeriaimagem.exibir</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+</portlet-app>

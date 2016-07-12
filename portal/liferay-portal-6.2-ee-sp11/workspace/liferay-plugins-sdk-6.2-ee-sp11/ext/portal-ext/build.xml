@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="portal-ext" basedir="." default="deploy">
+	<import file="/opt/liferay-developer-studio/liferay-plugins-sdk-6.2-ee-sp11/ext/build-common-ext.xml" />
+</project>

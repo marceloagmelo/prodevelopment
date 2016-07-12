@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="br.com.prodevelopment.eticket">
+	<author>Marcelo Melo</author>
+	<namespace>tkt</namespace>
+
+	<entity name="TypeTicket" table="Type" uuid="true" local-service="true" remote-service="true" trash-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="typeTicketId" type="long" primary="true" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userIdCreate" type="long" />
+		<column name="userIdModified" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="name" type="String" localized="true" />
+		<column name="description" type="String" localized="true" />
+		<column name="xsd" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="C_LikeName" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="name" comparator="LIKE" />
+		</finder>
+
+		<finder name="Company" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+
+		<finder name="CG" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+		
+		<finder name="CG_LikeName" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="name" comparator="LIKE" />
+		</finder>
+
+		<!-- References -->
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivityCounter" />
+		<reference package-path="com.liferay.portlet.trash" entity="TrashEntry" />
+		
+	</entity>
+	
+	<entity name="TypeTicketUsers" table="TypeUsers" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="typeTicketUsersId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="userIdCreate" type="long" />
+		<column name="userIdModified" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="typeTicketId" type="long" />
+		<column name="userId" type="long" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="typeTicketUsersId" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="TypeTicket" return-type="Collection">
+			<finder-column name="typeTicketId" />
+		</finder>
+
+		<finder name="User" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+
+		<finder name="TypeUser" return-type="TypeUsers" unique="true">
+			<finder-column name="typeTicketId" />
+			<finder-column name="userId" />
+		</finder>
+		
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivityCounter" />
+	</entity>
+	
+	<exceptions>
+		<exception>TipoNomeObrigatorio</exception>
+		<exception>TipoUsuarioDuplicado</exception>
+		<exception>TipoAlteradoOutroUsuario</exception>
+		<exception>TipoXsd</exception>
+	</exceptions>
+</service-builder>

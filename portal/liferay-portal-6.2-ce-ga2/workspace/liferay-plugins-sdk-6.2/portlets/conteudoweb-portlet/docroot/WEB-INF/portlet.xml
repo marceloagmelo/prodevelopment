@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+	
+	<portlet>
+		<portlet-name>ultimos-conteudos</portlet-name>
+		<display-name>Ultimos Conteudos</display-name>
+		<portlet-class>
+			br.com.prodevelopment.portlet.conteudoweb.ultimos.action.UltimosConteudosPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/ultimosconteudos/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>naoConfigurado-jsp</name>
+			<value>/html/naoConfigurado.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>
+			content.ultimosconteudos.Language
+		</resource-bundle>
+		<portlet-info>
+			<title>Ultimos Conteudos</title>
+			<short-title>Ultimos Conteudos</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>lista-conteudo</portlet-name>
+		<display-name>Lista Conteudo</display-name>
+		<portlet-class>
+			br.com.prodevelopment.portlet.conteudoweb.lista.action.ListaConteudoPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/listaconteudo/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>exibirConteudo-jsp</name>
+			<value>/html/common/exibirConteudo.jsp</value>
+		</init-param>
+		<init-param>
+			<name>naoConfigurado-jsp</name>
+			<value>/html/naoConfigurado.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>
+			content.listaconteudo.Language
+		</resource-bundle>
+		<portlet-info>
+			<title>Lista Conteudo</title>
+			<short-title>Lista Conteudo</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>categoryId</supported-public-render-parameter>
+		<supported-public-render-parameter>tag</supported-public-render-parameter>
+		<supported-public-render-parameter>resetCur</supported-public-render-parameter>
+		<supported-public-render-parameter>structureId</supported-public-render-parameter>
+		<supported-public-render-parameter>keywords</supported-public-render-parameter>
+		<supported-public-render-parameter>articleId</supported-public-render-parameter>
+	</portlet>
+	<portlet>
+		<portlet-name>thumbnail-conteudos</portlet-name>
+		<display-name>Thumbnail Conteudos</display-name>
+		<portlet-class>
+			br.com.prodevelopment.portlet.conteudoweb.thumbnail.action.ThumbnailConteudosPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/thumbnailconteudos/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>exibirConteudo-jsp</name>
+			<value>/html/common/exibirConteudo.jsp</value>
+		</init-param>
+		<init-param>
+			<name>naoConfigurado-jsp</name>
+			<value>/html/naoConfigurado.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>
+			content.thumbnailconteudos.Language
+		</resource-bundle>
+		<portlet-info>
+			<title>Thumbnail Conteudos</title>
+			<short-title>Thumbnail Conteudos</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-public-render-parameter>categoryId</supported-public-render-parameter>
+		<supported-public-render-parameter>tag</supported-public-render-parameter>
+		<supported-public-render-parameter>resetCur</supported-public-render-parameter>
+		<supported-public-render-parameter>structureId</supported-public-render-parameter>
+		<supported-public-render-parameter>keywords</supported-public-render-parameter>
+		<supported-public-render-parameter>articleId</supported-public-render-parameter>
+	</portlet>
+	<public-render-parameter>
+		<identifier>categoryId</identifier>
+		<qname xmlns:x="http://www.liferay.com/public-render-parameters">x:categoryId</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>tag</identifier>
+		<qname xmlns:x="http://www.liferay.com/public-render-parameters">x:tag</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>resetCur</identifier>
+		<qname xmlns:x="http://www.liferay.com/public-render-parameters">x:resetCur</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>structureId</identifier>
+		<qname xmlns:x="http://www.liferay.com/public-render-parameters">x:structureId</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>keywords</identifier>
+		<qname xmlns:x="http://www.liferay.com/public-render-parameters">x:keywords</qname>
+	</public-render-parameter>
+	<public-render-parameter>
+		<identifier>articleId</identifier>
+		<qname xmlns:x="http://www.liferay.com/public-render-parameters">x:articleId</qname>
+	</public-render-parameter>
+
+</portlet-app>

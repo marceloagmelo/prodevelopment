@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.com.prodevelopment.etask.model.TypeTask">
+		<field name="uuid" type="String" />
+		<field name="typeTaskId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userIdCreate" type="long" />
+		<field name="userIdModified" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" localized="true" />
+		<field name="description" type="String" localized="true" />
+		<field name="DDMStructureId" type="long" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field name="customFieldsActive" type="boolean" />
+		<field name="classNameId" type="long" />
+		<field name="classPK" type="long" />
+	</model>
+	<model name="br.com.prodevelopment.etask.model.TypeTaskUsers">
+		<field name="typeTaskUsersId" type="long" />
+		<field name="userIdCreate" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="typeTaskId" type="long" />
+		<field name="userId" type="long" />
+		<field name="typeUser" type="String">
+			<hint name="max-length">2</hint>
+		</field>
+	</model>
+</model-hints>

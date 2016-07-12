@@ -1,0 +1,29 @@
+<%
+	PortletURL portletURL = renderResponse.createRenderURL();
+	portletURL.setParameter("jspPage", "/html/atividade/horarios.jsp");
+	portletURL.setParameter("redirect", currentURL);
+	List<AcademiaHorario> listaResultado = AcademiaHorarioUtil
+			.recuperarHorariosPorAtividade(atividadeId);
+%>
+<liferay-ui:search-container
+	emptyResultsMessage="mensagem.naoExistem.horarios"
+	iteratorURL="<%=portletURL%>">
+
+	<liferay-ui:search-container-results>
+		<%
+			results = ListUtil.subList(listaResultado,
+							searchContainer.getStart(),
+							searchContainer.getEnd());
+					total = listaResultado.size();
+
+					pageContext.setAttribute("results", results);
+					pageContext.setAttribute("total", total);
+		%>
+	</liferay-ui:search-container-results>
+	<liferay-ui:search-container-row
+		className="br.com.prodevelopment.academiahorario.model.AcademiaHorario"
+		keyProperty="academiaHorarioId" modelVar="academiaHorario">
+		<%@ include file="/html/atividade/horarioColunas.jspf"%>
+	</liferay-ui:search-container-row>
+	<liferay-ui:search-iterator />
+</liferay-ui:search-container>

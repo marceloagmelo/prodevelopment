@@ -1,0 +1,95 @@
+table.form_portlet td {
+	padding-right: 30px;
+}
+
+.aniversariantes .titulo {
+    border-bottom: 2px solid #D3DADD;
+    margin-bottom: 10px;
+    padding-bottom: 2px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #34404F;
+}
+
+.aniversariantes {
+}
+
+.aniversariante {
+	border-bottom: 2px solid #e5e5e5;
+	margin-bottom: 6px;
+	padding-bottom: 12px;
+}
+
+.aniversariante a {
+	text-decoration: none;
+}
+
+.aniversariante div.data {
+	float: left;
+	height: 34px;
+	width: 34px;
+	text-align: center;
+	color: #fff;
+	font-size: 8px;
+	text-transform: uppercase;
+	background: url(../images/data_bg_2.png) no-repeat;
+	margin-right: 8px;
+}
+
+.aniversariante div.data a {
+	color: #fff;
+}
+
+.aniversariante .data span {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.aniversariante .foto {
+	float: left;
+}
+
+.aniversariante .foto img {
+	height: 34px;
+	width: 34px;
+}
+
+.aniversariante .texto {
+	font-size: 10px;
+	padding-left: 86px;
+}
+
+.aniversariante .texto h4 {
+	color: #404040;
+	font-size: 10px;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.aniversariante .texto h4 a {
+	color: #404040;
+}
+
+.aniversariante .texto p.depto {
+	margin: 0 0 3px 0;
+	color: #204184;
+}
+
+.aniversariante .texto p.depto a {
+	color: #204184;
+}
+
+.aniversariante .texto p.msg {
+	margin: 0;
+	background: url(../images/bubble_speech.png) no-repeat;
+	padding: 0 0 0 16px;
+}
+
+.aniversariante .texto a {
+	color: #737373;
+	text-decoration: none;
+}
+
+.aniversariante .texto a:hover {
+	text-decoration: underline;
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 elements to &apos;css&apos;&#x0A;- Original project: &apos;melo-santos-theme&apos;&#x0A;- Destination element: &apos;css&apos;&#x0A;- Original elements:&#x0A;     layout.css&#x0A;     main.css&#x0A;     custom.css&#x0A;     app_custom.css&#x0A;     custom_responsive.css" description="Copy files" element1="docroot/_diffs/css/layout.css" element2="docroot/_diffs/css/main.css" element3="docroot/_diffs/css/custom.css" element4="docroot/_diffs/css/app_custom.css" element5="docroot/_diffs/css/custom_responsive.css" files="5" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1418342842273" target="/jjg-theme/docroot/_diffs/css" units="0" version="1.0"/>
+</session>

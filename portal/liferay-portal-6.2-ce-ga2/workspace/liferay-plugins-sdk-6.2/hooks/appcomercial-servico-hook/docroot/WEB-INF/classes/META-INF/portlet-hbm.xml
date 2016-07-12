@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="br.com.prodevelopment.appcomercial.servico.model.Funcionario" />
+	<class name="br.com.prodevelopment.appcomercial.servico.model.impl.FuncionarioImpl" table="Funcionario">
+		<cache usage="read-write" />
+		<id name="funcionarioId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="apelido" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="observacao" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rg" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rgOrgaoEmissor" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rgDataEmissao" type="org.hibernate.type.TimestampType" />
+		<property name="cpf" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sexo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="estadoCivil" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dataNascimento" type="org.hibernate.type.TimestampType" />
+		<property name="endComLogradouro" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComDescricao" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComCep" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComBairro" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComCidade" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComUf" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComPais" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResLogradouro" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResDescricao" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResCep" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResBairro" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResCidade" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResUf" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResPais" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="telComDdd" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="telComNumero" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="telComRamal" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="telResDdd" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="telResNumero" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="telCelDdd" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="telCelNumero" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dataEntrada" type="org.hibernate.type.TimestampType" />
+		<property name="dataSaida" type="org.hibernate.type.TimestampType" />
+		<property name="existeUser" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram-geometry>
+    <node>
+        <id>Entity#Contato#0</id>
+        <bounds x="10" y="-1"/>
+    </node>
+    <node>
+        <id>Entity#Endereco#1</id>
+        <bounds x="10" y="9"/>
+    </node>
+    <node>
+        <id>Entity#Telefone#2</id>
+        <bounds x="10" y="19"/>
+    </node>
+    <node>
+        <id>Entity#EnderecoEmail#3</id>
+        <bounds x="10" y="29"/>
+    </node>
+</diagram-geometry>

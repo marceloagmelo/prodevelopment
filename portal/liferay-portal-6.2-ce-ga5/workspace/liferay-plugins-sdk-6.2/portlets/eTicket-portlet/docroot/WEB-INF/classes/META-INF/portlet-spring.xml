@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.com.prodevelopment.eticket.service.TypeTicketLocalService" class="br.com.prodevelopment.eticket.service.impl.TypeTicketLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.eticket.service.TypeTicketService" class="br.com.prodevelopment.eticket.service.impl.TypeTicketServiceImpl" />
+	<bean id="br.com.prodevelopment.eticket.service.persistence.TypeTicketPersistence" class="br.com.prodevelopment.eticket.service.persistence.TypeTicketPersistenceImpl" parent="basePersistence" />
+	<bean id="br.com.prodevelopment.eticket.service.TypeTicketUsersLocalService" class="br.com.prodevelopment.eticket.service.impl.TypeTicketUsersLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.eticket.service.TypeTicketUsersService" class="br.com.prodevelopment.eticket.service.impl.TypeTicketUsersServiceImpl" />
+	<bean id="br.com.prodevelopment.eticket.service.persistence.TypeTicketUsersPersistence" class="br.com.prodevelopment.eticket.service.persistence.TypeTicketUsersPersistenceImpl" parent="basePersistence" />
+</beans>

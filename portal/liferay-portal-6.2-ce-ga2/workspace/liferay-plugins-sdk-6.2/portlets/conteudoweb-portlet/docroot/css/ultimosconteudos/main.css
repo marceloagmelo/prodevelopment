@@ -1,0 +1,95 @@
+.conteudos {
+	margin: 0 0 20px 0;
+}
+.conteudos a {
+	text-decoration: none;
+}
+.conteudos a:hover {
+	
+}
+.conteudos h3.titulo_portlet {
+	margin: 0 0 9px 0;
+	color: #014675;
+	font-size: 16px;
+	border-bottom: 2px solid #E6E6E6;
+	text-transform: uppercase;
+}
+
+.conteudos .data_titulo {
+	margin-bottom: 2px;
+}
+.conteudos .data_titulo .data, .conteudos .data_titulo .titulo {
+	display: inline-block;
+}
+.conteudos .data_titulo .data{
+	width: 42px;
+	height: 32px;
+	border-radius: 2px;
+	vertical-align: text-bottom;
+	margin-right: 6px;
+	background: #999999;
+}
+.conteudos .data_titulo .data .dia{
+	display: block;
+	height: 16px;
+	text-align: center;
+	color: #fff;
+	font-size: 15px;
+	line-height: 16px;
+	font-weight: bold;
+}
+.conteudos .data_titulo .data .mes_ano{
+	display: block;
+	height: 16px;
+	text-align: center;
+	background: url(../images/ultimosconteudos/conteudos_mes_ano_bg.png) repeat-x 0 0 #015289;
+	color: #c3e0f3;
+	font-size: 10px;	
+	line-height: 15px;	
+	text-transform: uppercase;
+}
+.conteudos .data_titulo .titulo {
+	color: #333333;
+	font-size: 11px;
+	line-height: 13px;
+	text-transform: uppercase;
+	font-weight: bold;
+	max-width: 200px;
+}
+.conteudos .data_titulo .titulo a {
+	color: #333333;
+}
+.conteudos .data_titulo .titulo a:hover {
+	color: #014675;
+}
+
+.conteudos .texto p {
+	margin: 0 0 10px 0;
+	color: #666666;
+	font-size: 11px;
+	line-height: 12px;
+}
+.conteudos .texto p a {
+	color: #666666;
+}
+.conteudos .texto p a:hover {
+	color: #014675;
+}
+
+.conteudos  p.ver_todos {
+	margin: 0 0 10px 0;
+	color: #313131;
+	font-size: 14px;
+	line-height: 14px;
+	text-align: right;
+}
+.conteudos  p.ver_todos a {
+	color: #313131;
+	font-size: 10px;
+	display: inline-block;
+	padding: 0 2px;
+	vertical-align: top;
+}
+.conteudos  p.ver_todos a:hover {
+	text-decoration: underline;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.com.prodevelopment.municipio.model.Municipio">
+		<field name="codigo" type="long" />
+		<field name="uf" type="String">
+			<hint name="max-length">2</hint>
+		</field>
+		<field name="cidade" type="String" />
+		<field name="bairro" type="String" />
+		<field name="logradouro" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="cep" type="String" />
+	</model>
+</model-hints>

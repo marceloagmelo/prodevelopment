@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.com.prodevelopment.eticket.model.TypeTicket">
+		<field name="uuid" type="String" />
+		<field name="typeTicketId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userIdCreate" type="long" />
+		<field name="userIdModified" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" localized="true">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="description" type="String" localized="true">
+			<hint-collection name="TEXTAREA" />
+		</field>
+		<field name="xsd" type="String">
+			<hint-collection name="CLOB" />
+		</field>
+	</model>
+	<model name="br.com.prodevelopment.eticket.model.TypeTicketUsers">
+		<field name="typeTicketUsersId" type="long" />
+		<field name="userIdCreate" type="long" />
+		<field name="userIdModified" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeTicketId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+</model-hints>

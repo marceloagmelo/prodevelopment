@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.com.prodevelopment.contato.model.Contato">
+		<field name="contatoId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createUserId" type="long" />
+		<field name="modifiedUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="classNameId" type="long" />
+		<field name="classPK" type="long" />
+		<field name="accountId" type="long" />
+		<field name="endEmail" type="String" />
+		<field name="nome" type="String" />
+		<field name="sexo" type="String" />
+		<field name="dataNascimento" type="Date" />
+		<field name="cargoId" type="long" />
+		<field name="skype" type="String" />
+		<field name="facebook" type="String" />
+		<field name="twitter" type="String" />
+	</model>
+	<model name="br.com.prodevelopment.contato.model.Endereco">
+		<field name="uuid" type="String" />
+		<field name="enderecoId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createUserId" type="long" />
+		<field name="modifiedUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="classNameId" type="long" />
+		<field name="classPK" type="long" />
+		<field name="logradouro" type="String" />
+		<field name="numero" type="String" />
+		<field name="complemento" type="String" />
+		<field name="cep" type="String" />
+		<field name="bairro" type="String" />
+		<field name="cidadeId" type="long" />
+		<field name="uf" type="String" />
+		<field name="paisId" type="long" />
+		<field name="principal" type="boolean" />
+		<field name="tipo" type="int" />
+	</model>
+	<model name="br.com.prodevelopment.contato.model.EnderecoEmail">
+		<field name="uuid" type="String" />
+		<field name="enderecoEmailId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createUserId" type="long" />
+		<field name="modifiedUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="classNameId" type="long" />
+		<field name="classPK" type="long" />
+		<field name="endereco" type="String" />
+		<field name="tipo" type="int" />
+		<field name="principal" type="boolean" />
+	</model>
+	<model name="br.com.prodevelopment.contato.model.Telefone">
+		<field name="uuid" type="String" />
+		<field name="telefoneId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createUserId" type="long" />
+		<field name="modifiedUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="classNameId" type="long" />
+		<field name="classPK" type="long" />
+		<field name="ddi" type="String" />
+		<field name="ddd" type="String" />
+		<field name="numero" type="String" />
+		<field name="ramal" type="String" />
+		<field name="tipo" type="int" />
+		<field name="principal" type="boolean" />
+	</model>
+</model-hints>

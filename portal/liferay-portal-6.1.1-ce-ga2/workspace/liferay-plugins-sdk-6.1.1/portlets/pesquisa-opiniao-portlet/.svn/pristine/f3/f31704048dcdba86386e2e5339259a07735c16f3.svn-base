@@ -1,0 +1,17 @@
+<liferay-ui:panel id="panel-respostas"
+	title='<%=LanguageUtil.get(pageContext, "label.respostas")%>'
+	collapsible="true" extended="true">
+	<%
+		for (Resposta resposta : listaResposta) {
+				String descricao = resposta.getDescricaoCurrentValue()
+						.replaceAll("\n", Constantes.BR);
+	%>
+	<liferay-ui:panel-container id="respostas" extended="true">
+		<div class="visualizar_resposta">
+			<%=descricao%>
+		</div>
+	</liferay-ui:panel-container>
+	<%
+		}
+	%>
+</liferay-ui:panel>

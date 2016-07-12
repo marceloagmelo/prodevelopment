@@ -1,0 +1,76 @@
+#
+# T&iacute;tulo do portlet
+#
+javax.portlet.title=Exibir Teste de Conhecimento
+javax.portlet.short-title=Exibir Teste de Conhecimento
+javax.portlet.title.keywords=Exibir Teste de Conhecimento
+#
+category.testeconhecimento=Teste de Conhecimento
+category.prodevelopment=Pro Development
+#
+# Botões
+#
+botao.confirmar=Confirmar
+botao.proximo=Pr&otilde;ximo
+botao.finalizar=Finalizar Teste
+botao.salvar=Salvar
+botao.cancelar=Cancelar
+botao.voltar=Voltar para o in&iacute;cio
+#
+# Mensagens
+#
+mensagem.testeUsuario.nome.obrigatorio=Nome obrigat&otilde;rio.
+mensagem.testeUsuario.email.obrigatorio=Email obrigat&otilde;rio.
+mensagem.testeUsuario.selecione.resposta=Selecione uma resposta.
+#
+mensagem.testeUsuario.jaRespondeu=Usu&aacute;rio j&aacute; respondeu teste.
+#
+mensagem.teste.erro=Erro no portlet teste.
+#
+mensagem.testeUsuario.naoConfigurado=Teste n&atilde;o configurado.
+mensagem.testeUsuario.usuarioNaoLogado=Usu&aacute;rio n&atilde;o logado. Acesse a sua conta por favor.
+#
+mensagem.testeaUsuario.finalizado.sucesso=Teste finalizado com sucesso.
+mensagem.testeUsuario.perguntaRespondida=Pergunta respondida com sucesso.
+#
+mensagem.erro.bancoDados=Erro ao acessar o banco de dados, favor falar com o administrador.
+mensagem.erro.gravar.bancoDados=Erro ao gravar no banco de dados, favor falar com o administrador.
+mensagem.erro.enviarEmail=Erro ao enviar o email, favor falar com o administrador.
+mensagem.erro.testeNaoEncontrado=Erro teste n&atilde;o encontrado, favor falar com o administrador.
+#
+mensagem.teste.semPerguntas=N&atilde;o existem perguntas cadastrada.
+mensagem.teste.semRespostas=N&atilde;o existem respostas cadastrada.
+#
+mensagem.testeUsuario.respostaCerta=Resposta certa.
+mensagem.testeUsuario.respostaErrada=Resposta errada.
+#
+mensagem.testeUsuario.testeRespondido=Teste j&aacute; iniciado, falta finalizar.
+#
+# Labels
+#
+label.testeUsuario.nome=* Nome:
+label.testeUsuario.email=* Email:
+label.testeUsuario.preenchimentoObrigatorio=* Preenchimento obrigat&otilde;rio
+#
+label.testeUsuario.enviarEmail=Enviar email
+label.testeUsuario.exibirAcerto=Informar se acertou ap&otilde;s responder
+#
+label.testeUsuario.teste=Selecione
+#
+label.testeUsuario.justificativaResposta=Justificativa da resposta
+#
+#
+label.texto.pagina=P&aacute;gina
+label.texto.de=de
+#
+label.sim=Sim
+label.nao=N&atilde;o
+#
+email.assunto=Teste de Conhecimento
+email.from=portalweb@fmc-ag.com.br
+#
+label.exibir.titulo=Exibir t&iacute;tulo
+label.configuracao=Configura&ccedil;&atilde;o
+label.somenteLogado=Somente usu&aacuterio logado
+#
+mensagem.usuarioNaoLogado=Usu&aacuterio n&atilde;o logado

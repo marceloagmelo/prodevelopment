@@ -1,0 +1,4 @@
+#lista_banner .imagem img {
+  width: 220px;
+  height: 75px; }
+

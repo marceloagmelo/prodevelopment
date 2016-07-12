@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.com.prodevelopment.funcionario.model.Cargo">
+		<field name="uuid" type="String" />
+		<field name="cargoId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createUserId" type="long" />
+		<field name="modifiedUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nome" type="String" localized="true" />
+		<field name="versao" type="double" />
+	</model>
+	<model name="br.com.prodevelopment.funcionario.model.Funcionario">
+		<field name="uuid" type="String" />
+		<field name="funcionarioId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createUserId" type="long" />
+		<field name="modifiedUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nome" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="nomeReduzido" type="String" />
+		<field name="observacao" type="String" />
+		<field name="rg" type="String" />
+		<field name="rgOrgaoEmissor" type="String" />
+		<field name="rgDataEmissao" type="Date" />
+		<field name="cpf" type="String" />
+		<field name="sexo" type="String">
+			<hint name="max-length">1</hint>
+		</field>
+		<field name="estadoCivil" type="String" />
+		<field name="dataNascimento" type="Date" />
+		<field name="endComLogradouro" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="endComNumero" type="String" />
+		<field name="endComComplemento" type="String" />
+		<field name="endComCep" type="String" />
+		<field name="endComBairro" type="String" />
+		<field name="endComCidade" type="long" />
+		<field name="endComUf" type="String">
+			<hint name="max-length">2</hint>
+		</field>
+		<field name="endComPais" type="String" />
+		<field name="endResLogradouro" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="endResNumero" type="String" />
+		<field name="endResComplemento" type="String" />
+		<field name="endResCep" type="String" />
+		<field name="endResBairro" type="String" />
+		<field name="endResCidade" type="long" />
+		<field name="endResUf" type="String">
+			<hint name="max-length">2</hint>
+		</field>
+		<field name="endResPais" type="String" />
+		<field name="dataEntrada" type="Date" />
+		<field name="dataSaida" type="Date" />
+		<field name="existeUser" type="Boolean" />
+		<field name="userId" type="long" />
+		<field name="versao" type="double" />
+		<field name="cargoId" type="long" />
+		<field name="fotoId" type="long" />
+		<field name="ativo" type="Boolean" />
+		<field name="salario" type="double" />
+	</model>
+</model-hints>

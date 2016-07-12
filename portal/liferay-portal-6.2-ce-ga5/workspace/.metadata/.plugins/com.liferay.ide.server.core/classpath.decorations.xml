@@ -1,0 +1,144 @@
+<classpath>
+  <container id="contatos-hook!com.liferay.ide.eclipse.server.plugin.container/hook">
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-java.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-taglib.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/commons-logging.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/struts-el.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-bridges.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/struts.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/log4j.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+  </container>
+  <container id="eTask-portlet!com.liferay.ide.eclipse.server.plugin.container/portlet">
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-java.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-taglib.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/commons-logging.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-bridges.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/log4j.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+  </container>
+  <container id="municipio-ibge-hook!com.liferay.ide.eclipse.server.plugin.container/hook">
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-java.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-taglib.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/commons-logging.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/struts-el.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/dom4j.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-bridges.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/log4j.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/struts.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+  </container>
+  <container id="eTicket-portlet!com.liferay.ide.eclipse.server.plugin.container/portlet">
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/commons-beanutils.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/jstl-impl.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-java.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/jstl-api.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-taglib.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/commons-logging.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/log4j-extras.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-bridges.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/commons-collections.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/log4j.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+  </container>
+  <container id="employee-portlet!com.liferay.ide.eclipse.server.plugin.container/portlet">
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-java.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/jstl-impl.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/commons-beanutils.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-taglib.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/jstl-api.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/commons-logging.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/util-bridges.jar">
+      <source-attachment-path>/home/marcelo/Downloads/liferay-portal-src-6.2-ce-ga5-20151118111117117.zip</source-attachment-path>
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/commons-collections.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/log4j.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+  </container>
+</classpath>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	$theme.include($top_head_include)
+	
+	#if($is_signed_in)
+		<style>body {background-position: 0 31px;}</style>
+	#end
+	
+    <script src="http://connect.facebook.net/pt_BR/all.js#xfbml=1"></script>
+    <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+        
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    
+    <script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+<!-- Google Plus -->
+ 
+<script type="text/javascript">
+	(function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'https://apis.google.com/js/plusone.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+</script>
+</head>
+
+<body class="$css_class">
+
+$theme.include($body_top_include)
+
+#if ($is_signed_in)
+	#dockbar()
+#end
+
+<script type="text/javascript">
+
+	function buscar(paramBusca) {
+
+		if(paramBusca == null || paramBusca == 'Pesquisar...' || paramBusca == '') {
+			alert("A busca não pode estar vazia.");
+			return;
+		}
+
+		var location = "/resultado-busca";
+		location = location+"?parambusca="+paramBusca;
+
+		var pos = location.indexOf(" ");
+    	while (pos > -1){
+    		location = location.replace(" ","+");
+    		pos = location.indexOf(" ");
+    	}
+
+		window.location = location;
+	}
+
+	function buscarEnter(obj,paramBusca) {
+		var key;
+		if(window.event){
+			key = event.keyCode;
+			if(key == 13){
+				buscar(paramBusca);
+			} else{
+				window.event.returnValue=false;
+			}
+		} else{
+			key = obj.which;
+			if(key == 13){
+				buscar(paramBusca);
+			} else{
+				return true;
+			}
+		}
+	}
+
+</script>
+
+<div id="wrapper">
+	<a href="#main-content" id="skip-to-content">#language("skip-to-content")</a>
+
+	<header id="banner" role="banner">
+		<div id="heading">
+			<h1 class="site-title">
+				<a class="$logo_css_class" href="$site_default_url" title="#language("go-to") $site_name">
+					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+				</a>
+
+				#if ($show_site_name)
+					<span class="site-name" title="#language("go-to") $site_name">
+						$site_name
+					</span>
+				#end
+			</h1>
+
+			<h2 class="page-title">
+				<span>$the_title</span>
+			</h2>
+		</div>
+
+		#if (!$is_signed_in)
+			<!-- <a href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a> -->
+		#end
+
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+		
+		<!-- menu topo -->		
+		<div id="menu_topo">
+			<a href="/a-empresa">A Empresa</a><span class="separador"></span>
+			<a href="/onde-estamos">Onde Estamos</a><span class="separador"></span>
+			<span class="info">21 <span class="destaque">2445-4000</span></span><span class="separador"></span>
+		</div>
+		<!-- fim menu topo -->			
+		
+		<!-- slogan -->
+		<div id="slogan">Studiniz Contabilidade</div>
+
+		
+		<!-- busca -->
+		<div id="busca">
+			<div id="busca_input">
+				<input type="text" style="border: 0px none;" size="20px" id="campoBusca" onkeyup="javascript:buscarEnter(event,document.getElementById('campoBusca').value)" onfocus="if (this.value == '\u0050\u0065\u0073\u0071\u0075\u0069\u0073\u0061\u0072\u002e\u002e\u002e') { this.value = ''; }" onblur="if (this.value == '') { this.value = '\u0050\u0065\u0073\u0071\u0075\u0069\u0073\u0061\u0072\u002e\u002e\u002e'; }" value="Pesquisar...">
+			</div>
+			<div title="Buscar"><a onclick="javascript:buscar(document.getElementById('campoBusca').value)" class="busca_bt">Buscar</a></div>
+		</div>
+		<!-- fim busca -->
+		
+	</header>
+
+	<div id="content">
+		<nav class="site-breadcrumbs" id="breadcrumbs">
+			<h1>
+				<span>#language("breadcrumbs")</span>
+			</h1>
+
+			#breadcrumbs()
+		</nav>
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<p>
+			<a href="/home">Home</a>
+			<a href="/servicos">Servi&ccedil;os</a>
+			<a href="/clientes">Clientes</a>
+			<a href="/documentos">Documentos</a>
+			<a href="/contatos">Contatos</a>
+		</p>
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+</body>
+
+$theme.include($bottom_include)
+
+</html>

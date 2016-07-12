@@ -1,0 +1,78 @@
+<%@page import="com.liferay.portal.kernel.util.StringPool"%>
+<%
+PortletURL rowURL = renderResponse.createRenderURL();
+rowURL.setParameter("jspPage", "/html/academiahorario/cadastro.jsp");
+rowURL.setParameter(Constantes.CAMPO_ACADEMIA_HORARIO_ID, String.valueOf(academiaHorario.getAcademiaHorarioId()));
+rowURL.setParameter(Constantes.ACAO, Constantes.VIEW);
+rowURL.setParameter("backURL", currentURL);
+%>
+<liferay-ui:search-container-column-text name="label.diaSemana" buffer="buffer">
+<%
+String diaDaSemana = AcademiaHorarioUtil.getDiaDaSemana(academiaHorario.getDiaSemana()-1);
+diaDaSemana = LanguageUtil.get(pageContext, diaDaSemana);
+buffer.append("<div class='ver_dados'>");
+buffer.append("<a href='");
+buffer.append(rowURL);
+buffer.append("'>");
+buffer.append(diaDaSemana);
+buffer.append("</a>");
+buffer.append("</div>");
+%>	
+</liferay-ui:search-container-column-text>
+<liferay-ui:search-container-column-text name="label.atividade" buffer="buffer">
+<%
+String nomeAtividade = StringPool.BLANK;
+Atividade atividade = AtividadeUtil.getAtividade(academiaHorario.getAtividadeId());
+if (Validator.isNotNull(atividade)) {
+	nomeAtividade = atividade.getNome(locale);
+}
+buffer.append("<div class='ver_dados'>");
+buffer.append("<a href='");
+buffer.append(rowURL);
+buffer.append("'>");
+buffer.append(nomeAtividade);
+buffer.append("</a>");
+buffer.append("</div>");
+%>	
+</liferay-ui:search-container-column-text>
+<liferay-ui:search-container-column-text name="label.horaInicial" buffer="buffer">
+<%
+buffer.append("<div class='ver_dados'>");
+buffer.append("<a href='");
+buffer.append(rowURL);
+buffer.append("'>");
+buffer.append(academiaHorario.getHoraInicial());
+buffer.append("</a>");
+buffer.append("</div>");
+%>	
+</liferay-ui:search-container-column-text>
+<liferay-ui:search-container-column-text name="label.horaFinal" buffer="buffer">
+<%
+buffer.append("<div class='ver_dados'>");
+buffer.append("<a href='");
+buffer.append(rowURL);
+buffer.append("'>");
+buffer.append(academiaHorario.getHoraFinal());
+buffer.append("</a>");
+buffer.append("</div>");
+%>	
+</liferay-ui:search-container-column-text>
+<%
+if (!prefSomenteEsseSite) {
+	nomeSite = GroupUtil.getNomeSite(academiaHorario.getGroupId());
+%>
+<liferay-ui:search-container-column-text name="label.nomeSite"
+	buffer="buffer">
+<%
+buffer.append("<div class='ver_dados'>");
+buffer.append("<a href='");
+buffer.append(rowURL);
+buffer.append("'>");
+buffer.append(nomeSite);
+buffer.append("</a>");
+buffer.append("</div>");
+%>	
+</liferay-ui:search-container-column-text>
+<%
+}
+%>

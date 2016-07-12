@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="br.com.prodevelopment.contato" auto-namespace-tables="false">
+	<author>Marcelo Melo</author>
+	<namespace>contatos</namespace>
+
+	<entity name="Contato" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="contatoId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="createUserId" type="long" />
+		<column name="modifiedUserId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="classNameId" type="long" />
+		<column name="classPK" type="long" />
+		<column name="accountId" type="long" />
+		<column name="endEmail" type="String" />
+		<column name="nome" type="String" />
+		<column name="sexo" type="String" />
+		<column name="dataNascimento" type="Date" />
+		<column name="cargoId" type="long" />
+		<column name="skype" type="String" />
+		<column name="facebook" type="String" />
+		<column name="twitter" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="nome" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+		<finder name="AccountId" return-type="Collection">
+			<finder-column name="accountId" />
+		</finder>
+		<finder name="Contato" return-type="Contato">
+			<finder-column name="classNameId" />
+			<finder-column name="classPK" />
+		</finder>
+		<finder name="C_CARGO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="cargoId" />
+		</finder>
+		<finder name="C_G_CARGO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="cargoId" />
+		</finder>
+		<finder name="CARGO" return-type="Collection">
+			<finder-column name="cargoId" />
+		</finder>
+		<finder name="C_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_G_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+		<finder name="NOME" return-type="Collection">
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+		<finder name="C_DTN" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="dataNascimento" />
+		</finder>
+		<finder name="C_G_DTN" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="dataNascimento" />
+		</finder>
+		<finder name="DTN" return-type="Collection">
+			<finder-column name="dataNascimento" />
+		</finder>
+		<finder name="C_EMAIL" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="endEmail" />
+		</finder>
+		<finder name="C_G_EMAIL" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="endEmail" />
+		</finder>
+		<finder name="EMAIL" return-type="Collection">
+			<finder-column name="endEmail" />
+		</finder>
+		<finder name="C_SEXO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="dataNascimento" />
+		</finder>
+		<finder name="C_G_SEXO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="dataNascimento" />
+		</finder>
+		<finder name="SEXO" return-type="Collection">
+			<finder-column name="dataNascimento" />
+		</finder>
+	</entity>
+
+	<entity name="Endereco" uuid="true" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="enderecoId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="createUserId" type="long" />
+		<column name="modifiedUserId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="classNameId" type="long" />
+		<column name="classPK" type="long" />
+		<column name="logradouro" type="String" />
+		<column name="numero" type="String" />
+		<column name="complemento" type="String" />
+		<column name="cep" type="String" />
+		<column name="bairro" type="String" />
+		<column name="cidadeId" type="long" />
+		<column name="uf" type="String" />
+		<column name="paisId" type="long" />
+		<column name="principal" type="boolean" />
+		<column name="tipo" type="int" />
+		
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="C_U" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="classNameId" />
+		</finder>
+		<finder name="C_G_U" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="classNameId" />
+		</finder>
+		<finder name="C_C" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="classNameId" />
+		</finder>
+		<finder name="C_C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="classNameId" />
+		</finder>
+		<finder name="C_C_C" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="classNameId" />
+			<finder-column name="classPK" />
+		</finder>
+		<finder name="C_C_C_P" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="classNameId" />
+			<finder-column name="classPK" />
+			<finder-column name="principal" />
+		</finder>
+		<finder name="C_CEP" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="cep" />
+		</finder>
+		<finder name="C_G_CEP" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="cep" />
+		</finder>
+		<finder name="CEP" return-type="Collection">
+			<finder-column name="cep" />
+		</finder>
+		<finder name="C_BAIRRO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="bairro" comparator="LIKE" />
+		</finder>
+		<finder name="C_G_BAIRRO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="bairro" comparator="LIKE" />
+		</finder>
+		<finder name="BAIRRO" return-type="Collection">
+			<finder-column name="bairro" comparator="LIKE" />
+		</finder>
+		<finder name="C_CIDADE" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="cidadeId" />
+		</finder>
+		<finder name="C_G_CIDADE" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="cidadeId" />
+		</finder>
+		<finder name="CIDADE" return-type="Collection">
+			<finder-column name="cidadeId" />
+		</finder>
+		<finder name="C_UF" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="uf" />
+		</finder>
+		<finder name="C_G_UF" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="uf" />
+		</finder>
+		<finder name="UF" return-type="Collection">
+			<finder-column name="uf" />
+		</finder>
+		<finder name="C_PAIS" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="paisId" />
+		</finder>
+		<finder name="C_G_PAIS" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="paisId" />
+		</finder>
+		<finder name="PAIS" return-type="Collection">
+			<finder-column name="paisId" />
+		</finder>
+	</entity>
+
+	<entity name="Telefone" uuid="true" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="telefoneId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="createUserId" type="long" />
+		<column name="modifiedUserId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="classNameId" type="long" />
+		<column name="classPK" type="long" />
+		<column name="ddi" type="String" />
+		<column name="ddd" type="String" />
+		<column name="numero" type="String" />
+		<column name="ramal" type="String" />
+		<column name="tipo" type="int" />
+		<column name="principal" type="boolean" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="C_C" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="classNameId" />
+		</finder>
+		<finder name="C_C_C" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="classNameId" />
+			<finder-column name="classPK" />
+		</finder>
+		<finder name="C_C_C_P" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="classNameId" />
+			<finder-column name="classPK" />
+			<finder-column name="principal" />
+		</finder>
+	</entity>
+
+	<entity name="EnderecoEmail" uuid="true" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="enderecoEmailId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="createUserId" type="long" />
+		<column name="modifiedUserId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="classNameId" type="long" />
+		<column name="classPK" type="long" />
+		<column name="endereco" type="String" />
+		<column name="tipo" type="int" />
+		<column name="principal" type="boolean" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="C_C" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="classNameId" />
+		</finder>
+		<finder name="C_C_C" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="classNameId" />
+			<finder-column name="classPK" />
+		</finder>
+		<finder name="C_C_C_P" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="classNameId" />
+			<finder-column name="classPK" />
+			<finder-column name="principal" />
+		</finder>
+	</entity>
+
+	<exceptions>
+		<exception>ContatoEmailInvalido</exception>
+		<exception>ContatoDataNascimentoInvalida</exception>
+		<exception>EnderecoTipoObrigatotio</exception>
+		<exception>EnderecoLogradouroObrigatotio</exception>
+		<exception>TelefoneTipoObrigatotio</exception>
+		<exception>TelefoneDDDObrigatotio</exception>
+		<exception>TelefoneDDDInvalido</exception>
+		<exception>TelefoneNumeroObrigatotio</exception>
+		<exception>TelefoneNumeroInvalido</exception>
+		<exception>EnderecoEmailTipoObrigatotio</exception>
+		<exception>EnderecoEmailEnderecoObrigatotio</exception>
+		<exception>EnderecoEmailEnderecoInvalido</exception>
+	</exceptions>
+</service-builder>

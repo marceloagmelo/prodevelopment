@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="br.com.prodevelopment.contato.model.impl.ContatoModelImpl">
+		<attributes>
+			<id name="contatoId" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="createUserId" />
+			<basic name="modifiedUserId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="classNameId" />
+			<basic name="classPK" />
+			<basic name="accountId" />
+			<basic name="endEmail" />
+			<basic name="nome" />
+			<basic name="sexo" />
+			<basic name="dataNascimento">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="cargoId" />
+			<basic name="skype" />
+			<basic name="facebook" />
+			<basic name="twitter" />
+			<transient name="className" />
+			<transient name="createUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="modifiedUserUuid" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.com.prodevelopment.contato.model.impl.EnderecoModelImpl">
+		<attributes>
+			<id name="enderecoId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="createUserId" />
+			<basic name="modifiedUserId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="classNameId" />
+			<basic name="classPK" />
+			<basic name="logradouro" />
+			<basic name="numero" />
+			<basic name="complemento" />
+			<basic name="cep" />
+			<basic name="bairro" />
+			<basic name="cidadeId" />
+			<basic name="uf" />
+			<basic name="paisId" />
+			<basic name="principal" />
+			<basic name="tipo" />
+			<transient name="className" />
+			<transient name="createUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="modifiedUserUuid" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.com.prodevelopment.contato.model.impl.EnderecoEmailModelImpl">
+		<attributes>
+			<id name="enderecoEmailId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="createUserId" />
+			<basic name="modifiedUserId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="classNameId" />
+			<basic name="classPK" />
+			<basic name="endereco" />
+			<basic name="tipo" />
+			<basic name="principal" />
+			<transient name="className" />
+			<transient name="createUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="modifiedUserUuid" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.com.prodevelopment.contato.model.impl.TelefoneModelImpl">
+		<attributes>
+			<id name="telefoneId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="createUserId" />
+			<basic name="modifiedUserId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="classNameId" />
+			<basic name="classPK" />
+			<basic name="ddi" />
+			<basic name="ddd" />
+			<basic name="numero" />
+			<basic name="ramal" />
+			<basic name="tipo" />
+			<basic name="principal" />
+			<transient name="className" />
+			<transient name="createUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="modifiedUserUuid" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="br.com.prodevelopment.contato.model.impl.ContatoImpl" name="Contato">
+		<table name="Contato" />
+		<attributes />
+	</entity>
+	<entity class="br.com.prodevelopment.contato.model.impl.EnderecoImpl" name="Endereco">
+		<table name="Endereco" />
+		<attributes />
+	</entity>
+	<entity class="br.com.prodevelopment.contato.model.impl.EnderecoEmailImpl" name="EnderecoEmail">
+		<table name="EnderecoEmail" />
+		<attributes />
+	</entity>
+	<entity class="br.com.prodevelopment.contato.model.impl.TelefoneImpl" name="Telefone">
+		<table name="Telefone" />
+		<attributes />
+	</entity>
+</entity-mappings>

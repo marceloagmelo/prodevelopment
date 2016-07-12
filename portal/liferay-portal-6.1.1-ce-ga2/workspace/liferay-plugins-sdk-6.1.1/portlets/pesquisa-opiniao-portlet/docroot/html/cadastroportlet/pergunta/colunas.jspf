@@ -1,0 +1,2 @@
+<liferay-ui:search-container-column-text name="label.pergunta.descricao"
+	property="descricaoCurrentValue" />

@@ -1,0 +1,37 @@
+<jsp:useBean class="java.lang.String" id="novoURL" scope="request" />
+<liferay-ui:panel id="panel-perguntas"
+	title='<%=LanguageUtil.get(pageContext, "label.perguntas") %>'
+	collapsible="true" extended="true">
+
+	<c:if test='<%= (Boolean)request.getAttribute("hasAddPermission")%>'>
+		<div class="lfr-portlet-toolbar">
+			<span
+				class="lfr-toolbar-button add-button <%=toolbarItem.equals("add") ? "current"
+							: StringPool.BLANK%>"><a
+				href="<%=novoURL%>"><liferay-ui:message key="add" /> </a> </span>
+		</div>
+	</c:if>
+
+	<liferay-ui:search-container
+		emptyResultsMessage="mensagem.lista.registos.nao.encontrados"
+		delta="<%=linhasPorPagina %>">
+		<liferay-ui:search-container-results>
+			<%
+				results = ListUtil.subList(listaPergunta,
+									searchContainer.getStart(),
+									searchContainer.getEnd());
+							total = listaPergunta.size();
+							pageContext.setAttribute("results", results);
+							pageContext.setAttribute("total", total);
+			%>
+		</liferay-ui:search-container-results>
+		<liferay-ui:search-container-row
+			className="br.com.prodevelopment.pesquisaopiniao.model.Pergunta"
+			keyProperty="id" modelVar="pergunta">
+			<%@ include file="/html/cadastroportlet/pergunta/colunas.jspf"%>
+			<liferay-ui:search-container-column-jsp align="right"
+				path="/html/cadastroportlet/pergunta/acoes.jsp" />
+		</liferay-ui:search-container-row>
+		<liferay-ui:search-iterator />
+	</liferay-ui:search-container>
+</liferay-ui:panel>

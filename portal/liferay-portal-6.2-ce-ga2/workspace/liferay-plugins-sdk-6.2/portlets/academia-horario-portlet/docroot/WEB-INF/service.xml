@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="br.com.prodevelopment.academiahorario" auto-namespace-tables="false">
+	<author>Marcelo</author>
+	<namespace>academiahorario</namespace>
+
+	<entity name="AcademiaHorario" uuid="true" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="academiaHorarioId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="createUserId" type="long" />
+		<column name="modifiedUserId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="diaSemana" type="int" />
+		<column name="horaInicial" type="String" />
+		<column name="HoraFinal" type="String" />
+		<column name="atividadeId" type="long" />
+		<column name="atividadeNome" type="String" localized="true" />
+		<column name="versao" type="double" />
+				
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="atividadeNome" />
+			<order-column name="diaSemana" />
+			<order-column name="horaInicial" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Company" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_ATIVIDADE" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="atividadeId" />
+		</finder>
+
+		<finder name="C_G_ATIVIDADE" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="atividadeId" />
+		</finder>
+
+		<finder name="C_G_D_A_HI" return-type="AcademiaHorario" unique="true">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="diaSemana" />
+			<finder-column name="atividadeId" />
+			<finder-column name="horaInicial" />
+		</finder>
+
+		<!-- References -->
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+	</entity>
+
+	<exceptions>
+		<exception>AcademiaHorarioUnidadeObrigatoria</exception>
+		<exception>AcademiaHorarioAtividadeObrigatoria</exception>
+		<exception>AcademiaHorarioDiaSemanaObrigatorio</exception>
+		<exception>AcademiaHorarioHoraInicialObrigatoria</exception>
+		<exception>AcademiaHorarioHoraFinalObrigatoria</exception>
+		<exception>AcademiaHorarioHoraInicialMaiorQueFinal</exception>
+		<exception>AcademiaHorarioHoraInicialIgualFinal</exception>
+		<exception>AcademiaHorarioAlteradoOutroUsuario</exception>
+	</exceptions>
+</service-builder>

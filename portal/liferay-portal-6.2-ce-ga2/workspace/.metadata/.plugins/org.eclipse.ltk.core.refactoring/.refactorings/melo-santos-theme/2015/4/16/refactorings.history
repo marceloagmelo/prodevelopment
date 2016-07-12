@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;init_custom.vm&apos; to &apos;templates&apos;&#x0A;- Original project: &apos;melo-santos-theme&apos;&#x0A;- Destination element: &apos;templates&apos;&#x0A;- Original element: &apos;init_custom.vm&apos;" description="Copy file" element1="docroot/_diffs/templates/init_custom.vm" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1429033362214" target="/pd-theme/docroot/_diffs/templates" units="0" version="1.0"/>
+</session>

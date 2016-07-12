@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram-geometry>
+    <node>
+        <id>Entity#Funcionario#0</id>
+        <bounds x="10" y="-1"/>
+    </node>
+    <node>
+        <id>Entity#Cargo#1</id>
+        <bounds x="10" y="9"/>
+    </node>
+</diagram-geometry>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+<a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
+
+$theme.include($body_top_include)
+
+#dockbar()
+
+<script type="text/javascript">
+
+	function buscar(paramBusca, grupoId, urlPortal) {
+
+		if(paramBusca == null || paramBusca == 'Pesquisar...' || paramBusca == '') {
+			alert("A busca não pode estar vazia.");
+			return;
+		}
+
+		var location = urlPortal + "/web/guest/home?p_p_id=3&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&_3_struts_action=%2Fsearch%2Fsearch&_3_redirect=%2Fhome&_3_groupId="+grupoId;
+		location = location+"&_3_keywords="+paramBusca;
+
+		var pos = location.indexOf(" ");
+    	while (pos > -1){
+    		location = location.replace(" ","+");
+    		pos = location.indexOf(" ");
+    	}
+
+		window.location = location;
+	}
+
+	function buscarEnter(obj,paramBusca, grupoId, urlPortal) {
+		var key;
+		if(window.event){
+			key = event.keyCode;
+			if(key == 13){
+				buscar(paramBusca, grupoId, urlPortal);
+			} else{
+				window.event.returnValue=false;
+			}
+		} else{
+			key = obj.which;
+			if(key == 13){
+				buscar(paramBusca, grupoId, urlPortal);
+			} else{
+				return true;
+			}
+		}
+	}
+
+</script>
+
+<div class="container-fluid" id="wrapper">
+	<header id="banner" role="banner">
+		<div id="heading">
+			<h1 class="site-title">
+				<a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+
+					#if ($show_site_name)
+						<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+							$slogan
+						</span>
+					#end
+				</a>
+
+			</h1>
+
+			<!-- busca -->
+			<div id="busca">
+				<div id="busca_input">
+					<input type="text" style="border: 0px none;" size="20" id="campoBusca" onkeyup="javascript:buscarEnter(event,document.getElementById('campoBusca').value, document.getElementById('grupoId').value, document.getElementById('urlPortal').value)" onfocus="if (this.value == '\u0050\u0065\u0073\u0071\u0075\u0069\u0073\u0061\u0072\u002e\u002e\u002e') { this.value = ''; }" onblur="if (this.value == '') { this.value = '\u0050\u0065\u0073\u0071\u0075\u0069\u0073\u0061\u0072\u002e\u002e\u002e'; }" value="Pesquisar...">
+					<input type="hidden" id="grupoId" value="$groupId">
+					<input type="hidden" id="urlPortal" value="$urlPortal">
+				</div>
+				<div title="Buscar"><a onclick="javascript:buscar(document.getElementById('campoBusca').value, document.getElementById('grupoId').value, document.getElementById('urlPortal').value)" class="busca_bt">Buscar</a></div>
+			</div>
+			<!-- fim busca -->
+
+			<h2 class="page-title">
+				<span>$the_title</span>
+			</h2>
+		</div>
+
+	</header>
+
+	<div id="content">
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+
+		#if ($show_breadcrumb)
+			<nav id="breadcrumbs">#breadcrumbs()</nav>
+		#end
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<div class="footer_copyright">&copy; Prodevelopment</div>
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+</body>
+
+</html>

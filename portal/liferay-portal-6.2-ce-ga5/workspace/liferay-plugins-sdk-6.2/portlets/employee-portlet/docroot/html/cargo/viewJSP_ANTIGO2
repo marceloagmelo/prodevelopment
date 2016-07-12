@@ -1,0 +1,214 @@
+<%@ include file="init.jsp"%>
+
+<%
+String keywords = ParamUtil.getString(request, "keywords");
+
+PortletURL portletURL = renderResponse.createRenderURL();
+
+pageContext.setAttribute("portletURL", portletURL);
+
+String portletURLString = portletURL.toString();
+//String message = (TrashUtil.isTrashEnabled(scopeGroupId) ? "are-you-sure-you-want-to-recycle-this": "are-you-sure-you-want-to-delete-this");
+String message = (TrashUtil.isTrashEnabled(scopeGroupId) ? UnicodeLanguageUtil.get(pageContext, "are-you-sure-you-want-to-recycle-this"): UnicodeLanguageUtil.get(pageContext, "are-you-sure-you-want-to-delete-the-selected-entries"));
+
+
+int typeTaskStart = ParamUtil.getInteger(request, "typeTaskStart");
+int typeTaskEnd = ParamUtil.getInteger(request, "typeTaskEnd", SearchContainer.DEFAULT_DELTA);
+
+TypeTaskSearch searchContainer = new TypeTaskSearch(liferayPortletRequest, typeTaskEnd / (typeTaskEnd - typeTaskStart), typeTaskEnd - typeTaskStart, portletURL);
+
+String orderByCol = ParamUtil.getString(request, "orderByCol");
+String orderByType = ParamUtil.getString(request, "orderByType");
+
+if (Validator.isNull(orderByCol)) {
+	orderByCol = portalPrefs.getValue(PortletKeys.JOURNAL, "order-by-col", TypeTaskConstants.NAME);
+	orderByType = portalPrefs.getValue(PortletKeys.JOURNAL, "order-by-type", "asc");
+}
+else {
+	boolean saveOrderBy = ParamUtil.getBoolean(request, "saveOrderBy");
+
+	if (saveOrderBy) {
+		portalPrefs.setValue(PortletKeys.JOURNAL, "order-by-col", orderByCol);
+		portalPrefs.setValue(PortletKeys.JOURNAL, "order-by-type", orderByType);
+	}
+}
+
+OrderByComparator orderByComparator = TypeTaskComparator.getTypeTaskOrderByComparator(orderByCol,orderByType);
+
+searchContainer.setOrderByCol(orderByCol);
+searchContainer.setOrderByComparator(orderByComparator);
+//searchContainer.setOrderByJS("javascript:" + liferayPortletResponse.getNamespace() + "sortEntries('" + folderId + "', 'orderKey', 'orderByType');");
+searchContainer.setOrderByType(orderByType);
+
+searchContainer.setRowChecker(new RowChecker(renderResponse));
+
+TypeTaskDisplayTerms displayTerms = (TypeTaskDisplayTerms)searchContainer.getDisplayTerms();	
+TypeTaskDisplayTerms searchTerms = (TypeTaskDisplayTerms)searchContainer.getSearchTerms();
+
+int status = WorkflowConstants.STATUS_APPROVED;
+
+if (permissionChecker.isContentReviewer(user.getCompanyId(), scopeGroupId)) {
+	status = WorkflowConstants.STATUS_ANY;
+}
+
+List<TypeTask> results = TypeTaskUtil.search(
+		themeDisplay.getCompanyId(),
+		themeDisplay.getScopeGroupId(), searchTerms.getName(),
+		typeTaskStart, typeTaskEnd, searchContainer.getOrderByComparator(),
+		themeDisplay.getPermissionChecker());
+
+int total = results.size();
+
+searchContainer.setTotal(total);
+
+searchContainer.setResults(results);
+
+request.setAttribute("view.jsp-total", String.valueOf(total));
+
+request.setAttribute("view_typetask.jsp-typeTaskStart", String.valueOf(searchContainer.getStart()));
+request.setAttribute("view_typetask.jsp-typeTaskEnd", String.valueOf(searchContainer.getEnd()));
+%>
+<%@ include file="message.jspf"%>
+<aui:nav-bar>
+	<aui:nav>
+		<c:if test="<%=permissaoAddTypeTask%>">
+			<portlet:renderURL var="addURL">
+				<portlet:param name="jspPage"
+					value="/html/typetask/edit_typetask.jsp" />
+				<portlet:param name="redirect" value="<%=currentURL%>" />
+			</portlet:renderURL>
+
+			<aui:nav-item href="<%=addURL%>" iconCssClass="icon-plus"
+				label="add" />
+		</c:if>
+		<c:if test="<%=permissaoConfigTypeTask%>">
+			<liferay-security:permissionsURL
+				modelResource="<%=TypeTaskConstants.RESOURCE_TYPE_TICKET%>"
+				modelResourceDescription="<%=HtmlUtil.escape(themeDisplay
+							.getScopeGroupName())%>"
+				resourcePrimKey="<%=String.valueOf(scopeGroupId)%>"
+				var="permissionsURL"
+				windowState="<%=LiferayWindowState.POP_UP.toString()%>" />
+
+			<aui:nav-item href="<%=permissionsURL%>" label="permissions"
+				title="edit-permissions" useDialog="<%=true%>" />
+		</c:if>
+
+		<c:if test="<%=permissaoDeleteTypeTask%>">
+			<aui:nav-item cssClass="hide" dropdown="<%=true%>"
+				id="tagsActionsButton" label="actions">
+				<aui:nav-item id='deleteSelectedTags' 
+					iconCssClass='<%=TrashUtil
+								.isTrashEnabled(scopeGroupId) ? "icon-trash"
+								: "icon-remove"%>'
+					label='<%=TrashUtil
+								.isTrashEnabled(scopeGroupId) ? "move-to-the-recycle-bin"
+								: "delete"%>' />
+			</aui:nav-item>
+
+			<aui:script use="aui-base,liferay-util-list-fields">
+			A.one('#<portlet:namespace /><%=searchContainerReference.getId()%>SearchContainer').delegate(
+				'click',
+				function() {
+					var hide = (Liferay.Util.listCheckedExcept(document.<portlet:namespace />fm, '<portlet:namespace /><%=RowChecker.ALL_ROW_IDS%>').length == 0);
+
+					A.one('#<portlet:namespace />tagsActionsButton').toggle(!hide);
+				},
+				'input[type=checkbox]'
+			);
+
+			A.one('#<portlet:namespace />deleteSelectedTags').on(
+				'click',
+				function() {
+					if (confirm('<%=message %>')) {
+						<portlet:actionURL var="deleteURL">
+					<portlet:param name="<%=TypeTaskConstants.PORTLET_ACTION%>"
+						value="deletarSelecionados" />
+					<portlet:param name="redirect" value="<%=currentURL%>" />
+					<portlet:param name="<%=Constants.CMD%>"
+						value="<%=TrashUtil
+									.isTrashEnabled(scopeGroupId) ? Constants.MOVE_TO_TRASH
+									: Constants.DELETE%>" />
+				</portlet:actionURL>
+
+						document.<portlet:namespace />fm.method = "post";
+						document.<portlet:namespace />fm.<portlet:namespace />deleteTagIds.value = Liferay.Util.listCheckedExcept(document.<portlet:namespace />fm, '<portlet:namespace />allRowIds');
+						submitForm(document.<portlet:namespace />fm, '<%=deleteURL%>');
+					}
+				}
+			);
+		</aui:script>
+
+		</c:if>
+
+	</aui:nav>
+	<aui:nav-bar-search cssClass="pull-right"
+		searchContainer="<%=searchContainer%>">
+		<div class="form-search">
+			<liferay-ui:input-search
+				autoFocus="<%=windowState.equals(WindowState.MAXIMIZED)%>"
+				name="<%=TypeTaskConstants.NAME%>"
+				placeholder='<%=LanguageUtil.get(locale, "keywords")%>' />
+		</div>
+
+	</aui:nav-bar-search>
+</aui:nav-bar>
+<div class="typetask-portlet" id="<portlet:namespace/>">
+<aui:form action="<%=portletURLString%>" method="get" name="fm">
+	<liferay-portlet:renderURLParams varImpl="portletURL" />
+	<aui:input name="deleteTagIds" type="hidden" />
+
+<c:if test="<%= results.isEmpty() %>">
+	<div class="entries-empty alert alert-info">
+		<c:if test="<%= total == 0 %>">
+			<liferay-ui:message key="notFound-typetasks" />
+		</c:if>
+	</div>
+</c:if>
+
+<%
+List resultRows = searchContainer.getResultRows();
+for (int i = 0; i < results.size(); i++) {
+	TypeTask typeTask = (TypeTask) results.get(i);
+%>
+<c:choose>
+	<c:when test="<%= typeTask != null %>">
+			<%	
+			ResultRow row = new ResultRow(typeTask,
+					typeTask.getTypeTaskId(), i);
+
+			PortletURL rowURL = renderResponse.createRenderURL();
+			rowURL.setParameter("jspPage",
+					"/html/typetask/edit_typetask.jsp");
+			rowURL.setParameter(TypeTaskConstants.TYPE_TASK_ID,
+					String.valueOf(typeTask.getTypeTaskId()));
+			rowURL.setParameter(TypeTaskConstants.ACTION,
+					ActionKeys.VIEW);
+			rowURL.setParameter("backURL", currentURL);
+
+			// Nome
+			row.addText(typeTask.getName(locale), rowURL);
+			
+			if (WorkflowDefinitionLinkLocalServiceUtil
+					.hasWorkflowDefinitionLink(themeDisplay.getCompanyId(),
+							scopeGroupId, TypeTask.class.getName())) {
+				// Status
+				row.addText(String.valueOf(typeTask.getStatus()));
+			}
+
+			row.addJSP("right", SearchEntry.DEFAULT_VALIGN,
+					"/html/typetask/action.jsp",
+					this.getServletContext(), request, response);
+
+			// Add result row
+			resultRows.add(row);
+			%>
+	</c:when>
+</c:choose>
+<%
+}
+%>
+<liferay-ui:search-iterator searchContainer="<%=searchContainer%>" />
+</aui:form>
+</div>
+

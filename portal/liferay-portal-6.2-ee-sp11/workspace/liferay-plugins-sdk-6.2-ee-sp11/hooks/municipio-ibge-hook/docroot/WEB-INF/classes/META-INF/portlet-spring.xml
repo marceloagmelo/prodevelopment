@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.com.prodevelopment.municipio.service.MunicipioLocalService" class="br.com.prodevelopment.municipio.service.impl.MunicipioLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.municipio.service.MunicipioService" class="br.com.prodevelopment.municipio.service.impl.MunicipioServiceImpl" />
+	<bean id="br.com.prodevelopment.municipio.service.persistence.MunicipioPersistence" class="br.com.prodevelopment.municipio.service.persistence.MunicipioPersistenceImpl" parent="basePersistence" />
+</beans>

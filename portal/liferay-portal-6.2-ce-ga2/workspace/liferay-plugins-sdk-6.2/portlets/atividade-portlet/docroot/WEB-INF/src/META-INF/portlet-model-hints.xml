@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.com.prodevelopment.atividade.model.Atividade">
+		<field name="uuid" type="String" />
+		<field name="atividadeId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createUserId" type="long" />
+		<field name="modifiedUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nome" type="String" localized="true" />
+		<field name="descricao" type="String" localized="true" />
+		<field name="imagemId" type="long" />
+		<field name="existeImagem" type="boolean" />
+		<field name="versao" type="double" />
+	</model>
+</model-hints>

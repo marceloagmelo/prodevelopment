@@ -1,0 +1,32 @@
+Buildfile: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/themes/rasec-portal-theme/build.xml
+compile:
+     [copy] Copying 822 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/themes/rasec-portal-theme/docroot
+     [copy] Copying 5 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/themes/rasec-portal-theme/docroot/templates
+     [copy] Copying 62 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/themes/rasec-portal-theme/docroot
+war:
+build-css:
+     [java] Loading jar:file:/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/portal-impl.jar!/system.properties
+     [java] Loading file:/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/classes/system-ext.properties
+     [java] Oct 08, 2014 9:50:04 AM com.liferay.portal.kernel.log.Jdk14LogImpl info
+     [java] INFO: No server detected
+     [java] Oct 08, 2014 9:50:04 AM com.liferay.portal.kernel.log.Jdk14LogImpl info
+     [java] INFO: Global shared lib directory /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/lib/
+     [java] Oct 08, 2014 9:50:04 AM com.liferay.portal.kernel.log.Jdk14LogImpl info
+     [java] INFO: Global lib directory /opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/lib/ext/
+     [java] Oct 08, 2014 9:50:04 AM com.liferay.portal.kernel.log.Jdk14LogImpl info
+     [java] INFO: Portal lib directory /opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/
+     [java] Oct 08, 2014 9:50:07 AM com.liferay.portal.kernel.log.Jdk14LogImpl info
+     [java] INFO: Properties for portal loaded from [file:/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/classes/portal-ext.properties, jar:file:/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/portal-impl.jar!/portal.properties]
+     [java] Loading jar:file:/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/portal-impl.jar!/portal.properties
+     [java] Loading file:/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/classes/portal-ext.properties
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/themes/rasec-portal-theme/docroot/css/custom.css in 22313 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/themes/rasec-portal-theme/docroot/css/custom_novo.css in 2509 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/themes/rasec-portal-theme/docroot/css/layout.css in 724 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/themes/rasec-portal-theme/docroot/css/main.css in 10575 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/themes/rasec-portal-theme/docroot/css/portlet.css in 337 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/themes/rasec-portal-theme/docroot/css/style.css in 64 ms
+      [zip] Building zip: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/workspace/liferay-plugins-sdk-6.1.1/dist/rasec-portal-theme-6.1.1.1.war
+deploy:
+     [copy] Copying 1 file to /opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/deploy
+BUILD SUCCESSFUL
+Total time: 49 seconds

@@ -1,0 +1,10 @@
+#set ($css_class = "${css_class} dockbar-split")
+
+#set ($show_breadcrumb = false)
+
+#set ($slogan = "Tecnologia ao seu Alcance!")
+
+#set ($grupo = $page.getGroup())
+#set ($groupId = $grupo.getGroupId())
+#set ($urlPortal = $theme_display.getURLPortal())
+

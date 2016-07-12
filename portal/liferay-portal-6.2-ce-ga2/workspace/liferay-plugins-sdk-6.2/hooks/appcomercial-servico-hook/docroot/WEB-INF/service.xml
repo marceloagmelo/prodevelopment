@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="br.com.prodevelopment.appcomercial.servico">
+	<author>marcelo</author>
+	<namespace>ac</namespace>
+
+	<entity name="Funcionario" table="Funcionario" local-service="true"
+		remote-service="true" data-source="appcomercialDataSource"
+		session-factory="appcomercialSessionFactory" tx-manager="appcomercialTransactionManager">
+
+		<!-- PK fields -->
+
+		<column name="funcionarioId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="createUserId" type="long" />
+		<column name="modifiedUserId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="nome" type="String" />
+		<column name="apelido" type="String" />
+		<column name="observacao" type="String" />
+		<column name="rg" type="String" />
+		<column name="rgOrgaoEmissor" type="String" />
+		<column name="rgDataEmissao" type="Date" />
+		<column name="cpf" type="String" />
+		<column name="sexo" type="String" />
+		<column name="estadoCivil" type="String" />
+		<column name="dataNascimento" type="Date" />
+		<column name="endComLogradouro" type="String" />
+		<column name="endComDescricao" type="String" />
+		<column name="endComCep" type="String" />
+		<column name="endComBairro" type="String" />
+		<column name="endComCidade" type="String" />
+		<column name="endComUf" type="String" />
+		<column name="endComPais" type="String" />
+		<column name="endResLogradouro" type="String" />
+		<column name="endResDescricao" type="String" />
+		<column name="endResCep" type="String" />
+		<column name="endResBairro" type="String" />
+		<column name="endResCidade" type="String" />
+		<column name="endResUf" type="String" />
+		<column name="endResPais" type="String" />
+		<column name="telComDdd" type="String" />
+		<column name="telComNumero" type="String" />
+		<column name="telComRamal" type="String" />
+		<column name="telResDdd" type="String" />
+		<column name="telResNumero" type="String" />
+		<column name="telCelDdd" type="String" />
+		<column name="telCelNumero" type="String" />
+		<column name="endEmail" type="String" />
+		<column name="dataEntrada" type="Date" />
+		<column name="dataSaida" type="Date" />
+		<column name="existeUser" type="Boolean" />
+		<column name="userId" type="long" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="nome" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Company" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_G_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_APELIDO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="apelido" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_G_APELIDO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="apelido" comparator="LIKE" />
+		</finder>
+
+		<finder name="CPF" return-type="Collection">
+			<finder-column name="cpf" />
+		</finder>
+
+		<finder name="RG" return-type="Collection">
+			<finder-column name="rg" />
+		</finder>
+
+		<finder name="DT_NASCIMENTO" return-type="Collection">
+			<finder-column name="dataNascimento" />
+		</finder>
+
+	    <!--  References -->
+	    <reference package-path="com.liferay.portal" entity="User" />
+	</entity>
+
+	<exceptions>
+		<exception>FuncionarioNomeObrigatorio</exception>
+		<exception>FuncionarioCPFInvalido</exception>
+		<exception>FuncionarioDataNascimentoInvalida</exception>
+		<exception>FuncionarioRGDataEmissaoInvalida</exception>
+		<exception>FuncionarioDataEntradaInvalida</exception>
+		<exception>FuncionarioDataSaidaInvalida</exception>
+		<exception>FuncionarioEmailInvalido</exception>
+		<exception>FuncionarioLoginObrigatorio</exception>
+	</exceptions>
+</service-builder>

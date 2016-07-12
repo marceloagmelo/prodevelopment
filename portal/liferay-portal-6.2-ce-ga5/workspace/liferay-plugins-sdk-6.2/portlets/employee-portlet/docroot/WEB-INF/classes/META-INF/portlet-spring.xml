@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.com.prodevelopment.funcionario.service.CargoLocalService" class="br.com.prodevelopment.funcionario.service.impl.CargoLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.funcionario.service.CargoService" class="br.com.prodevelopment.funcionario.service.impl.CargoServiceImpl" />
+	<bean id="br.com.prodevelopment.funcionario.service.persistence.CargoPersistence" class="br.com.prodevelopment.funcionario.service.persistence.CargoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.com.prodevelopment.funcionario.service.FuncionarioLocalService" class="br.com.prodevelopment.funcionario.service.impl.FuncionarioLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.funcionario.service.FuncionarioService" class="br.com.prodevelopment.funcionario.service.impl.FuncionarioServiceImpl" />
+	<bean id="br.com.prodevelopment.funcionario.service.persistence.FuncionarioPersistence" class="br.com.prodevelopment.funcionario.service.persistence.FuncionarioPersistenceImpl" parent="basePersistence" />
+</beans>

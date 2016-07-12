@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="br.com.prodevelopment.atividade" auto-namespace-tables="false">
+	<author>Marcelo</author>
+	<namespace>atividade</namespace>
+
+	<entity name="Atividade" uuid="true" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="atividadeId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="createUserId" type="long" />
+		<column name="modifiedUserId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="nome" type="String" localized="true" />
+		<column name="descricao" type="String" localized="true" />
+		<column name="imagemId" type="long" />
+		<column name="existeImagem" type="boolean" />
+		<column name="versao" type="double" />
+				
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="nome" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Company" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_G_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_DESCRICAO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="descricao" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_G_DESCRICAO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="descricao" comparator="LIKE" />
+		</finder>
+
+		<!-- References -->
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+	</entity>
+
+	<exceptions>
+		<exception>AtividadeNomeObrigatorio</exception>
+		<exception>AtividadeAlteradoOutroUsuario</exception>
+	</exceptions>
+</service-builder>

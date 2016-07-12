@@ -1,0 +1,19 @@
+Buildfile: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ee-sp11/workspace/liferay-plugins-sdk-6.2-ee-sp11/hooks/municipio-ibge-hook/build.xml
+compile:
+merge:
+compile-import-shared:
+    [mkdir] Created dir: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ee-sp11/workspace/liferay-plugins-sdk-6.2-ee-sp11/hooks/municipio-ibge-hook/docroot/WEB-INF/classes
+     [copy] Copying 1 file to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ee-sp11/workspace/liferay-plugins-sdk-6.2-ee-sp11/hooks/municipio-ibge-hook/docroot/WEB-INF/lib
+     [copy] Copying 5 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ee-sp11/workspace/liferay-plugins-sdk-6.2-ee-sp11/hooks/municipio-ibge-hook/docroot/WEB-INF/lib
+compile-java:
+     [copy] Copying 10 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ee-sp11/workspace/liferay-plugins-sdk-6.2-ee-sp11/hooks/municipio-ibge-hook/docroot/WEB-INF/classes
+     [copy] Copied 13 empty directories to 12 empty directories under /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ee-sp11/workspace/liferay-plugins-sdk-6.2-ee-sp11/hooks/municipio-ibge-hook/docroot/WEB-INF/classes
+    [javac] Compiling 13 source files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ee-sp11/workspace/liferay-plugins-sdk-6.2-ee-sp11/hooks/municipio-ibge-hook/docroot/WEB-INF/classes
+merge:
+war:
+clean-portal-dependencies:
+      [zip] Building zip: /opt/liferay-developer-studio/liferay-plugins-sdk-6.2-ee-sp11/dist/municipio-ibge-hook-6.2.10.1.war
+deploy:
+     [copy] Copying 1 file to /opt/servidores/prodevelopment/portal/liferay-portal-6.2-ee-sp11/deploy
+BUILD SUCCESSFUL
+Total time: 3 seconds

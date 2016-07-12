@@ -1,0 +1,124 @@
+<%
+	PortletURL voltarURL = renderResponse.createRenderURL();
+	voltarURL.setParameter("articleId", StringPool.BLANK);
+	
+	JournalArticleDisplay articleDisplay = JournalArticleLocalServiceUtil
+	.getArticleDisplay(themeDisplay.getScopeGroupId(),
+			articleId, "normal", "",
+			themeDisplay);
+	
+	String titulo = StringPool.BLANK;
+	String conteudo = StringPool.BLANK;
+	
+	String templateId = (String)request.getAttribute(Constantes.TEMPLATE_ID);
+	
+	boolean print = ParamUtil.getString(request, "viewMode").equals(
+			Constantes.PRINT);
+
+	String resourceBundle = (String) request
+			.getAttribute(Constantes.RESOURCE_BUNDLE);
+
+	if (Validator.isNotNull(articleDisplay)) {
+		titulo = articleDisplay.getTitle();
+		conteudo = articleDisplay.getContent();
+
+		DDMTemplate template = null;
+
+		AssetEntryServiceUtil.incrementViewCounter(
+				JournalArticle.class.getName(),
+				articleDisplay.getResourcePrimKey());
+		if (Validator.isNotNull(templateId)) {
+			try {
+				template = DDMTemplateLocalServiceUtil.getTemplate(Long.valueOf(templateId));
+			} catch (NoSuchTemplateException nste) {
+				template = DDMTemplateLocalServiceUtil.getTemplate(Long.valueOf(templateId));
+			}
+		}
+%>
+
+<!-- inicio codigo portlet -->
+<div class="exibir_conteudo">
+<%
+if (Constantes.S.equals(prefExibirTitulo)) {
+%>
+	<h3 class="titulo"><%=titulo %></h3>
+<%
+}
+%>
+	<p class="texto"><%=conteudo %></p>
+
+	<c:choose>
+		<c:when test="<%=print%>">
+			<aui:script>
+				print();
+			</aui:script>
+		</c:when>
+		<c:otherwise>
+			<c:if test="<%= acoes %>">
+				<div class="acoes">
+				<c:if test="<%= prefVoltar %>">
+					<a class="voltar" href="<%=voltarURL.toString() %>"><liferay-ui:message key="label.botao.voltar"/></a>
+				</c:if>
+				<c:if test="<%= prefImprimir %>">
+							<%
+								PortletURL printPageURL = renderResponse
+														.createRenderURL();
+		
+												printPageURL
+														.setWindowState(LiferayWindowState.POP_UP);
+		
+												printPageURL.setParameter("struts_action",
+														"/journal_content/view");
+												printPageURL.setParameter("groupId",
+														String.valueOf(articleDisplay.getGroupId()));
+												printPageURL.setParameter("id",
+														articleDisplay.getArticleId());
+												printPageURL.setParameter("viewMode",
+														Constantes.PRINT);
+							%>
+							<input type="button" value="<liferay-ui:message key="label.botao.imprimir"/>" onclick="<%= "javascript:" + renderResponse.getNamespace() + "printPage();" %>" value="<liferay-ui:message key="label.botao.imprimir"/>" class="imprimir" title="<liferay-ui:message key="label.botao.imprimir"/>"/>
+		
+							<aui:script>
+												function <portlet:namespace />printPage() {
+													window.open('<%=printPageURL%>', '', "directories=0,height=480,left=80,location=1,menubar=1,resizable=1,scrollbars=yes,status=0,toolbar=0,top=180,width=640");
+												}
+											</aui:script>
+				</c:if>
+				</div>
+			</c:if>
+			<c:choose>
+				<c:when test="<%= showEditArticleIcon %>">
+					<div class="manutencao">
+						<div class="acao">
+							<c:if
+								test="<%=showEditArticleIcon %>">
+								<liferay-portlet:renderURL
+									windowState="<%= WindowState.MAXIMIZED.toString() %>"
+									var="editURL" portletName="<%= PortletKeys.JOURNAL %>">
+									<portlet:param name="struts_action" value="/journal/edit_article" />
+									<portlet:param name="redirect" value="<%= currentURL %>" />
+									<portlet:param name="originalRedirect"
+										value="<%= currentURL %>" />
+									<portlet:param name="groupId"
+										value="<%= String.valueOf(articleDisplay.getGroupId()) %>" />
+									<portlet:param name="articleId"
+										value="<%= articleDisplay.getArticleId() %>" />
+									<portlet:param name="version"
+										value="<%= String.valueOf(articleDisplay.getVersion()) %>" />
+								</liferay-portlet:renderURL>
+		
+								<liferay-ui:icon image="edit" message="edit-web-content"
+									url="<%= editURL %>" />
+							</c:if>
+						</div>
+					</div>
+				
+				</c:when>
+			</c:choose>
+		</c:otherwise>
+	</c:choose>
+</div>
+<!-- fim codigo portlet -->
+<%
+	}
+%>

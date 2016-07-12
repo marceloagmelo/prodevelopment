@@ -1,0 +1,12 @@
+<classpath>
+  <container id="academia-horario-portlet!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="/home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/portlets/academia-horario-portlet/docroot/WEB-INF/lib/academia-horario-portlet-service.jar">
+      <source-attachment-path>/academia-horario-portlet/docroot/WEB-INF/service</source-attachment-path>
+    </entry>
+  </container>
+  <container id="atividade-portlet!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="/home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/portlets/atividade-portlet/docroot/WEB-INF/lib/atividade-portlet-service.jar">
+      <source-attachment-path>/atividade-portlet/docroot/WEB-INF/service</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

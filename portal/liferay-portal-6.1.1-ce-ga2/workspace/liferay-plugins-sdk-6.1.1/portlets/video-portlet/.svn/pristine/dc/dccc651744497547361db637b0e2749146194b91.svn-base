@@ -1,0 +1,31 @@
+#
+# T�tulo do portlet
+#
+javax.portlet.title=Vídeo Destaque
+javax.portlet.short-title=Vídeo Destaque
+javax.portlet.title.keywords=Vídeo Destaque
+
+#
+category.video=Vídeo
+
+#Configuracoes
+salvar=Salvar
+config-gerais=Configurações Gerais
+videos=Vídeos
+url-destino=URL 'Ver Mais...' :
+destino=Destino:
+escolha-dos-videos=Escolha dos Vídeos
+categoria=Categoria
+tags=Tags
+filtrar=Filtrar
+exibir-video=Exibir Vídeo
+id-video=Identificação(ID)
+titulo-video=Título Vídeo
+descricao-video=Descrição Vídeo
+dataCriacao=Data de Criação
+ordenacao=Ordenação
+mensagem.lista.registos.nao.encontrados=Registros não encontrados
+
+#visualizacao
+label.vejaMais=Veja mais
+nao-configurado=Não existem vídeos configurados

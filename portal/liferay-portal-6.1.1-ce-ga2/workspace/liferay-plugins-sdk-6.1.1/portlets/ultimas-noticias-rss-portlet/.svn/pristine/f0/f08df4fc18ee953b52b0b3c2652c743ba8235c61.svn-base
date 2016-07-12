@@ -1,0 +1,34 @@
+#
+# T�tulo do portlet
+#
+javax.portlet.title=Ultimas Notícias RSS
+javax.portlet.short-title=Ultimas Notícias RSS
+javax.portlet.title.keywords=Ultimas Notícias RSS
+
+#
+label.ultimasNoticicas=&Uacute;ltimas Not&iacute;cias
+label.noticiasInternacional=Internacional
+label.noticiasNegocios=Neg&oacute;cios
+label.noticiasSaude=Sa&uacute;de
+label.noticiasEsporte=Esporte
+label.leiaMais=Leia mais
+#
+label.url.google=URL Google
+label.url.globo=URL Globo
+label.url.uol=URL Uol
+label.url.terra=URL Terra
+#
+label.servico.google=Google
+label.servico.globo=Globo.com
+label.servico.uol=UOL
+label.servico.terra=Terra
+#
+label.servico=Selecione o servi&ccedil;o
+#
+mensagem.lista.registos.nao.encontrados=Registros n&atilde;o encontrados
+#
+botao.salvar=Salvar
+#
+mensagem.portletNaoConfigurado=Portlet não configurado.
+mensagem.erro.portlet=Erro no portlet.
+mensagem.configuradoComSucesso=Portlet configurado com sucesso.

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+	
+#if ($is_signed_in)
+	<style>
+		.nav-account-controls {margin-top: 30px !important;}
+	</style>
+#end
+</head>
+
+<body class="$css_class">
+
+<a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
+
+$theme.include($body_top_include)
+
+
+<div class="topo">
+	<div class="topo_inner">
+		<span class="busca">
+			$theme.search()
+		</span>
+	</div>
+</div>
+
+#dockbar()
+
+<div class="" id="wrapper">
+	<header id="banner" role="banner">
+		<div id="heading">
+			<h1 class="site-title">
+				<a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+
+					#if ($show_site_name)
+						<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+							$site_name
+						</span>
+					#end
+				</a>
+
+			</h1>
+
+			<h2 class="page-title">
+				<span>$the_title</span>
+			</h2>
+		</div>
+
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+	</header>
+
+	<div id="content">
+		#if ($show_breadcrumb)
+			<nav id="breadcrumbs">#breadcrumbs()</nav>
+		#end
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<div class="nav">
+			<ul>
+				<h3 class="endereco">#language ("address")</h3>
+				#set($enderecos = $enderecoService.getAddresses($theme_display.companyId, $conta_classe_name, $contaId))
+				<li class="col">
+				#foreach( $endereco in $enderecos )
+					#if ($endereco.getPrimary())
+						#if ($endereco.getStreet1() != "")
+							$endereco.getStreet1()<br />
+						#end
+						#if ($endereco.getStreet2() != "")
+							$endereco.getStreet2()<br />
+						#end
+						#if ($endereco.getStreet3() != "")
+							$endereco.getStreet3()<br />
+						#end
+						#if ($endereco.getCity() != "")
+							$endereco.getCity()<br />
+						#end
+					#end
+				#end
+				</li>
+			</ul>
+			<ul>
+				<h3 class="telefone">#language ("phones")</h3>
+				#set($telefones = $telefoneService.getPhones($theme_display.companyId, $conta_classe_name, $contaId))
+				<li class="col">
+				#foreach( $telefone in $telefones )
+					#if ($telefone.getNumber() != "")
+						$telefone.getNumber()<br />
+					#end
+				#end
+				</li>
+			</ul>
+		</div>
+		<p class="powered-by">
+			Desenvolvido por <a href="http://www.prodevelopment.com.br" target="_blank">Pro Development Informática</a>
+		</p>
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="br.com.prodevelopment.contato.model.Contato" />
+	<import class="br.com.prodevelopment.contato.model.Endereco" />
+	<import class="br.com.prodevelopment.contato.model.EnderecoEmail" />
+	<import class="br.com.prodevelopment.contato.model.Telefone" />
+	<class name="br.com.prodevelopment.contato.model.impl.ContatoImpl" table="Contato">
+		<cache usage="read-write" />
+		<id name="contatoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="classNameId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="classPK" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="accountId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="endEmail" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sexo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dataNascimento" type="org.hibernate.type.TimestampType" />
+		<property name="cargoId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="skype" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="facebook" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="twitter" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="br.com.prodevelopment.contato.model.impl.EnderecoImpl" table="Endereco">
+		<cache usage="read-write" />
+		<id name="enderecoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="classNameId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="classPK" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="logradouro" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="numero" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="complemento" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cep" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="bairro" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cidadeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="uf" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="paisId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="principal" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="tipo" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="br.com.prodevelopment.contato.model.impl.EnderecoEmailImpl" table="EnderecoEmail">
+		<cache usage="read-write" />
+		<id name="enderecoEmailId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="classNameId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="classPK" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="endereco" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tipo" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="principal" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="br.com.prodevelopment.contato.model.impl.TelefoneImpl" table="Telefone">
+		<cache usage="read-write" />
+		<id name="telefoneId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="classNameId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="classPK" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="ddi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ddd" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="numero" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ramal" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="tipo" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="principal" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+</hibernate-mapping>

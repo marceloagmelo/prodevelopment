@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="331" key="DIALOG_WIDTH"/>
+		<item value="164" key="DIALOG_Y_ORIGIN"/>
+		<item value="949" key="DIALOG_X_ORIGIN"/>
+		<item value="468" key="DIALOG_HEIGHT"/>
+		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="removed a" key="selection"/>
+		<list key="findhistory">
+			<item value="exclui um"/>
+			<item value="execlui um"/>
+			<item value="atualizou um"/>
+			<item value="funcion&amp;aacute;rio"/>
+			<item value="adicionou um novo"/>
+			<item value="FotoFuncionarioTamanho"/>
+			<item value="finder"/>
+			<item value="keyword"/>
+		</list>
+		<list key="replacehistory">
+			<item value="removed a"/>
+			<item value="updated a"/>
+			<item value="employee"/>
+			<item value="added a new"/>
+			<item value="restoreTypeTaskIds"/>
+			<item value="RESTORE_TYPE_TASK_IDS"/>
+			<item value="int[] status"/>
+			<item value="typeTask"/>
+		</list>
+	</section>
+</section>

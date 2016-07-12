@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="br.com.prodevelopment.academiahorario.model.AcademiaHorario" />
+	<class name="br.com.prodevelopment.academiahorario.model.impl.AcademiaHorarioImpl" table="AcademiaHorario">
+		<cache usage="read-write" />
+		<id name="academiaHorarioId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="diaSemana" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="horaInicial" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="HoraFinal" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="atividadeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="atividadeNome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="versao" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,7 @@
+<liferay-ui:success key="mensagem.academiaHorarioHorario.adicionada.sucesso"
+	message="mensagem.academiaHorarioHorario.adicionada.sucesso" />
+<liferay-ui:success key="mensagem.academiaHorarioHorario.alterada.sucesso"
+	message="mensagem.academiaHorarioHorario.alterada.sucesso" />
+<liferay-ui:success key="mensagem.portlet.configurado.sucesso"
+	message="mensagem.portlet.configurado.sucesso" />
+	

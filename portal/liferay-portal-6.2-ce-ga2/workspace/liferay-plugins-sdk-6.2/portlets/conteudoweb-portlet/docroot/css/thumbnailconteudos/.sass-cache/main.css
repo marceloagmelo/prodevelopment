@@ -1,0 +1,189 @@
+.thumbnails {
+  /*padding-left: 20px;
+  width: 842px;
+  margin-top: 5px;
+  float: left;*/ }
+
+.thumbnails div.linha {
+  margin-bottom: 30px;
+  width: 100%;
+  padding: 0 0 0 6px; }
+
+.thumbnails div.celula {
+  display: inline-block;
+  max-width: 183px;
+  padding-left: 33px;
+  text-align: center;
+  vertical-align: bottom; }
+
+.thumbnails div.celula:first-child {
+  padding-left: 0; }
+
+.thumbnails div.imagem img {
+  border: 1px solid #E6E6E6;
+  width: 181px;
+  height: 136px;
+  border-radius: 8px 8px 0 0; }
+
+.thumbnails div.dados {
+  background-color: #d3d3d3;
+  border: 1px solid #E6E6E6;
+  border-radius: 0 0 8px 8px;
+  margin-top: -4px;
+  padding: 10px 7px 9px; }
+
+.thumbnails h4.nome {
+  font-size: 12px;
+  padding: 0 0 4px;
+  min-height: 45px; }
+
+.thumbnails h4.nome a {
+  color: #333;
+  text-decoration: none; }
+
+.thumbnails h4.nome a:hover {
+  color: #FF6600;
+  text-decoration: underline; }
+
+.thumbnails .outros_dados {
+  color: #5D5D5D;
+  font-size: 11px;
+  padding: 0 0 4px; }
+
+.thumbnails .outros_dados span {
+  padding-left: 10px; }
+
+.thumbnails .outros_dados span:first-child {
+  padding-left: 0; }
+
+.thumbnails .valor {
+  background-color: #EBEBEB;
+  color: #4D4D4D;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 0 4px; }
+
+.thumbnails .local {
+  color: #333333;
+  font-size: 12px;
+  padding: 5px 0 0;
+  min-height: 32px; }
+
+.thumbnails .tit_portlets {
+  color: #E9953D;
+  font: bold 2.1em arial, Helvetica, sans-serif, verdana;
+  margin: 0 0 5px; }
+
+.thumbnails .paginacao {
+  padding: 5px 0 0; }
+
+.thumbnails .adicionar {
+  padding-left: 20px;
+  margin-top: 15px; }
+
+.thumbnails .acoes {
+  clear: both;
+  height: auto;
+  margin-top: 1em;
+  overflow: hidden;
+  width: auto;
+  float: left; }
+
+.thumbnails .acoes .acao {
+  margin: 1px 10px 1px 1px; }
+
+/*
+Exibir Conteudo
+*/
+.exibir_conteudo {
+  margin: 0 0 20px 0; }
+
+/*
+.exibir_conteudo h3.titulo {
+	margin: 0 0 11px 0;
+	color: #014675;
+	font-size: 16px;
+	line-height: 17px;
+}
+*/
+.exibir_conteudo h3.titulo {
+  color: #E9953D;
+  font: bold 1.6em arial,Helvetica,sans-serif,verdana;
+  margin: 0 0 10px; }
+
+.exibir_conteudo img.interna_opc1 {
+  max-width: 700px;
+  margin-bottom: 13px; }
+
+.exibir_conteudo p {
+  margin: 6px 0 6px 0;
+  color: #333;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: justify; }
+
+.exibir_conteudo p a {
+  color: #0172BE;
+  text-decoration: none; }
+
+.exibir_conteudo p a:hover {
+  text-decoration: underline; }
+
+.exibir_conteudo .acoes {
+  margin: 25px 0 10px;
+  border-top: 2px solid #ccc;
+  padding-top: 4px;
+  text-align: right; }
+
+.exibir_conteudo .acoes a.voltar {
+  height: 16px;
+  background: url(../../images/acoes_voltar.png) no-repeat 0 0;
+  margin: 1px 5px 0;
+  vertical-align: top;
+  display: inline-block;
+  padding: 4px 0 0 9px;
+  line-height: 0;
+  font-size: 12px;
+  color: #0172BE;
+  text-decoration: none;
+  float: left; }
+
+.exibir_conteudo .acoes a.voltar:hover {
+  font-weight: bold; }
+
+.exibir_conteudo .acoes input.email {
+  width: 18px;
+  height: 16px;
+  background: url(../../images/acoes_email.png) no-repeat 0 0;
+  margin: 0 7px;
+  vertical-align: top;
+  border: 0;
+  text-indent: -9999px;
+  cursor: pointer; }
+
+.exibir_conteudo .acoes input.imprimir {
+  width: 16px;
+  height: 16px;
+  background: url(../../images/acoes_imprimir.png) no-repeat 0 0;
+  margin: 0 7px;
+  vertical-align: top;
+  border: 0;
+  text-indent: -9999px;
+  cursor: pointer; }
+
+.exibir_conteudo .acoes .separador {
+  display: inline-block;
+  width: 1px;
+  height: 11px;
+  background: #ccc;
+  margin: -4px 17px 0;
+  vertical-align: top; }
+
+/* ---------- Fale Conosco ---------- */
+.exibir_conteudo_oferta {
+  margin-top: 10px;
+  margin-left: 30px; }
+
+.aui .navbar .btn-group, .aui .navbar .navbar-search {
+  margin-right: 12px; }
+

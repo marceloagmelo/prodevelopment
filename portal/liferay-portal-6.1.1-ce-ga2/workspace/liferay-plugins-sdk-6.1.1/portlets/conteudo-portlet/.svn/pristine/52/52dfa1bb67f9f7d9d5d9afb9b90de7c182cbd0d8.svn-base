@@ -1,0 +1,114 @@
+#lista_conteudos {
+  /* fundo ultimos conteÃºdos */
+  padding: 15px 20px 15px 20px;
+  margin: 10px 0px 10px 0px; }
+
+#lista_conteudos .conteudos {
+  margin: 20px 0px 10px 0px;
+  clear: both; }
+
+#lista_conteudos .imagem img {
+  width: 120px;
+  height: 64px;
+  margin: 10px 10px 10px 0px;
+  display: block;
+  float: left; }
+
+#lista_conteudos .imagem img:hover {
+  border-color: #014a89; }
+
+#lista_conteudos .info_img {
+  /* informaÃ§Ãµes do conteÃºdo sem imagem */
+  float: left;
+  font: bold 1em Arial, Helvetica, Verdana, sans-serif;
+  color: #707276;
+  width: 480px;
+  margin: 10px 0px 32px 0px; }
+
+#lista_conteudos .info {
+  /* informaÃ§Ãµes do conteÃºdo sem imagem */
+  float: left;
+  font: bold 1em Arial, Helvetica, Verdana, sans-serif;
+  color: #707276;
+  margin: 10px 0px 32px 0px;
+  width: 576px; }
+
+#lista_conteudos .titulo {
+  border-bottom: 1px solid #DDDDDD;
+  margin-bottom: 0.7em;
+  margin-right: 8px;
+  margin-top: 2em;
+  padding-bottom: 1px;
+  font-size: 14px;
+  color: #333;
+  margin: 0; }
+
+#lista_conteudos .data_alteracao {
+  font: bold 1em Arial, Helvetica, Verdana, sans-serif;
+  color: #707276;
+  margin: 0px 0px 5px 0px; }
+
+#lista_conteudos .texto {
+  font: 1em Arial, Helvetica, Verdana, sans-serif;
+  color: #707276;
+  margin: 0px 0px 5px 0px;
+  text-align: justify; }
+
+#lista_conteudos .leia_mais {
+  font: bold .9em Arial, Helvetica, Verdana, sans-serif;
+  color: #707276; }
+
+#lista_conteudos .leia_mais a {
+  color: #017FBA;
+  text-decoration: none; }
+
+#lista_conteudos .leia_mais a:hover {
+  color: #2F2F2F;
+  text-decoration: underline; }
+
+/* ---------- TÃ­tulo Portlets ---------- */
+#lista_conteudos .tit_portlets {
+  font: bold 1.8em Arial, Helvetica, Verdana, sans-serif;
+  margin: 0 0 10px 0;
+  color: #017FBA; }
+
+#lista_conteudos .naveg {
+  fonte-size: 12px;
+  clear: both;
+  margin: 0;
+  text-align: right; }
+
+#lista_conteudos .texto_resultado {
+  float: left;
+  color: #555555; }
+
+#lista_conteudos .acoes {
+  clear: both;
+  height: auto;
+  margin-top: 1em;
+  overflow: hidden;
+  width: auto;
+  float: left; }
+
+#lista_conteudos .acoes .acao {
+  margin: 1px 10px 1px 1px; }
+
+#lista_conteudos .paginacao {
+  float: left;
+  color: #555555; }
+
+#lista_conteudos .separador {
+  border-bottom: 1px solid #C8C9CA;
+  color: #707276;
+  font: 1em Helvetica-Neue,Verdana,Arial,sans-serif;
+  padding: 0 0 10px;
+  text-decoration: none;
+  width: 550px; }
+
+#lista_conteudos .adicionar {
+  margin-bottom: 4.7em; }
+
+/*NOTÃ�CIAS*/
+.noticia .texto {
+  padding: 0 !important; }
+

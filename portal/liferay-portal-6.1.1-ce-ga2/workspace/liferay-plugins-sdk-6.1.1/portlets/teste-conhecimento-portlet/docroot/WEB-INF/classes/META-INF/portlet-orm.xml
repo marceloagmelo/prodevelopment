@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="br.com.prodevelopment.testeconhecimento.model.impl.PerguntaModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="descricao" />
+			<basic name="justificativaResposta" />
+			<basic name="pontuacao" />
+			<basic name="dataInclusao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dataAlteracao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="testeId" />
+			<basic name="userIdInclusao" />
+			<basic name="userIdAlteracao" />
+			<transient name="descricaoCurrentLanguageId" />
+			<transient name="descricaoMap" />
+			<transient name="justificativaRespostaCurrentLanguageId" />
+			<transient name="justificativaRespostaMap" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.com.prodevelopment.testeconhecimento.model.impl.RespostaModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="descricao" />
+			<basic name="correta" />
+			<basic name="dataInclusao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dataAlteracao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="perguntaId" />
+			<basic name="userIdInclusao" />
+			<basic name="userIdAlteracao" />
+			<transient name="descricaoCurrentLanguageId" />
+			<transient name="descricaoMap" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.com.prodevelopment.testeconhecimento.model.impl.Resposta_UsuarioModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="correta" />
+			<basic name="dataInclusao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="testeUsuarioId" />
+			<basic name="respostaId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.com.prodevelopment.testeconhecimento.model.impl.TesteModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="titulo" />
+			<basic name="descricao" />
+			<basic name="dataInclusao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dataAlteracao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ativo" />
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="userIdInclusao" />
+			<basic name="userIdAlteracao" />
+			<transient name="descricaoCurrentLanguageId" />
+			<transient name="descricaoMap" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="tituloCurrentLanguageId" />
+			<transient name="tituloMap" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.com.prodevelopment.testeconhecimento.model.impl.Teste_UsuarioModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="nome" />
+			<basic name="email" />
+			<basic name="dataInclusao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dataFinalizacao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="totalRespostaCorreta" />
+			<basic name="totalRespostaErrada" />
+			<basic name="totalPontuacao" />
+			<basic name="testeId" />
+			<basic name="userId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="br.com.prodevelopment.testeconhecimento.model.impl.PerguntaImpl" name="Pergunta">
+		<table name="TC_Pergunta" />
+		<attributes />
+	</entity>
+	<entity class="br.com.prodevelopment.testeconhecimento.model.impl.RespostaImpl" name="Resposta">
+		<table name="TC_Resposta" />
+		<attributes />
+	</entity>
+	<entity class="br.com.prodevelopment.testeconhecimento.model.impl.Resposta_UsuarioImpl" name="Resposta_Usuario">
+		<table name="TC_Resposta_Usuario" />
+		<attributes />
+	</entity>
+	<entity class="br.com.prodevelopment.testeconhecimento.model.impl.TesteImpl" name="Teste">
+		<table name="TC_Teste" />
+		<attributes />
+	</entity>
+	<entity class="br.com.prodevelopment.testeconhecimento.model.impl.Teste_UsuarioImpl" name="Teste_Usuario">
+		<table name="TC_Teste_Usuario" />
+		<attributes />
+	</entity>
+</entity-mappings>

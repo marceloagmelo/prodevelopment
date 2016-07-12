@@ -1,0 +1,4 @@
+create-new-portlet=true
+eclipse.preferences.version=1
+include-sample-code=false
+project-default-build-type-option=ant

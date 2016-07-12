@@ -1,0 +1,19 @@
+<liferay-ui:success key="mensagem.pesquisa.criada.sucesso"
+	message="mensagem.pesquisa.criada.sucesso" />
+<liferay-ui:success key="mensagem.pesquisa.alterada.sucesso"
+	message="mensagem.pesquisa.alterada.sucesso" />
+<liferay-ui:success key="mensagem.pesquisa.excluida.sucesso"
+	message="mensagem.pesquisa.excluida.sucesso" />
+<liferay-ui:success key="mensagem.erro.bancoDados"
+	message="mensagem.erro.bancoDados" />
+<liferay-ui:error key="mensagem.pesquisa.titulo.obrigatorio"
+	message="mensagem.pesquisa.titulo.obrigatorio" />
+<liferay-ui:error key="mensagem.pesquisa.descricao.obrigatoria"
+	message="mensagem.pesquisa.descricao.obrigatoria" />
+<liferay-ui:error key="mensagem.erro.gravar.bancoDados"
+	message="mensagem.erro.gravar.bancoDados" />
+<liferay-ui:error key="mensagem.pesquisa.existe.perguntaCadastrada"
+	message="mensagem.pesquisa.existe.perguntaCadastrada" />
+	
+
+	

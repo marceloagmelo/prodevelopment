@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="br.com.prodevelopment.eticket.model.TypeTicket" />
+	<import class="br.com.prodevelopment.eticket.model.TypeTicketUsers" />
+	<class name="br.com.prodevelopment.eticket.model.impl.TypeTicketImpl" table="Type">
+		<cache usage="read-write" />
+		<id name="typeTicketId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userIdCreate" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userIdModified" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="xsd" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="br.com.prodevelopment.eticket.model.impl.TypeTicketUsersImpl" table="TypeUsers">
+		<cache usage="read-write" />
+		<id name="typeTicketUsersId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="userIdCreate" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userIdModified" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="typeTicketId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

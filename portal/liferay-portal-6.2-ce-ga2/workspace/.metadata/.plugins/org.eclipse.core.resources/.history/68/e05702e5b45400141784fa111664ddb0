@@ -1,0 +1,10 @@
+<%@ include file="init.jsp"%>
+
+<liferay-ui:search-toggle
+	autoFocus="<%= windowState.equals(WindowState.MAXIMIZED) %>"
+	buttonLabel="search"
+	displayTerms="<%= displayTerms %>"
+	id="toggle_id_users_admin_user_search"
+>
+
+</liferay-ui:search-toggle>

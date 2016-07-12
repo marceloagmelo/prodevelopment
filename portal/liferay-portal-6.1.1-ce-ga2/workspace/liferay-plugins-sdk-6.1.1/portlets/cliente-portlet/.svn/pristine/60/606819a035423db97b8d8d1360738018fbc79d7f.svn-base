@@ -1,0 +1,40 @@
+#
+# T&iacute;tulo do portlet
+#
+javax.portlet.title=Lista de Clientes
+javax.portlet.short-title=Lista de Clientes
+javax.portlet.title.keywords=Lista de Clientes
+#
+category.cliente=Cliente
+#
+botao.salvar=Salvar
+botao.cancelar=Cancelar
+#
+label.voltar=Voltar
+#
+label.pref.titulo=Prefer&ecirc;ncias do Portlet
+label.pref.tipo=Tipo
+label.pref.tag=Tag
+label.pref.categoria=Categoria
+label.pref.estrutura=Estrutura
+label.pref.paginacao=Pagina&ccedil;&atilde;o
+label.pref.qtdeRegistros=Quantidade de registros
+label.pref.urlDestino=URL destino
+label.pref.tamanhoCaracteres=Tamanho de caracteres
+label.pref.exibirTitulo=Exibir t&iacute;tulo
+#
+label.leiaMais=Leia mais
+label.verTodos=Veja todos
+label.todos=Todos
+label.todas=Todas
+label.sim=Sim
+label.nao=N&atilde;o
+#
+mensagem.registros.naoEncontrados=Registros n&atilde;o encontrados.
+#
+mensagem.portletNaoConfigurado=Portlet n&atilde;o configurado.
+mensagem.erro.portlet=Erro no portlet.
+mensagem.configuradoComSucesso=Portlet configurado com sucesso.
+#
+label.texto.pagina=P&aacute;gina
+label.texto.de=de

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="br.com.prodevelopment.funcionario" auto-namespace-tables="false">
+	<author>Marcelo Melo</author>
+	<namespace>funcionario</namespace>
+
+	<entity name="Funcionario" uuid="true" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="funcionarioId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="createUserId" type="long" />
+		<column name="modifiedUserId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="nome" type="String" />
+		<column name="nomeReduzido" type="String" />
+		<column name="observacao" type="String" />
+		<column name="rg" type="String" />
+		<column name="rgOrgaoEmissor" type="String" />
+		<column name="rgDataEmissao" type="Date" />
+		<column name="cpf" type="String" />
+		<column name="sexo" type="String" />
+		<column name="estadoCivil" type="String" />
+		<column name="dataNascimento" type="Date" />
+		<column name="endComLogradouro" type="String" />
+		<column name="endComNumero" type="String" />
+		<column name="endComComplemento" type="String" />
+		<column name="endComCep" type="String" />
+		<column name="endComBairro" type="String" />
+		<column name="endComCidade" type="long" />
+		<column name="endComUf" type="String" />
+		<column name="endComPais" type="String" />
+		<column name="endResLogradouro" type="String" />
+		<column name="endResNumero" type="String" />
+		<column name="endResComplemento" type="String" />
+		<column name="endResCep" type="String" />
+		<column name="endResBairro" type="String" />
+		<column name="endResCidade" type="long" />
+		<column name="endResUf" type="String" />
+		<column name="endResPais" type="String" />
+		<column name="dataEntrada" type="Date" />
+		<column name="dataSaida" type="Date" />
+		<column name="existeUser" type="Boolean" />
+		<column name="userId" type="long" />
+		<column name="versao" type="double" />
+		<column name="cargoId" type="long" />
+		<column name="fotoId" type="long" />
+		<column name="ativo" type="Boolean" />
+		<column name="salario" type="double" />
+		
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="nome" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Company" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_G_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_N_REDUZIDO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="nomeReduzido" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_G_N_REDUZIDO" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="nomeReduzido" comparator="LIKE" />
+		</finder>
+
+		<finder name="CPF" return-type="Funcionario">
+			<finder-column name="cpf" />
+		</finder>
+
+		<finder name="RG" return-type="Funcionario">
+			<finder-column name="rg" />
+		</finder>
+
+		<finder name="DT_NASCIMENTO" return-type="Collection">
+			<finder-column name="dataNascimento" />
+		</finder>
+
+		<finder name="CARGO" return-type="Collection">
+			<finder-column name="cargoId" />
+		</finder>
+
+		<finder name="USUARIO" return-type="Funcionario">
+			<finder-column name="userId" />
+		</finder>
+
+		<!-- References -->
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		
+	</entity>
+
+	<entity name="Cargo" uuid="true" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="cargoId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="createUserId" type="long" />
+		<column name="modifiedUserId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="nome" type="String" localized="true" />
+		<column name="versao" type="double" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="nome" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Company" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_G_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+
+		<!-- References -->
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+	</entity>
+
+	<exceptions>
+		<exception>FuncionarioNomeObrigatorio</exception>
+		<exception>FuncionarioCPFInvalido</exception>
+		<exception>FuncionarioCPFDuplicado</exception>
+		<exception>FuncionarioDataNascimentoInvalida</exception>
+		<exception>FuncionarioRGDataEmissaoInvalida</exception>
+		<exception>FuncionarioRGDuplicado</exception>
+		<exception>FuncionarioDataEntradaInvalida</exception>
+		<exception>FuncionarioDataSaidaInvalida</exception>
+		<exception>FuncionarioEmailInvalido</exception>
+		<exception>FuncionarioUsuarioDuplicado</exception>
+		<exception>FuncionarioAlteradoOutroUsuario</exception>
+		<exception>CargoNomeObrigatorio</exception>
+		<exception>CargoAlteradoOutroUsuario</exception>
+		<exception>FotoFuncionarioTamanho</exception>
+	</exceptions>
+</service-builder>

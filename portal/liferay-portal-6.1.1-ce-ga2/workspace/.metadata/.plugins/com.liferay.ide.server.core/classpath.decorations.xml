@@ -1,0 +1,48 @@
+<classpath>
+  <container id="email-marketing-express-portlet!com.liferay.ide.eclipse.server.plugin.container/portlet">
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/jstl-api.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/commons-logging.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/jstl-impl.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/util-taglib.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/log4j.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/poi.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/util-bridges.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/commons-email.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/util-java.jar">
+      <attribute name="javadoc_location"></attribute>
+    </entry>
+  </container>
+  <container id="galeria-imagem-portlet!com.liferay.ide.eclipse.server.plugin.container/portlet">
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/commons-logging.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/util-taglib.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/log4j.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/util-bridges.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+    <entry id="/opt/servidores/prodevelopment/portal/liferay-portal-6.1.1-ce-ga2/tomcat-7.0.27/webapps/ROOT/WEB-INF/lib/util-java.jar">
+      <attribute name="javadoc_location">null</attribute>
+    </entry>
+  </container>
+</classpath>

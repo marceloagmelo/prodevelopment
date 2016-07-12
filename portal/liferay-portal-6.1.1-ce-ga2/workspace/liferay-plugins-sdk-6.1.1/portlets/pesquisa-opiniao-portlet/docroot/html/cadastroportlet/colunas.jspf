@@ -1,0 +1,17 @@
+<liferay-ui:search-container-column-text name="label.pesquisa.titulo"
+	property="tituloCurrentValue" />
+<liferay-ui:search-container-column-text name="label.pesquisa.descricao"
+	property="descricaoCurrentValue" />
+<liferay-ui:search-container-column-text name="label.pesquisa.ativa"
+	buffer="buffer">
+	<%
+		String sim = LanguageUtil.get(pageContext, "label.sim");
+			String nao = LanguageUtil.get(pageContext, "label.nao");
+
+			if (pesquisa.getAtiva()) {
+				buffer.append(sim);
+			} else {
+				buffer.append(nao);
+			}
+	%>
+</liferay-ui:search-container-column-text>

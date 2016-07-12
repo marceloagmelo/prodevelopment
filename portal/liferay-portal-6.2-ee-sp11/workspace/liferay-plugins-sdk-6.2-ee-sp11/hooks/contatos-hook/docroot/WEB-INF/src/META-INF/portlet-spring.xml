@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.com.prodevelopment.contato.service.ContatoLocalService" class="br.com.prodevelopment.contato.service.impl.ContatoLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.contato.service.ContatoService" class="br.com.prodevelopment.contato.service.impl.ContatoServiceImpl" />
+	<bean id="br.com.prodevelopment.contato.service.persistence.ContatoPersistence" class="br.com.prodevelopment.contato.service.persistence.ContatoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.com.prodevelopment.contato.service.EnderecoLocalService" class="br.com.prodevelopment.contato.service.impl.EnderecoLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.contato.service.EnderecoService" class="br.com.prodevelopment.contato.service.impl.EnderecoServiceImpl" />
+	<bean id="br.com.prodevelopment.contato.service.persistence.EnderecoPersistence" class="br.com.prodevelopment.contato.service.persistence.EnderecoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.com.prodevelopment.contato.service.EnderecoEmailLocalService" class="br.com.prodevelopment.contato.service.impl.EnderecoEmailLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.contato.service.EnderecoEmailService" class="br.com.prodevelopment.contato.service.impl.EnderecoEmailServiceImpl" />
+	<bean id="br.com.prodevelopment.contato.service.persistence.EnderecoEmailPersistence" class="br.com.prodevelopment.contato.service.persistence.EnderecoEmailPersistenceImpl" parent="basePersistence" />
+	<bean id="br.com.prodevelopment.contato.service.TelefoneLocalService" class="br.com.prodevelopment.contato.service.impl.TelefoneLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.contato.service.TelefoneService" class="br.com.prodevelopment.contato.service.impl.TelefoneServiceImpl" />
+	<bean id="br.com.prodevelopment.contato.service.persistence.TelefonePersistence" class="br.com.prodevelopment.contato.service.persistence.TelefonePersistenceImpl" parent="basePersistence" />
+</beans>

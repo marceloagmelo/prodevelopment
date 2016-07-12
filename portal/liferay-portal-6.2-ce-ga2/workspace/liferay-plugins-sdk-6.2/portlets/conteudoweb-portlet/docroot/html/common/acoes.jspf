@@ -1,0 +1,115 @@
+<c:if test="<%= !addPortletURLs.isEmpty() %>">
+	<%
+	String taglibId = "addNew";
+
+	taglibId = taglibId.concat("In");
+
+	if (themeDisplay.getCompanyGroupId() == themeDisplay.getScopeGroupId()) {
+		taglibId = taglibId.concat("Global");
+	}
+	else {
+		Group group = GroupLocalServiceUtil.getGroup(themeDisplay.getScopeGroupId());
+
+		if (group.isLayout()) {
+			Layout scopeLayout = LayoutLocalServiceUtil.getLayout(group.getClassPK());
+
+			String friendlyURL = scopeLayout.getFriendlyURL();
+
+			taglibId = taglibId.concat(friendlyURL.substring(1));
+		}
+		else {
+			String friendlyURL = group.getFriendlyURL();
+
+			taglibId = taglibId.concat(friendlyURL.substring(1));
+		}
+	}
+	%>
+
+	<aui:nav-bar>
+		<aui:nav>
+			<c:choose>
+				<c:when test="<%= addPortletURLs.size() == 1 %>">
+
+					<%
+					Set<Map.Entry<String, PortletURL>> addPortletURLsSet = addPortletURLs.entrySet();
+
+					Iterator<Map.Entry<String, PortletURL>> iterator = addPortletURLsSet.iterator();
+
+					Map.Entry<String, PortletURL> entry = iterator.next();
+
+					String message = _getMessage(entry.getKey(), addPortletURLs, locale);
+					%>
+
+					<aui:nav-item
+						href="<%= _getURL(themeDisplay.getScopeGroupId(), plid, entry.getValue(), message, defaultAssetPublisher, layout, pageContext, liferayPortletResponse) %>"
+						iconCssClass="icon-file"
+						label='<%= LanguageUtil.format(pageContext, "add-x", HtmlUtil.escape(message)) %>'
+					/>
+				</c:when>
+				<c:otherwise>
+					<aui:nav-item
+						dropdown="<%= true %>"
+						iconCssClass="icon-plus"
+						label='<%= LanguageUtil.format(pageContext, (groupIds.length == 1) ? "add-new" : "add-new-in-x", new Object[] {HtmlUtil.escape((GroupLocalServiceUtil.getGroup(themeDisplay.getScopeGroupId())).getDescriptiveName(locale))}) %>'
+					>
+
+						<%
+						for (Map.Entry<String, PortletURL> entry : addPortletURLs.entrySet()) {
+							String message = _getMessage(entry.getKey(), addPortletURLs, locale);
+						%>
+
+							<aui:nav-item
+								href="<%= _getURL(themeDisplay.getScopeGroupId(), plid, entry.getValue(), message, defaultAssetPublisher, layout, pageContext, liferayPortletResponse) %>"
+								iconCssClass="icon-file"
+								label="<%= HtmlUtil.escape(message) %>"
+							/>
+
+						<%
+						}
+						%>
+
+					</aui:nav-item>
+				</c:otherwise>
+			</c:choose>
+		</aui:nav>
+	</aui:nav-bar>
+
+</c:if>
+
+<%!
+private String _getMessage(String className, Map<String, PortletURL> addPortletURLs, Locale locale) {
+	String message = null;
+
+	int pos = className.indexOf(JournalUtil.CLASSNAME_SEPARATOR);
+
+	if (pos != -1) {
+		message = className.substring(pos + JournalUtil.CLASSNAME_SEPARATOR.length());
+
+		className = className.substring(0, pos);
+	}
+
+	AssetRendererFactory assetRendererFactory = AssetRendererFactoryRegistryUtil.getAssetRendererFactoryByClassName(className);
+
+	if (pos == -1) {
+		message = assetRendererFactory.getTypeName(locale, JournalUtil.hasSubtype(className, addPortletURLs));
+	}
+
+	return message;
+}
+
+private String _getURL(long groupId, long plid, PortletURL addPortletURL, String message, boolean defaultAssetPublisher, Layout layout, PageContext pageContext, LiferayPortletResponse liferayPortletResponse) {
+	addPortletURL.setParameter("groupId", String.valueOf(groupId));
+	addPortletURL.setParameter("showHeader", Boolean.FALSE.toString());
+
+	String addPortletURLString = addPortletURL.toString();
+
+	addPortletURLString = HttpUtil.addParameter(addPortletURLString, "doAsGroupId", groupId);
+	addPortletURLString = HttpUtil.addParameter(addPortletURLString, "refererPlid", plid);
+
+	if (defaultAssetPublisher) {
+		addPortletURLString = HttpUtil.addParameter(addPortletURLString, "layoutUuid", layout.getUuid());
+	}
+
+	return "javascript:Liferay.Util.openWindow({dialog: {destroyOnHide: true}, id: '" + liferayPortletResponse.getNamespace() + "editAsset', title: '" + HtmlUtil.escapeJS(LanguageUtil.format(pageContext, "new-x", HtmlUtil.escape(message))) + "', uri: '" + HtmlUtil.escapeJS(addPortletURLString) + "'});";
+}
+%>

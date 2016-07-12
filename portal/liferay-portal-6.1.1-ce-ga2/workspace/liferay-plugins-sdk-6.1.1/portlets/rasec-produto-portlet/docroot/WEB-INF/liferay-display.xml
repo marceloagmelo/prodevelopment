@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.1.0//EN" "http://www.liferay.com/dtd/liferay-display_6_1_0.dtd">
+
+<display>
+	<category name="category.rasec">
+	<category name="category.produto">
+		<portlet id="rasecprodutodestaqueportlet"></portlet>
+		<portlet id="rasecprodutolistaportlet"></portlet>
+	</category>
+	</category>
+</display>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="org.slf4j.Logger"/>
+<fullyQualifiedTypeName name="org.apache.commons.logging.Log"/>
+<fullyQualifiedTypeName name="br.com.prodevelopment.eticket.portlet.type.util.ActionKeys"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.cal.Recurrence"/>
+<fullyQualifiedTypeName name="br.com.prodevelopment.eticket.model.Type"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.json.JSONFactoryUtil"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.liferay.portal.model.PortalPreferences"/>
+<fullyQualifiedTypeName name="br.com.prodevelopment.eticket.portlet.type.Constants"/>
+<fullyQualifiedTypeName name="br.com.prodevelopment.etask.model.TypeTask"/>
+<fullyQualifiedTypeName name="com.liferay.portlet.dynamicdatamapping.service.DDMStructureLocalServiceUtil"/>
+<fullyQualifiedTypeName name="br.com.prodevelopment.etask.portlet.typetask.util.TypeTaskUtil"/>
+<fullyQualifiedTypeName name="com.liferay.portlet.dynamicdatamapping.service.DDMStructureServiceUtil"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.exception.SystemException"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.log.Log"/>
+<fullyQualifiedTypeName name="br.com.prodevelopment.etask.portlet.typetask.TypeTaskConstants"/>
+<fullyQualifiedTypeName name="br.com.prodevelopment.etask.portlet.typetask.util.ActionKeys"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.util.StringUtil"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.exception.PortalException"/>
+<fullyQualifiedTypeName name="com.liferay.portal.model.Group"/>
+<fullyQualifiedTypeName name="com.liferay.portal.service.ServiceContext"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.util.GetterUtil"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.util.StringPool"/>
+<fullyQualifiedTypeName name="br.com.prodevelopment.etask.service.TypeTaskLocalServiceUtil"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.util.Validator"/>
+<fullyQualifiedTypeName name="br.com.prodevelopment.etask.portlet.typetask.util.TypeTaskUsersUtil"/>
+<fullyQualifiedTypeName name="com.liferay.portal.model.User"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.util.OrderByComparator"/>
+<fullyQualifiedTypeName name="br.com.prodevelopment.etask.service.TypeTaskUsersLocalServiceUtil"/>
+<fullyQualifiedTypeName name="com.liferay.portal.util.PortalUtil"/>
+</qualifiedTypeNameHistroy>

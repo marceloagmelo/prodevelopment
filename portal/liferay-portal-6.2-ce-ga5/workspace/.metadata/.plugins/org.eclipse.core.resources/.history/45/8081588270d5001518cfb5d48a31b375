@@ -1,0 +1,35 @@
+<%@ include file="init.jsp"%>
+<%
+PortletURL editRoleURL = renderResponse.createRenderURL();
+
+String cmd = ParamUtil.getString(request, Constants.CMD);
+
+int pos = 0;
+
+String tabs1 = ParamUtil.getString(request, "tabs1");
+
+String portletResource = ParamUtil.getString(request, "portletResource");
+
+String portletResourceLabel = null;
+
+if (Validator.isNotNull(portletResource)) {
+	Portlet portlet = PortletLocalServiceUtil.getPortletById(company.getCompanyId(), portletResource);
+
+	portletResourceLabel = PortalUtil.getPortletLongTitle(portlet, application, locale);
+}
+
+String tabs1Names = StringPool.BLANK;
+
+tabs1Names += ",edit";
+request.setAttribute("liferay-ui:tabs:url" + pos++, editRoleURL.toString());
+
+tabs1Names += ",assign-members";
+request.setAttribute("liferay-ui:tabs:url" + pos++, editRoleURL.toString());
+
+if (tabs1Names.startsWith(",")) {
+	tabs1Names = tabs1Names.substring(1);
+}
+
+%>
+
+<liferay-ui:tabs names="<%= tabs1Names %>" />

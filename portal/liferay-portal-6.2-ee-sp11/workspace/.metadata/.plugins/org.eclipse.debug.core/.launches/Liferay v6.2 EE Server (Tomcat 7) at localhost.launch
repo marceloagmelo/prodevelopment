@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.liferay.studio.eclipse.server.62.ee.tomcat.70.launchConfigurationType">
+<stringAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_ENCODING" value="UTF-8"/>
+<listAttribute key="org.eclipse.jdt.launching.CLASSPATH">
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;runtimeClasspathEntry containerPath=&quot;org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_60&quot; path=&quot;2&quot; type=&quot;4&quot;/&gt;&#10;"/>
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ee-sp11/tomcat-7.0.42/bin/bootstrap.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ee-sp11/tomcat-7.0.42/bin/tomcat-juli.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
+<listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;runtimeClasspathEntry externalArchive=&quot;/usr/java/jdk1.7.0_60/lib/tools.jar&quot; path=&quot;3&quot; type=&quot;2&quot;/&gt;&#10;"/>
+</listAttribute>
+<booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_60"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="start"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Duser.timezone=GMT -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.net.preferIPv4Stack=true -Djava.util.logging.config.file=&quot;/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ee-sp11/tomcat-7.0.42/conf/logging.properties&quot; -Djava.io.tmpdir=&quot;/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ee-sp11/tomcat-7.0.42/temp&quot; -Dexternal-properties=&quot;/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ee-sp11/portal-ide.properties&quot; -Dcatalina.base=&quot;/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ee-sp11/tomcat-7.0.42&quot; -Dcatalina.home=&quot;/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ee-sp11/tomcat-7.0.42&quot; -Dwtp.deploy=&quot;/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ee-sp11/tomcat-7.0.42/webapps&quot; -Djava.endorsed.dirs=&quot;/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ee-sp11/tomcat-7.0.42/endorsed&quot; -Xmx1024m -XX:MaxPermSize=256m"/>
+<stringAttribute key="server-id" value="Liferay v6.2 EE Server (Tomcat 7) at localhost"/>
+</launchConfiguration>

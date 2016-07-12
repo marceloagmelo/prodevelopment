@@ -1,0 +1,6 @@
+<liferay-ui:error key="mensagem.erro.portlet"
+	message="mensagem.erro.portlet" />
+<liferay-ui:success key="mensagem.configuradoComSucesso"
+	message="mensagem.configuradoComSucesso" />
+<liferay-ui:success key="mensagem.conteudo.naoEncontrado"
+	message="mensagem.conteudo.naoEncontrado" />

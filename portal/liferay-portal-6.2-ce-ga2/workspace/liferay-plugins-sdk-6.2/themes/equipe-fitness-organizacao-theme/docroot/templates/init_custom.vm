@@ -1,0 +1,19 @@
+#set ($css_class = "${css_class} dockbar-split")
+
+#set ($site_principal_url = "/web/guest")
+
+#set ($portal_name = "Equipe Fitness")
+
+#set ($voltar_site_principal = "o Site Principal")
+
+#set ($show_breadcrumb = false)
+#set ($grupo = $page.getGroup())
+#set ($groupId = $grupo.getGroupId())
+#set ($isUser = $grupo.isUser())
+#set ($orgId = $grupo.getOrganizationId())
+
+#set($enderecoService = $serviceLocator.findService("com.liferay.portal.service.AddressLocalService"))
+#set($telefoneService = $serviceLocator.findService("com.liferay.portal.service.PhoneLocalService"))
+
+
+

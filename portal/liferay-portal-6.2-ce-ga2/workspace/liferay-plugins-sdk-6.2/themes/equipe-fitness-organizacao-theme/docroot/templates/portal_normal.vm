@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="$root_css_class" dir="#language ("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+	
+	<script src="/equipe-fitness-principal-theme/js/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="/equipe-fitness-principal-theme/js/jquery.bxslider.min.js" type="text/javascript"></script>
+
+	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+<a href="#main-content" id="skip-to-content">#language ("skip-to-content")</a>
+
+$theme.include($body_top_include)
+
+#dockbar()
+
+<div class="container-fluid" id="wrapper">
+	<header id="banner" role="banner">
+		<div class="voltar-site-principal">
+			<a href="$site_principal_url">
+				#language_format ("back-to-x", [$voltar_site_principal])
+			</a>
+		</div>
+
+		<div id="heading">
+			<h1 class="site-title">
+				<a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
+					<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
+
+					#if ($show_site_name)
+						<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+							$portal_name
+							<div class="nome-site">$site_name</div>
+						</span>
+					#end
+				</a>
+			</h1>
+
+			<h2 class="page-title">
+				<span>$the_title</span>
+			</h2>
+		</div>
+
+		<!-- busca -->
+		<div class="busca">
+			$theme.search()
+		</div>
+		<!-- fim busca -->
+
+		#if ($has_navigation || $is_signed_in)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+	</header>
+
+	<div id="content">
+		#if ($show_breadcrumb)
+			<nav id="breadcrumbs">#breadcrumbs()</nav>
+		#end
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<div class="nav">
+			#if (!$isUser)
+				#set ($organizacao_classe_name = "com.liferay.portal.model.Organization")
+				#set ($orgService = $serviceLocator.findService("com.liferay.portal.service.OrganizationLocalService"))
+				#set ($org = $orgService.getOrganization($orgId))
+				<ul>
+					<h3 class="endereco">#language ("address")</h3>
+					#set($enderecos = $enderecoService.getAddresses($theme_display.companyId, $organizacao_classe_name, $org.getOrganizationId()))
+					<li class="col">
+					#foreach( $endereco in $enderecos )
+						#if ($endereco.getPrimary())
+							#if ($endereco.getStreet1() != "")
+								$endereco.getStreet1()<br />
+							#end
+							#if ($endereco.getStreet2() != "")
+								$endereco.getStreet2()<br />
+							#end
+							#if ($endereco.getStreet3() != "")
+								$endereco.getStreet3()<br />
+							#end
+							#if ($endereco.getCity() != "")
+								$endereco.getCity()<br />
+							#end
+						#end
+					#end
+					</li>
+				</ul>
+				<ul>
+					<h3 class="telefone">#language ("phones")</h3>
+					#set($telefones = $telefoneService.getPhones($theme_display.companyId, $organizacao_classe_name, $org.getOrganizationId()))
+					<li class="col">
+					#foreach( $telefone in $telefones )
+						#if ($telefone.getNumber() != "")
+							$telefone.getNumber()<br />
+						#end
+					#end
+					</li>
+				</ul>
+			#end
+		</div>
+		<p class="powered-by">
+			Desenvolvido por <a href="http://www.prodevelopment.com.br" target="_blank">Pro Development Informática</a>
+		</p>
+	</footer>
+</div>
+
+$theme.include($body_bottom_include)
+
+$theme.include($bottom_include)
+
+</body>
+
+</html>

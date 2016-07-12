@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.com.prodevelopment.appcomercial.servico.model.Funcionario">
+		<field name="funcionarioId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createUserId" type="long" />
+		<field name="modifiedUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nome" type="String" />
+		<field name="apelido" type="String" />
+		<field name="observacao" type="String" />
+		<field name="rg" type="String" />
+		<field name="rgOrgaoEmissor" type="String" />
+		<field name="rgDataEmissao" type="Date" />
+		<field name="cpf" type="String" />
+		<field name="sexo" type="String" />
+		<field name="estadoCivil" type="String" />
+		<field name="dataNascimento" type="Date" />
+		<field name="endComLogradouro" type="String" />
+		<field name="endComDescricao" type="String" />
+		<field name="endComCep" type="String" />
+		<field name="endComBairro" type="String" />
+		<field name="endComCidade" type="String" />
+		<field name="endComUf" type="String" />
+		<field name="endComPais" type="String" />
+		<field name="endResLogradouro" type="String" />
+		<field name="endResDescricao" type="String" />
+		<field name="endResCep" type="String" />
+		<field name="endResBairro" type="String" />
+		<field name="endResCidade" type="String" />
+		<field name="endResUf" type="String" />
+		<field name="endResPais" type="String" />
+		<field name="telComDdd" type="String" />
+		<field name="telComNumero" type="String" />
+		<field name="telComRamal" type="String" />
+		<field name="telResDdd" type="String" />
+		<field name="telResNumero" type="String" />
+		<field name="telCelDdd" type="String" />
+		<field name="telCelNumero" type="String" />
+		<field name="endEmail" type="String" />
+		<field name="dataEntrada" type="Date" />
+		<field name="dataSaida" type="Date" />
+		<field name="existeUser" type="Boolean" />
+		<field name="userId" type="long" />
+	</model>
+</model-hints>

@@ -1,0 +1,48 @@
+#
+# T�tulo do portlet
+#
+javax.portlet.title=Banner Rotativo
+javax.portlet.short-title=Banner Rotativo
+javax.portlet.title.keywords=Banner Rotativo
+
+#
+category.banner=Banner
+
+#Configuracao - intervalo
+intervalo-entre-banners=Intervalo entre os Banners:
+segundos=segundos
+
+#Configuracao - duracao
+lenta=Lenta
+normal=Normal
+rapido=R&aacute;pido
+muito_-rapida=Muito R&aacute;pido
+duracao-da-transacao=Duração da Transação:
+salvar=Salvar
+exibir-titulo=Exibir título na foto
+tipo-de-banner=Tipo de Banner:
+grande-1=Banner Grande 01
+grande-2=Banner Grande 02
+grande-3=Banner Grande 03
+pequeno-1=Banner Pequeno
+exibir-controles=Exibir Controles
+
+#Configuracoes Gerais
+categoria=Categoria
+tags=Tags
+exibir-banner=Exibir Banner
+id-banner=Identificação(ID)
+titulo-banner=Título do Banner
+dataCriacao=Data de Criação
+escolha-dos-videos=Escolha dos Vídeos
+ordenacao=Ordenação
+filtrar=Filtrar
+mensagem.lista.registos.nao.encontrados=Registros não encontrados
+
+
+#Mensagens
+mensagem-sucesso=Configurações atualizadas com sucesso!
+config-gerais=Configurações Gerais
+
+#
+categorias-exibicao=Categorias

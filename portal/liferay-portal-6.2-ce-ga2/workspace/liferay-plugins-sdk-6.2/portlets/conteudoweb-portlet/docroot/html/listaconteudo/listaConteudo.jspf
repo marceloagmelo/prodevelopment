@@ -1,0 +1,102 @@
+<div id="lista_conteudos">
+<%
+	PortletURL renderURL = renderResponse.createRenderURL();
+	renderURL.setParameter("categoryId", categoryId);
+	renderURL.setParameter("structureId", structureId);
+	renderURL.setParameter("tag", tag);
+
+	SearchContainer searchContainer = new SearchContainer(renderRequest, new DisplayTerms(renderRequest), null, SearchContainer.DEFAULT_CUR_PARAM, 2, renderURL, null, null);
+
+	DisplayTerms displayTerms = searchContainer.getDisplayTerms();
+	
+	List<JournalArticle> results = Search.buscarConteudos(keywords, themeDisplay.getCompanyId(),
+			themeDisplay.getScopeGroupId(),
+			GetterUtil.getLong(structureId),
+			searchContainer.getStart(), searchContainer.getEnd(),
+			categoryId, tag, prefOrdenacao);
+
+	int total = Search.getTotalConteudo(keywords, themeDisplay.getCompanyId(),
+			themeDisplay.getScopeGroupId(),
+			GetterUtil.getLong(structureId),
+			categoryId, tag);
+	
+	searchContainer.setTotal(total);
+
+	searchContainer.setResults(results);
+	
+	addPortletURLs = JournalUtil.getAddPortletURLs(liferayPortletRequest, liferayPortletResponse, classNameIds, classTypeIds, allCategoryIds, null, null);
+	
+	boolean showSearch = !results.isEmpty();
+%>
+	<div class="lfr-meta-actions add-asset-selector">
+		<%@ include file="/html/common/acoes.jspf" %>
+	</div>
+
+	<c:if test="<%= showSearch %>">
+		<liferay-portlet:actionURL name="pesquisar" var="pesquisarURL" />
+			<aui:form action="<%= pesquisarURL.toString() %>" method="post" name="fm">
+
+				<aui:nav-bar>
+					<aui:nav-bar-search cssClass="pull-right">
+						<div class="form-search">
+							<liferay-ui:input-search
+								autoFocus="<%=windowState.equals(WindowState.MAXIMIZED)%>"
+								placeholder='<%=LanguageUtil.get(locale, "keywords")%>'/>
+						</div>
+				
+					</aui:nav-bar-search>
+				</aui:nav-bar>
+
+			</aui:form>
+	</c:if>
+<%	
+	for (int i = 0; i < results.size(); i++) {
+		
+		JournalArticle article = (JournalArticle) results.get(i);
+
+		PortletURL voltarURL = renderResponse.createRenderURL();
+		voltarURL.setParameter("articleId", article.getArticleId());
+		voltarURL.setParameter("backURL", currentURL);
+		
+				
+		String titulo = article.getTitle(locale);
+		String descricao = article.getDescription(locale);
+		descricao = StringUtil.shorten(descricao, GetterUtil.getInteger(prefTamanhoCaracteres));
+		String dataAlteracao = dateFormatDate.format(article.getModifiedDate());
+		String urlImagem = StringPool.BLANK;
+		if (article.isSmallImage()) {
+			if (Validator.isNotNull(article.getSmallImageURL())) {
+				urlImagem = themeDisplay.getPathImage() + article.getSmallImageURL();
+			} else {
+				urlImagem = "/image/journal/article?img_id=" + article.getSmallImageId();
+			}
+		}
+%>
+		<div class="lista_conteudos conteudos">
+			<div class="titulo"><%=HtmlUtil.escape(titulo) %></div>
+<%
+		if (article.isSmallImage()) {
+%>		
+			<div class="imagem">
+				<img alt="" src="<%= urlImagem %>" width="150" />
+			</div>
+			<div class="info_img">
+<%
+		} else { 
+%>				
+			<div class="info">
+<%
+		}
+%>			
+			<div class="data_alteracao"><liferay-ui:message key="label.dataAtualizacao" />:<%=dataAlteracao %></div>
+			<div class="texto"><%=descricao %></div>
+			<div class="leia_mais">
+			</div>
+				<a href="<%=voltarURL.toString() %>"><liferay-ui:message key="label.leiaMais" />&nbsp;&raquo;</a>			
+			</div>
+		</div>
+<%		
+	}
+%>
+<liferay-ui:search-paginator searchContainer="<%= searchContainer %>" type="simple" />
+</div>

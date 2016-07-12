@@ -1,0 +1,15 @@
+<liferay-ui:search-container-column-text name="label.resposta.descricao"
+	property="descricaoCurrentValue" />
+<liferay-ui:search-container-column-text name="label.resposta.correta"
+	buffer="buffer">
+	<%
+		String sim = LanguageUtil.get(pageContext, "label.sim");
+		String nao = LanguageUtil.get(pageContext, "label.nao");
+
+		if (resposta.getCorreta()) {
+			buffer.append(sim);
+		} else {
+			buffer.append(nao);
+		}
+	%>
+</liferay-ui:search-container-column-text>

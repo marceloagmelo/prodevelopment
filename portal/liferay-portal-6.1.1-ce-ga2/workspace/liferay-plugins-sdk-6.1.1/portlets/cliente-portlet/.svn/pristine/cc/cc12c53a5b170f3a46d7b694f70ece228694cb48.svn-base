@@ -1,0 +1,121 @@
+#lista_clientes {
+  /* fundo ultimos conteÃºdos */
+  margin: 10px 0px 10px 0px; }
+
+#lista_clientes .clientes {
+  margin: 20px 0px 10px 0px;
+  clear: both; }
+
+#lista_clientes .imagem img {
+  width: 120px;
+  height: 64px;
+  margin: 10px 10px 10px 0px;
+  display: block;
+  float: left; }
+
+#lista_clientes .imagem img:hover {
+  border-color: #014a89; }
+
+#lista_clientes .info_img {
+  /* informaÃ§Ãµes do conteÃºdo sem imagem */
+  float: left;
+  font: bold 1em Arial, Helvetica, Verdana, sans-serif;
+  color: #707276;
+  width: 480px;
+  margin: 10px 0px 32px 0px; }
+
+#lista_clientes .info {
+  /* informaÃ§Ãµes do conteÃºdo sem imagem */
+  float: left;
+  font: bold 1em Arial, Helvetica, Verdana, sans-serif;
+  color: #707276;
+  margin: 10px 0px 32px 0px;
+  width: 576px; }
+
+#lista_clientes .titulo {
+  border-bottom: 1px solid #DDDDDD;
+  margin-bottom: 0.7em;
+  margin-right: 8px;
+  margin-top: 2em;
+  padding-bottom: 1px;
+  font-size: 14px;
+  color: #333;
+  margin: 0; }
+
+#lista_clientes .data_alteracao {
+  font: bold 1em Arial, Helvetica, Verdana, sans-serif;
+  color: #707276;
+  margin: 0px 0px 5px 0px; }
+
+#lista_clientes .texto {
+  font: 1em Arial, Helvetica, Verdana, sans-serif;
+  color: #707276;
+  margin: 0px 0px 5px 0px;
+  text-align: justify; }
+
+#lista_clientes .leia_mais {
+  font: bold .9em Arial, Helvetica, Verdana, sans-serif;
+  color: #707276; }
+
+#lista_clientes .leia_mais a {
+  color: #017FBA;
+  text-decoration: none; }
+
+#lista_clientes .leia_mais a:hover {
+  color: #2F2F2F;
+  text-decoration: underline; }
+
+/* ---------- TÃ­tulo Portlets ---------- */
+#lista_clientes .tit_portlets {
+  font: bold 1.8em Arial, Helvetica, Verdana, sans-serif;
+  margin: 0 0 10px 0;
+  color: #017FBA; }
+
+#lista_clientes .naveg {
+  fonte-size: 12px;
+  clear: both;
+  margin: 0;
+  text-align: right; }
+
+#lista_clientes .naveg .anterior {
+  display: inline-block;
+  height: 16px;
+  background: #e4e4de url(../images/previous.png) 2px 2px no-repeat;
+  padding: 4px 4px 0 22px;
+  text-decoration: none;
+  margin-right: 4px; }
+
+#lista_clientes .naveg .proximo {
+  display: inline-block;
+  height: 16px;
+  background: #e4e4de url(../images/next.png) right 2px no-repeat;
+  padding: 4px 22px 0 4px;
+  text-decoration: none; }
+
+#lista_clientes .texto_resultado {
+  float: left;
+  color: #555555; }
+
+#lista_clientes .acoes {
+  clear: both;
+  height: auto;
+  margin-top: 1em;
+  overflow: hidden;
+  width: auto;
+  float: left; }
+
+#lista_clientes .acoes .acao {
+  margin: 1px 10px 1px 1px; }
+
+#lista_clientes .paginacao {
+  float: left;
+  color: #555555; }
+
+#lista_clientes .separador {
+  border-bottom: 1px solid #C8C9CA;
+  color: #707276;
+  font: 1em Helvetica-Neue,Verdana,Arial,sans-serif;
+  padding: 0 0 10px;
+  text-decoration: none;
+  width: 550px; }
+

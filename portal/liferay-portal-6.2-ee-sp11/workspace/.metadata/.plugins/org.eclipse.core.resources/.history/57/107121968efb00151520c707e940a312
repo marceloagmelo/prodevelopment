@@ -1,0 +1,12 @@
+name=Contatos
+module-group-id=prodevelopment
+module-incremental-version=1
+tags=
+short-description=
+long-description=
+change-log=
+page-url=http://www.prodevelopment.com.br
+author=Marcelo Melo
+licenses=EE
+liferay-versions=6.2.0,6.2.10+
+security-manager-enabled=true

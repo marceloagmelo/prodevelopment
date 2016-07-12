@@ -1,0 +1,207 @@
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {
+  display: block; }
+
+mark, rp, rt, ruby, summary, time {
+  display: inline; }
+
+/***** menu *****/
+nav {
+  float: left;
+  width: 100%;
+  margin-left: 10px; }
+
+.menu2 {
+  font-family: Arial, Helvetica, sans-serif;
+  float: left;
+  margin: -27px 0 0 0;
+  padding: 0 0 95px 0;
+  width: 100%;
+  background: url(../images/common/menu1.png) left bottom no-repeat; }
+
+.menu2 li {
+  float: left;
+  position: relative;
+  font-weight: bold;
+  margin-left: -25px; }
+
+.menu2 li:first-child {
+  margin-left: 312px; }
+
+.menu2 li a {
+  display: block;
+  font-size: 12px;
+  line-height: 15px;
+  color: #017fba;
+  z-index: 20;
+  height: 37px;
+  overflow: hidden;
+  background: url(../images/common/menu1_r.png) right -37px no-repeat;
+  padding: 0 20px 0 0;
+  text-decoration: none; }
+
+.menu2 li a span {
+  display: block;
+  background: url(../images/common/menu1_l.png) left -37px no-repeat;
+  padding: 10px 14px 12px 33px; }
+
+.menu2 li.active,
+.menu2 > li:hover {
+  z-index: 999 !important; }
+
+.menu2 li.active a,
+.menu2 > li > a:hover {
+  background-position: right top;
+  color: #fff; }
+
+.menu2 li.active a span,
+.menu2 > li > a:hover span {
+  background-position: left top; }
+
+nav {
+  float: left;
+  width: 100%; }
+
+.menu {
+  font-family: Arial, Helvetica, sans-serif;
+  float: left;
+  position: relative;
+  z-index: 150;
+  margin: -37px 0 0 0;
+  padding: 0 0 10px 0;
+  width: 100%;
+  background: url(../images/common/menu2.png) left bottom no-repeat;
+  list-style: none;
+  outside: none; }
+
+.menu li {
+  float: left;
+  position: relative;
+  font-weight: bold;
+  margin-left: -20px;
+  list-style: none;
+  outside: none; }
+
+.menu li:first-child {
+  margin-left: 7px; }
+
+.menu li a {
+  display: block;
+  font-size: 12px;
+  line-height: 15px;
+  color: #373737;
+  z-index: 20;
+  height: 37px;
+  overflow: hidden;
+  background: url(../images/common/menu2_r.png) right top no-repeat;
+  padding: 0 21px 0 0;
+  text-decoration: none; }
+
+.menu li a span {
+  display: block;
+  background: url(../images/common/menu2_l.png) left top no-repeat;
+  padding: 11px 8px 11px 33px; }
+
+.menu li.sfHover {
+  position: relative;
+  z-index: 10; }
+
+.menu li.active,
+.menu > li:hover {
+  z-index: 999 !important; }
+
+.menu li.active > a,
+.menu li.sfHover > a,
+.menu > li > a:hover {
+  background-position: right -37px;
+  color: #fff; }
+
+.menu li.active a span,
+.menu li.sfHover > a span,
+.menu > li > a:hover span {
+  background-position: left -37px; }
+
+.menu ul {
+  z-index: 20;
+  letter-spacing: normal;
+  position: absolute;
+  top: -9999em;
+  width: 135px;
+  /*background:url(../images/common/menu3.gif) left top repeat-x #3d3d3d;*/
+  background: none  #2B2B2B;
+  border: none;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 10px 20px 28px; }
+
+.menu ul ul {
+  border-radius: 5px;
+  width: 114px;
+  background: url(../images/common/menu4.gif) left top repeat-x #9f0c17;
+  padding: 9px 5px 9px 18px; }
+
+.menu li a span.sf-sub-indicator {
+  position: absolute;
+  left: -999px;
+  top: 47px;
+  width: 183px;
+  display: block;
+  height: 5px;
+  background: url(../images/common/sub.png) left top no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0; }
+
+.menu li.sfHover > a span.sf-sub-indicator {
+  left: 0px; }
+
+.menu li li a span.sf-sub-indicator {
+  display: none; }
+
+.menu ul li {
+  width: 100%; }
+
+.menu li:hover {
+  visibility: inherit; }
+
+.menu li li {
+  background: none;
+  margin: 4px !important;
+  border: none;
+  padding: 0; }
+
+.menu li li a {
+  font-weight: normal;
+  background: none;
+  margin: 0;
+  text-transform: none;
+  height: auto !important;
+  display: block;
+  padding: 0;
+  font-size: 12px;
+  line-height: 15px;
+  color: #929292; }
+
+.menu li li li a {
+  color: #fc5151; }
+
+.menu li li > a:hover,
+.menu li li.sfHover > a {
+  color: #f8f8f8; }
+
+.menu li:hover ul, .menu li.sfHover ul {
+  left: -17px;
+  top: 41px;
+  z-index: 999;
+  top: 26px; }
+
+ul.menu li:hover li ul, ul.menu li.sfHover li ul {
+  top: -999em; }
+
+ul.menu li li:hover ul, ul.menu li li.sfHover ul {
+  left: 98px;
+  top: -14px;
+  z-index: 9999; }
+
+ul.menu li li:hover li ul, ul.menu li li.sfHover li ul {
+  top: -999em; }
+

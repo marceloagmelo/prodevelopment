@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;html&apos;&#x0A;- Original project: &apos;teste-form-builder-portlet&apos;&#x0A;- Destination element: &apos;html&apos;&#x0A;- Original elements:&#x0A;     custom_fields.jspf&#x0A;     form_builder.jspf" description="Copy files" element1="docroot/html/testeformbuilderportlet/custom_fields.jspf" element2="docroot/html/testeformbuilderportlet/form_builder.jspf" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1456187105356" target="/eTask-portlet/docroot/html" units="0" version="1.0"/>
+</session>

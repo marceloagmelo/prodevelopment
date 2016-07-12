@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="br.com.prodevelopment.etask">
+	<author>Marcelo Melo</author>
+	<namespace>etsk</namespace>
+
+	<entity name="TypeTask" uuid="true" local-service="true"
+		remote-service="true" trash-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="typeTaskId" type="long" primary="true" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userIdCreate" type="long" />
+		<column name="userIdModified" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="name" type="String" localized="true" />
+		<column name="description" type="String" localized="true" />
+		<column name="DDMStructureId" type="long" />
+		<column name="status" type="int" />
+		<column name="statusByUserId" type="long" />
+		<column name="statusByUserName" type="String" />
+		<column name="statusDate" type="Date" />
+		<column name="customFieldsActive" type="boolean" />
+		<column name="classNameId" type="long" />
+		<column name="classPK" type="long" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Company" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+
+		<finder name="CG" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="CG_S" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" arrayable-operator="OR" />
+		</finder>
+
+		<finder name="CG_LikeName" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="name" comparator="LIKE" />
+		</finder>
+
+		<finder name="CG_Class" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="classNameId" />
+		</finder>
+
+		<finder name="CG_S_LikeName" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" arrayable-operator="OR" />
+			<finder-column name="name" comparator="LIKE" />
+		</finder>
+
+		<finder name="CG_S_Class" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" arrayable-operator="OR" />
+			<finder-column name="classNameId" />
+		</finder>
+
+		<finder name="CG_S_LikeName_Class" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" arrayable-operator="OR" />
+			<finder-column name="name" comparator="LIKE" />
+			<finder-column name="classNameId" />
+		</finder>
+
+		<finder name="OtherClassPK" return-type="TypeTask">
+			<finder-column name="classPK" />
+		</finder>
+
+		<!-- References -->
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivityCounter" />
+		<reference package-path="com.liferay.portlet.trash" entity="TrashEntry" />
+		<reference package-path="com.liferay.portal" entity="WorkflowInstanceLink" />
+	</entity>
+
+	<entity name="TypeTaskUsers" local-service="true"
+		remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="typeTaskUsersId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="userIdCreate" type="long" />
+		<column name="createDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="typeTaskId" type="long" />
+		<column name="userId" type="long" />
+		<column name="typeUser" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="typeTaskUsersId" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="TypeTask" return-type="Collection">
+			<finder-column name="typeTaskId" />
+		</finder>
+
+		<finder name="TypeTaskUser" return-type="Collection">
+			<finder-column name="typeTaskId" />
+			<finder-column name="userId" />
+		</finder>
+
+		<finder name="TypeTaskTypeUser" return-type="Collection">
+			<finder-column name="typeTaskId" />
+			<finder-column name="typeUser" />
+		</finder>
+
+		<finder name="User" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+
+		<finder name="UserTypeUser" return-type="Collection">
+			<finder-column name="userId" />
+			<finder-column name="typeUser" />
+		</finder>
+
+		<finder name="TypeTaskUserType" return-type="TypeUsers" unique="true">
+			<finder-column name="typeTaskId" />
+			<finder-column name="userId" />
+			<finder-column name="typeUser" />
+		</finder>
+	</entity>
+
+	
+	<entity name="Task" uuid="true" local-service="true"
+		remote-service="true" trash-enabled="true">
+
+		<!-- PK fields -->
+
+		<column name="taskId" type="long" primary="true" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userIdCreate" type="long" />
+		<column name="userIdModified" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="name" type="String" localized="true" />
+		<column name="description" type="String" localized="true" />
+		<column name="typeTaskId" type="long" />
+		<column name="status" type="int" />
+		<column name="statusByUserId" type="long" />
+		<column name="statusByUserName" type="String" />
+		<column name="statusDate" type="Date" />
+		<column name="state" type="int" />
+		<column name="classNameId" type="long" />
+		<column name="classPK" type="long" />
+		<column name="startDateExpected" type="Date" />
+		<column name="endDateExpected" type="Date" />
+		<column name="initialExecutionDate" type="Date" />
+		<column name="finalExecutionDate" type="Date" />
+		<column name="xml" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="name" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Company" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+
+		<finder name="CG" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="CG_S" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" arrayable-operator="OR" />
+		</finder>
+
+		<finder name="CG_LikeName" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="name" comparator="LIKE" />
+		</finder>
+
+		<finder name="CG_Class" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="classNameId" />
+		</finder>
+
+		<finder name="CG_S_LikeName" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" arrayable-operator="OR" />
+			<finder-column name="name" comparator="LIKE" />
+		</finder>
+
+		<finder name="CG_S_Class" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" arrayable-operator="OR" />
+			<finder-column name="classNameId" />
+		</finder>
+
+		<finder name="CG_S_LikeName_Class" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="status" arrayable-operator="OR" />
+			<finder-column name="name" comparator="LIKE" />
+			<finder-column name="classNameId" />
+		</finder>
+
+		<finder name="OtherClassPK" return-type="Task">
+			<finder-column name="classPK" />
+		</finder>
+
+		<!-- References -->
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivityCounter" />
+	</entity>
+	
+	<exceptions>
+		<exception>RequiredTypeTaskName</exception>
+		<exception>DuplicateTypeTaskName</exception>
+		<exception>DuplicateTypeTaskUser</exception>
+		<exception>RequiredTaskName</exception>
+	</exceptions>
+</service-builder>

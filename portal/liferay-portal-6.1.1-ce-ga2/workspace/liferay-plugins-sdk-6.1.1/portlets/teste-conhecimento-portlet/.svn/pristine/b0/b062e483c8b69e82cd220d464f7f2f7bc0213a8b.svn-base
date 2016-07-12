@@ -1,0 +1,12 @@
+<liferay-ui:success key="mensagem.teste.criado.sucesso"
+	message="mensagem.teste.criado.sucesso" />
+<liferay-ui:success key="mensagem.teste.alterado.sucesso"
+	message="mensagem.teste.alterado.sucesso" />
+<liferay-ui:success key="mensagem.teste.excluido.sucesso"
+	message="mensagem.teste.excluido.sucesso" />
+<liferay-ui:error key="mensagem.teste.titulo.obrigatorio"
+	message="mensagem.teste.titulo.obrigatorio" />
+<liferay-ui:error key="mensagem.teste.descricao.obrigatoria"
+	message="mensagem.teste.descricao.obrigatoria" />
+
+	

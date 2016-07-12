@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram-geometry>
+    <node>
+        <id>Entity#TypeTask#0</id>
+        <bounds x="173" y="36"/>
+    </node>
+    <node>
+        <id>Entity#TypeTaskUsers#1</id>
+        <bounds x="36" y="36"/>
+    </node>
+    <node>
+        <id>Entity#Task#2</id>
+        <bounds x="10" y="140"/>
+    </node>
+</diagram-geometry>

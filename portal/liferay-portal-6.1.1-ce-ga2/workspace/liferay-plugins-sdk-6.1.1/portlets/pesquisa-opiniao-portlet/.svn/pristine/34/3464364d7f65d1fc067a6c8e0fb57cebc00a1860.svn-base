@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.com.prodevelopment.pesquisaopiniao.service.PerguntaLocalService" class="br.com.prodevelopment.pesquisaopiniao.service.impl.PerguntaLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.pesquisaopiniao.service.persistence.PerguntaPersistence" class="br.com.prodevelopment.pesquisaopiniao.service.persistence.PerguntaPersistenceImpl" parent="basePersistence" />
+	<bean id="br.com.prodevelopment.pesquisaopiniao.service.PesquisaLocalService" class="br.com.prodevelopment.pesquisaopiniao.service.impl.PesquisaLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.pesquisaopiniao.service.persistence.PesquisaPersistence" class="br.com.prodevelopment.pesquisaopiniao.service.persistence.PesquisaPersistenceImpl" parent="basePersistence" />
+	<bean id="br.com.prodevelopment.pesquisaopiniao.service.Pesquisa_UsuarioLocalService" class="br.com.prodevelopment.pesquisaopiniao.service.impl.Pesquisa_UsuarioLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.pesquisaopiniao.service.persistence.Pesquisa_UsuarioPersistence" class="br.com.prodevelopment.pesquisaopiniao.service.persistence.Pesquisa_UsuarioPersistenceImpl" parent="basePersistence" />
+	<bean id="br.com.prodevelopment.pesquisaopiniao.service.RespostaLocalService" class="br.com.prodevelopment.pesquisaopiniao.service.impl.RespostaLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.pesquisaopiniao.service.persistence.RespostaPersistence" class="br.com.prodevelopment.pesquisaopiniao.service.persistence.RespostaPersistenceImpl" parent="basePersistence" />
+	<bean id="br.com.prodevelopment.pesquisaopiniao.service.Resposta_UsuarioLocalService" class="br.com.prodevelopment.pesquisaopiniao.service.impl.Resposta_UsuarioLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.pesquisaopiniao.service.persistence.Resposta_UsuarioPersistence" class="br.com.prodevelopment.pesquisaopiniao.service.persistence.Resposta_UsuarioPersistenceImpl" parent="basePersistence" />
+</beans>

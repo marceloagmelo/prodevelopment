@@ -1,0 +1,23 @@
+<root>
+  <facet id="liferay.ext">
+    <node name="libprov">
+      <node name="last-provider-used">
+        <attribute name="6.0" value="com.liferay.ide.eclipse.plugin.ext.libraryProvider"/>
+      </node>
+    </node>
+  </facet>
+  <facet id="liferay.portlet">
+    <node name="libprov">
+      <node name="last-provider-used">
+        <attribute name="6.0" value="com.liferay.ide.eclipse.plugin.portlet.libraryProvider"/>
+      </node>
+    </node>
+  </facet>
+  <facet id="liferay.hook">
+    <node name="libprov">
+      <node name="last-provider-used">
+        <attribute name="6.0" value="com.liferay.ide.eclipse.plugin.hook.libraryProvider"/>
+      </node>
+    </node>
+  </facet>
+</root>

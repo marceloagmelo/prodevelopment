@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.com.prodevelopment.pesquisaopiniao.model.Pergunta">
+		<field name="id" type="long" />
+		<field name="descricao" type="String" localized="true" />
+		<field name="dataInclusao" type="Date" />
+		<field name="dataAlteracao" type="Date" />
+		<field name="pesquisaId" type="long" />
+		<field name="userIdInclusao" type="long" />
+		<field name="userIdAlteracao" type="long" />
+	</model>
+	<model name="br.com.prodevelopment.pesquisaopiniao.model.Pesquisa">
+		<field name="uuid" type="String" />
+		<field name="id" type="long" />
+		<field name="titulo" type="String" localized="true" />
+		<field name="descricao" type="String" localized="true" />
+		<field name="dataInclusao" type="Date" />
+		<field name="dataAlteracao" type="Date" />
+		<field name="ativa" type="boolean" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userIdInclusao" type="long" />
+		<field name="userIdAlteracao" type="long" />
+	</model>
+	<model name="br.com.prodevelopment.pesquisaopiniao.model.Pesquisa_Usuario">
+		<field name="id" type="long" />
+		<field name="nome" type="String" />
+		<field name="email" type="String" />
+		<field name="dataInclusao" type="Date" />
+		<field name="pesquisaId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="br.com.prodevelopment.pesquisaopiniao.model.Resposta">
+		<field name="id" type="long" />
+		<field name="descricao" type="String" localized="true" />
+		<field name="dataInclusao" type="Date" />
+		<field name="dataAlteracao" type="Date" />
+		<field name="perguntaId" type="long" />
+		<field name="userIdInclusao" type="long" />
+		<field name="userIdAlteracao" type="long" />
+	</model>
+	<model name="br.com.prodevelopment.pesquisaopiniao.model.Resposta_Usuario">
+		<field name="id" type="long" />
+		<field name="dataInclusao" type="Date" />
+		<field name="pesquisaUsuarioId" type="long" />
+		<field name="respostaId" type="long" />
+	</model>
+</model-hints>

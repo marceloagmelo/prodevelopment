@@ -1,0 +1,154 @@
+a, abbr, acronym, address, applet, article, aside, audio,
+b, blockquote, big, body,
+center, canvas, caption, cite, code, command,
+datalist, dd, del, details, dfn, dl, div, dt,
+em, embed,
+fieldset, figcaption, figure, font, footer, form,
+h1, h2, h3, h4, h5, h6, header, hgroup, html,
+i, iframe, img, ins,
+kbd,
+keygen,
+label, legend, li,
+meter,
+nav,
+object, ol, output,
+p, pre, progress,
+q,
+s, samp, section, small, span, source, strike, strong, sub, sup,
+table, tbody, tfoot, thead, th, tr, tdvideo, tt,
+u, ul,
+var{
+    background: transparent;
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+		padding: 0;
+		border: 0;
+		outline: 0;
+    vertical-align: top; }
+
+
+ul.tabs2 {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	overflow:hidden;
+	font-family:Arial, Helvetica, sans-serif;
+}
+ul.tabs2 li {
+	float: left;
+	margin:0 0 0 -24px;
+	padding: 0;
+	height: 37px;
+	position: relative;
+	font-weight:bold;
+	list-style: none;
+}
+ul.tabs2 li:first-child {
+	margin-left:0;
+}
+ul.tabs2 li a {
+	text-decoration: none;
+	color: #fff;
+	display: block;
+	font-size: 12px;
+	line-height:15px;
+	height:37px;
+	background:url(../../images/destaque/tab4_l.png) left top no-repeat;
+	padding:0 0 0 22px;
+}
+ul.tabs2 li a span {
+	display:block;
+	background:url(../../images/destaque/tab4_r.png) right top no-repeat;
+	padding:0 5px 0 0;
+}
+ul.tabs2 li a span span {
+	text-align:center;
+	width:104px;
+	background:url(../../images/destaque/tab4_t.png) right top repeat-x;
+	padding:11px 6px 11px 0px;
+}
+ul.tabs2 li:first-child a {
+	background:url(../../images/destaque/tab3_l.png) left top no-repeat;
+	padding:0 0 0 5px;
+}
+ul.tabs2 li:first-child a span {
+	background:url(../../images/destaque/tab3_r.png) right top no-repeat;
+	padding:0 22px 0 0;
+}
+ul.tabs2 li:first-child a span span {
+	width:150px;
+	background:url(../../images/destaque/tab3_t.png) right top repeat-x;
+	padding:11px 0px 11px 10px;
+}
+ul.tabs2 li.active a {
+	background-position:left -37px !important;
+}
+ul.tabs2 li.active a span {
+	background-position:right -37px !important;
+}
+ul.tabs2 li.active {
+	z-index:111 !important;
+}
+ul.tabs2 li.active a:hover {
+	color:#fff;
+}
+ul.tabs2 li a:hover {
+	color:#f93434;
+}
+.containerDestaqueProd {
+	border-radius:0 0 6px 6px;
+	width:230px;
+	background:url(../../images/destaque/bg-2.gif) left top repeat-x #017FBA;
+	overflow:hidden;
+	margin-bottom:10px;
+}
+.conteudoDestaqueProd {
+	background:url(../../images/destaque/bg-2.gif) left top repeat-x #017FBA;
+	padding:18px 18px 14px 11px;
+	border-radius:0 0 6px 6px;
+}
+
+
+.color-1 {color:#d8e138;}
+.color-2 {color:#cf001c;}
+.color-3 {color:#343434;}
+.color-4 {color:#fff;}
+.color-5 {color:#fc5151;}
+.color-6 {color:#017fba;}
+
+.conteudoDestaqueProd .txtDestaqueProdudo, .imgDestaqueProduto {
+	float: left;
+}
+
+.imgDestaqueProduto {
+	border-radius: 4px 4px 4px 4px;
+}
+
+.txtDestaqueProdudo {
+	max-width: 116px;
+	margin-left: 5px;
+}
+
+.txtDestaqueProdudo a {
+	text-decoration: none;
+}
+
+.destaqueProduto {
+	border-bottom: 1px dotted white;
+    height: 70px;
+    margin-bottom: 15px;
+    width: 208px;
+}
+
+.button-5 {
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    padding: 0 10px 0 0;
+    float: right;
+    outline: medium none;
+    text-decoration: none;
+}

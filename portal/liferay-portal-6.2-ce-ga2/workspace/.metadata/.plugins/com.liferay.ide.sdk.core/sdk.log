@@ -1,0 +1,35 @@
+Buildfile: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/build.xml
+deploy:
+     [copy] Copying 689 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot
+     [copy] Copying 5 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/templates
+     [copy] Copying 10 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot
+    [mkdir] Created dir: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/WEB-INF/classes
+     [copy] Copying 5 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/WEB-INF/lib
+     [copy] Copying 2 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/WEB-INF/classes
+     [copy] Copied 7 empty directories to 6 empty directories under /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/WEB-INF/classes
+     [java] Loading jar:file:/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga2/tomcat-7.0.42/webapps/ROOT/WEB-INF/lib/portal-impl.jar!/system.properties
+     [java] Loading jar:file:/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga2/tomcat-7.0.42/webapps/ROOT/WEB-INF/lib/portal-impl.jar!/portal.properties
+     [java] Loading file:/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga2/tomcat-7.0.42/webapps/ROOT/WEB-INF/classes/portal-ext.properties
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/app_custom.css in 19525 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/application.css in 11170 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/aui.css in 17568 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/base.css in 1091 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/color_schemes/common.css in 1092 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/color_schemes/dark.css in 911 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/color_schemes/green.css in 113 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/color_schemes/light.css in 583 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/color_schemes/orange.css in 143 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/custom.css in 5922 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/custom_common.css in 2523 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/custom_responsive.css in 561 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/dockbar.css in 989 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/extras.css in 1064 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/layout.css in 44 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/main.css in 7605 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/navigation.css in 523 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/portlet.css in 739 ms
+     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/themes/equipe-fitness-principal-theme/docroot/css/taglib/header.css in 11 ms
+      [zip] Building zip: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga2/workspace/liferay-plugins-sdk-6.2/dist/equipe-fitness-principal-theme-6.2.0.1.war
+     [copy] Copying 1 file to /opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga2/deploy
+BUILD SUCCESSFUL
+Total time: 2 minutes 53 seconds

@@ -1,0 +1,13 @@
+<div class="resultadoItem">
+	<c:set var="pipe" value="" />
+
+	<c:if test="${not empty resultadoItem.categorias}">
+		<c:set var="pipe" value="|" />
+	</c:if>
+
+	<div class="tituloResultadoItem">
+		<img src="${resultadoItem.iconeUrl }" /> 
+		<a href="${resultadoItem.downloadUrl}" target="_blank">${resultadoItem.titulo}</a>
+	</div>
+	<div class="descricaoResultadoItem">${resultadoItem.descricao}</div>
+</div>

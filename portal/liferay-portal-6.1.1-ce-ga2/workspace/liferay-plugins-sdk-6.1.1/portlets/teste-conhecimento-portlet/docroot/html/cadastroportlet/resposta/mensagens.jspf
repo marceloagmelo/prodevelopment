@@ -1,0 +1,15 @@
+<liferay-ui:success key="mensagem.resposta.criada.sucesso"
+	message="mensagem.resposta.criada.sucesso" />
+<liferay-ui:success key="mensagem.resposta.alterada.sucesso"
+	message="mensagem.resposta.alterada.sucesso" />
+<liferay-ui:success key="mensagem.resposta.excluida.sucesso"
+	message="mensagem.resposta.excluida.sucesso" />
+<liferay-ui:error key="mensagem.resposta.descricao.obrigatoria"
+	message="mensagem.resposta.descricao.obrigatoria" />
+<liferay-ui:error key="mensagem.resposta.selecioneCorreta.obrigatoria"
+	message="mensagem.resposta.selecioneCorreta.obrigatoria" />
+	
+	
+	
+
+	

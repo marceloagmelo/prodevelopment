@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="br.com.prodevelopment.testeconhecimento.model.Pergunta" />
+	<import class="br.com.prodevelopment.testeconhecimento.model.Resposta" />
+	<import class="br.com.prodevelopment.testeconhecimento.model.Resposta_Usuario" />
+	<import class="br.com.prodevelopment.testeconhecimento.model.Teste" />
+	<import class="br.com.prodevelopment.testeconhecimento.model.Teste_Usuario" />
+	<class name="br.com.prodevelopment.testeconhecimento.model.impl.PerguntaImpl" table="TC_Pergunta">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="descricao" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="justificativaResposta" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="pontuacao" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="dataInclusao" type="org.hibernate.type.TimestampType" />
+		<property name="dataAlteracao" type="org.hibernate.type.TimestampType" />
+		<property name="testeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userIdInclusao" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userIdAlteracao" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="br.com.prodevelopment.testeconhecimento.model.impl.RespostaImpl" table="TC_Resposta">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="descricao" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="correta" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="dataInclusao" type="org.hibernate.type.TimestampType" />
+		<property name="dataAlteracao" type="org.hibernate.type.TimestampType" />
+		<property name="perguntaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userIdInclusao" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userIdAlteracao" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="br.com.prodevelopment.testeconhecimento.model.impl.Resposta_UsuarioImpl" table="TC_Resposta_Usuario">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="correta" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="dataInclusao" type="org.hibernate.type.TimestampType" />
+		<property name="testeUsuarioId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="respostaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="br.com.prodevelopment.testeconhecimento.model.impl.TesteImpl" table="TC_Teste">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="titulo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="descricao" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dataInclusao" type="org.hibernate.type.TimestampType" />
+		<property name="dataAlteracao" type="org.hibernate.type.TimestampType" />
+		<property name="ativo" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userIdInclusao" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userIdAlteracao" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="br.com.prodevelopment.testeconhecimento.model.impl.Teste_UsuarioImpl" table="TC_Teste_Usuario">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dataInclusao" type="org.hibernate.type.TimestampType" />
+		<property name="dataFinalizacao" type="org.hibernate.type.TimestampType" />
+		<property name="totalRespostaCorreta" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="totalRespostaErrada" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="totalPontuacao" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="testeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

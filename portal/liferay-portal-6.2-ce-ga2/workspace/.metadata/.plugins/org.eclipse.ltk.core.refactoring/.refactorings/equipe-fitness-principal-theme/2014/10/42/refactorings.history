@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;_diffs&apos;&#x0A;- Original project: &apos;equipe-fitness-principal-theme&apos;&#x0A;- Destination element: &apos;_diffs&apos;&#x0A;- Original elements:&#x0A;     templates&#x0A;     css" description="Copy folders" element1="docroot/_diffs/templates" element2="docroot/_diffs/css" files="0" flags="589830" folders="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1413583199377" target="/equipe-fitness-organizacao-theme/docroot/_diffs" units="0" version="1.0"/>
+</session>

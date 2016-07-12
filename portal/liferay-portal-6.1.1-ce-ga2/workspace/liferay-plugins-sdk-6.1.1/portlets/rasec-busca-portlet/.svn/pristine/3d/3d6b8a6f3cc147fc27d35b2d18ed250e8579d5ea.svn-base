@@ -1,0 +1,87 @@
+.bg-4 {
+	background:#eaedf0;
+	border-radius:5px;
+	width:100%;
+	padding:5px 0;
+	overflow:hidden;
+}
+
+#form-2 {
+    float: right;
+    overflow: hidden;
+    padding: 0 5px 0 0;
+}
+
+.XXXd-block {
+    display: block;
+}
+
+.wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.input-1 input {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #373737;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    height: 15px;
+    margin: 0;
+    outline: medium none;
+    padding: 5px 0 3px;
+    width: 204px;
+}
+
+.input-1 input.focus {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #373737;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    height: 15px;
+    margin: 0;
+    outline: medium none;
+    padding: 5px 0 3px;
+    width: 204px;
+}
+
+.input-1 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DDE1E5;
+    display: block;
+    float: left;
+    height: 23px;
+    overflow: hidden;
+    padding: 0 10px;
+    position: relative;
+    width: 204px;
+}
+
+a {
+    color: #8C8C8C;
+    outline: medium none;
+    text-decoration: none;
+}
+
+.form2_btn {
+    background: url("../../images/busca/form2_btn.png") no-repeat scroll left bottom transparent;
+    display: block;
+    float: left;
+    height: 25px;
+    margin: 0 0 0 5px;
+    overflow: hidden;
+    text-indent: -999px;
+    width: 26px;
+}
+
+.fieldBusca {
+	background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: top;
+}

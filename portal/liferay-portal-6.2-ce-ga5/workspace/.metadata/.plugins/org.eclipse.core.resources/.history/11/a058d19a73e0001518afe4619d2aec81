@@ -1,0 +1,227 @@
+package br.com.prodevelopment.etask.portlet.typetask.action;
+
+import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Locale;
+import java.util.Map;
+
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
+import javax.portlet.PortletException;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+
+import br.com.prodevelopment.etask.DuplicateTypeTaskUserException;
+import br.com.prodevelopment.etask.RequiredTypeTaskNameException;
+import br.com.prodevelopment.etask.model.TypeTask;
+import br.com.prodevelopment.etask.portlet.typetask.TypeTaskConstants;
+import br.com.prodevelopment.etask.service.TypeTaskLocalServiceUtil;
+import br.com.prodevelopment.etask.util.ActionUtil;
+
+import com.liferay.portal.LocaleException;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.servlet.SessionErrors;
+import com.liferay.portal.kernel.servlet.SessionMessages;
+import com.liferay.portal.kernel.util.Constants;
+import com.liferay.portal.kernel.util.LocalizationUtil;
+import com.liferay.portal.kernel.util.ParamUtil;
+import com.liferay.portal.kernel.util.StringUtil;
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.security.auth.PrincipalException;
+import com.liferay.portal.service.ServiceContext;
+import com.liferay.portal.service.ServiceContextFactory;
+import com.liferay.portal.theme.ThemeDisplay;
+import com.liferay.portlet.dynamicdatamapping.NoSuchStructureException;
+import com.liferay.portlet.dynamicdatamapping.RequiredStructureException;
+import com.liferay.portlet.dynamicdatamapping.StructureDuplicateElementException;
+import com.liferay.portlet.dynamicdatamapping.StructureDuplicateStructureKeyException;
+import com.liferay.portlet.dynamicdatamapping.StructureNameException;
+import com.liferay.portlet.dynamicdatamapping.StructureXsdException;
+import com.liferay.util.bridges.mvc.MVCPortlet;
+
+/**
+ * Portlet implementation class TypeTaskPortlet
+ */
+public class TypeTaskPortlet extends MVCPortlet {
+	private static Log _log = LogFactoryUtil.getLog(TypeTaskPortlet.class);
+
+	@Override
+	public void render(RenderRequest renderRequest,
+			RenderResponse renderResponse) throws PortletException, IOException {
+
+		try {
+			if (_log.isDebugEnabled()) {
+				_log.debug("LOG com debug");
+			}
+			_log.info("LOG sem debug");
+			String cmd = ParamUtil.getString(renderRequest, Constants.CMD);
+
+			if (!cmd.equals(Constants.ADD)) {
+				ActionUtil.getTypeTask(renderRequest);
+			}
+
+			super.render(renderRequest, renderResponse);
+		} catch (Exception e) {
+			_log.error(e, e);
+		}
+	}
+
+	@Override
+	public void processAction(ActionRequest actionRequest,
+			ActionResponse actionResponse) throws IOException, PortletException {
+
+		ThemeDisplay themeDisplay = (ThemeDisplay) actionRequest
+				.getAttribute(WebKeys.THEME_DISPLAY);
+
+		String cmd = ParamUtil.getString(actionRequest, Constants.CMD);
+
+		String availableFields = ParamUtil.getString(actionRequest,
+				"availableFields");
+		String name = ParamUtil.getString(actionRequest, TypeTaskConstants.NAME);
+		String description = ParamUtil.getString(actionRequest, TypeTaskConstants.DESCRIPTION);
+		String xsd = ParamUtil.getString(actionRequest, TypeTaskConstants.XSD);
+		String typeTaskId = ParamUtil.getString(actionRequest, TypeTaskConstants.TYPE_TASK_ID);
+
+		try {
+			if (Constants.ADD.equals(cmd) || Constants.UPDATE.equals(cmd)) {
+				updateTypeTask(actionRequest);
+			} else if (cmd.equals(Constants.DELETE)) {
+				deleteTypeTasks(actionRequest, cmd);
+			} else if (cmd.equals(Constants.MOVE_TO_TRASH)) {
+				deleteTypeTasks(actionRequest, cmd);
+			}
+
+			if (Validator.isNotNull(cmd)) {
+				SessionMessages.add(actionRequest,
+						"typetask-saved-sucessfully");
+			}
+		} catch (Exception e) {
+			if (e instanceof NoSuchStructureException
+					|| e instanceof PrincipalException) {
+
+				SessionErrors.add(actionRequest, e.getClass());
+			} else if (e instanceof LocaleException
+					|| e instanceof RequiredStructureException
+					|| e instanceof StructureDuplicateElementException
+					|| e instanceof StructureNameException
+					|| e instanceof StructureXsdException
+					|| e instanceof StructureDuplicateStructureKeyException
+					|| e instanceof RequiredTypeTaskNameException
+					|| e instanceof DuplicateTypeTaskUserException) {
+
+				SessionErrors.add(actionRequest, e.getClass(), e);
+				
+				copyRequestParameters(actionRequest, actionResponse);
+			} else {
+				_log.error(e, e);
+			}
+		}
+		actionResponse.setRenderParameter(
+				TypeTaskConstants.REDIRECT, getRedirect(actionRequest, actionResponse));
+		actionResponse.setRenderParameter(
+				Constants.CMD, cmd);
+		actionResponse.setRenderParameter(TypeTaskConstants.COMPANY_ID,
+				String.valueOf(themeDisplay.getCompanyId()));
+		actionResponse.setRenderParameter(TypeTaskConstants.GROUP_ID,
+				String.valueOf(themeDisplay.getScopeGroupId()));
+		actionResponse.setRenderParameter("availableFields",
+				availableFields);
+		actionResponse.setRenderParameter(TypeTaskConstants.TYPE_TASK_ID,
+				typeTaskId);
+		actionResponse.setRenderParameter(TypeTaskConstants.NAME,
+				name);
+		actionResponse.setRenderParameter(TypeTaskConstants.DESCRIPTION,
+				description);
+		actionResponse.setRenderParameter(TypeTaskConstants.XSD,
+				xsd);
+
+		actionResponse.setRenderParameter(TypeTaskConstants.JSP_PAGE,
+				TypeTaskConstants.PATH_JSP_EDIT);
+	}
+
+	protected void deleteTypeTasks(ActionRequest actionRequest, String comand)
+			throws Exception {
+
+		ThemeDisplay themeDisplay = (ThemeDisplay) actionRequest
+				.getAttribute(WebKeys.THEME_DISPLAY);
+		
+		long[] deleteTypeTaskIds = null;
+
+		long typeTaskId = ParamUtil.getLong(actionRequest, TypeTaskConstants.TYPE_TASK_ID);
+
+		if (typeTaskId > 0) {
+			deleteTypeTaskIds = new long[] { typeTaskId };
+		} else {
+			deleteTypeTaskIds = StringUtil
+					.split(ParamUtil.getString(actionRequest,
+							TypeTaskConstants.DELETE_TAG_IDS), 0L);
+		}
+
+		for (long deleteTypeTaskId : deleteTypeTaskIds) {
+			if (Constants.DELETE.equals(comand)) {
+				TypeTaskLocalServiceUtil.deleteTypeTask(deleteTypeTaskId);
+			} else if (Constants.MOVE_TO_TRASH.equals(comand)) {
+				TypeTaskLocalServiceUtil.moveTypeTaskToTrash(themeDisplay.getRealUserId(), deleteTypeTaskId);
+			}
+		}
+	}
+
+	protected TypeTask updateTypeTask(ActionRequest actionRequest)
+			throws Exception {
+
+		String cmd = ParamUtil.getString(actionRequest, Constants.CMD);
+
+		long typeTaskId = ParamUtil.getLong(actionRequest, TypeTaskConstants.TYPE_TASK_ID);
+
+		long companyId = ParamUtil.getLong(actionRequest, TypeTaskConstants.COMPANY_ID);
+		long groupId = ParamUtil.getLong(actionRequest, TypeTaskConstants.GROUP_ID);
+		long userId = ParamUtil.getLong(actionRequest, TypeTaskConstants.USER_ID);
+		long DDMStructureId = ParamUtil.getLong(actionRequest,
+				TypeTaskConstants.DDM_STRUCTURE_ID, 0);
+		Map<Locale, String> nameMap = LocalizationUtil.getLocalizationMap(
+				actionRequest, TypeTaskConstants.NAME);
+		Map<Locale, String> descriptionMap = LocalizationUtil
+				.getLocalizationMap(actionRequest, TypeTaskConstants.DESCRIPTION);
+		String xsd = ParamUtil.getString(actionRequest, TypeTaskConstants.XSD);
+
+		ServiceContext serviceContext = ServiceContextFactory.getInstance(
+				TypeTask.class.getName(), actionRequest);
+
+		TypeTask typeTask = null;
+
+		if (cmd.equals(Constants.ADD)) {
+			typeTask = TypeTaskLocalServiceUtil.addTypeTask(companyId, groupId,
+					userId, nameMap, descriptionMap, xsd, 0, serviceContext);
+		} else if (cmd.equals(Constants.UPDATE)) {
+			typeTask = TypeTaskLocalServiceUtil.updateTypeTask(typeTaskId,
+					companyId, groupId, userId, nameMap, descriptionMap, xsd,
+					DDMStructureId, serviceContext);
+		}
+
+		return typeTask;
+	}
+
+	private void copyRequestParameters(ActionRequest request,
+			ActionResponse actionResponse) {
+
+		actionResponse.setRenderParameter("p_p_lifecycle", "1");
+
+		Enumeration<String> enu = request.getParameterNames();
+
+		Map<String, String[]> renderParameters = actionResponse
+				.getRenderParameterMap();
+
+		while (enu.hasMoreElements()) {
+			String param = enu.nextElement();
+			String[] values = request.getParameterValues(param);
+
+			if (renderParameters.get(actionResponse.getNamespace() + param) == null
+					&& (Validator.isNotNull(param) && Validator
+							.isNotNull(values))) {
+				actionResponse.setRenderParameter(param, values);
+			}
+		}
+	}
+}

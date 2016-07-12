@@ -1,0 +1,12 @@
+<div class="resultadoItem">
+	<c:set var="pipe" value="" />
+
+	<c:if test="${not empty resultadoItem.tagsNames}">
+		<c:set var="pipe" value="|" />
+	</c:if>
+
+	<div class="tituloResultadoItem">
+		<a href="${resultadoItem.paginaDestino}">${resultadoItem.titulo}</a>
+	</div>
+	<div class="descricaoResultadoItem">${resultadoItem.descricao}</div>
+</div>
