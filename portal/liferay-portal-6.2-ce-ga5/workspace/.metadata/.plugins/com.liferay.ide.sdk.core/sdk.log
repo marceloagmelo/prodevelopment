@@ -1,22 +1,11 @@
-Buildfile: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/build.xml
-deploy:
-    [mkdir] Created dir: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/classes
-     [copy] Copying 4 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/lib
-     [copy] Copying 1 file to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/lib
-     [copy] Copying 1 file to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/lib
-     [copy] Copying 1 file to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/tld
-     [copy] Copying 5 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/lib
-     [copy] Copying 18 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/classes
-     [copy] Copied 26 empty directories to 22 empty directories under /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/classes
-    [javac] Compiling 47 source files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/classes
-     [java] Loading jar:file:/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/portal-impl.jar!/system.properties
-     [java] Loading jar:file:/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/lib/portal-impl.jar!/portal.properties
-     [java] Loading file:/opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/tomcat-7.0.62/webapps/ROOT/WEB-INF/classes/portal-ext.properties
-     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/css/funcionario/main.css in 5086 ms
-     [java] Parsed /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/css/jquery-ui.css in 3391 ms
-     [copy] Copying 1 file to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/lib
-     [copy] Copying 1 file to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/portlets/employee-portlet/docroot/WEB-INF/lib
-      [zip] Building zip: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/dist/employee-portlet-6.2.0.1.war
-     [copy] Copying 1 file to /opt/servidores/prodevelopment/portal/liferay-portal-6.2-ce-ga5/deploy
+Buildfile: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/themes/portal-theme/build.xml
+compile:
+     [copy] Copying 691 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/themes/portal-theme/docroot
+     [copy] Copied 57 empty directories to 3 empty directories under /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/themes/portal-theme/docroot
+     [copy] Copying 5 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/themes/portal-theme/docroot/templates
+    [mkdir] Created dir: /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/themes/portal-theme/docroot/WEB-INF/lib
+     [copy] Copying 5 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/themes/portal-theme/docroot/WEB-INF/lib
+     [copy] Copying 2 files to /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/themes/portal-theme/docroot/WEB-INF/classes
+     [copy] Copied 7 empty directories to 6 empty directories under /home/marcelo/projetos/prodevelopment/portal/liferay-portal-6.2-ce-ga5/workspace/liferay-plugins-sdk-6.2/themes/portal-theme/docroot/WEB-INF/classes
 BUILD SUCCESSFUL
-Total time: 17 seconds
+Total time: 2 seconds

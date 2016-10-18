@@ -1,0 +1,163 @@
+<aui:col width="<%= 50 %>">
+	<aui:input name='<%= "enderecoId" + enderecosIndex %>' type="hidden" value="<%= endereco.getEnderecoId() %>" />
+
+	<aui:select inlineField="<%= true %>" label="label.tipo" name='<%= "tipoEndereco" + enderecosIndex %>' id='<%= "tipoEndereco" + enderecosIndex %>' onClick="teste(this)">
+		<aui:option value="0" label=""/>
+		<aui:option value="1" label="label.tipoEndereco.residencial" selected="<%=endereco.getTipo() == 1%>"/>
+		<aui:option value="2" label="label.tipoEndereco.comercial" selected="<%=endereco.getTipo() == 2%>"/>
+	</aui:select>
+
+	<aui:input checked="<%= endereco.isPrincipal()%>" id='<%= "enderecoPrincipal" + enderecosIndex %>' inlineField="<%= true %>" label="label.principal" name="enderecoPrincipal" type="radio" value="<%= enderecosIndex %>"/>
+
+<%
+String cmd = "javascript: teste(" + enderecosIndex + ");";
+%>
+	<aui:field-wrapper helpMessage="help.cep" label="label.endereco.cep" >
+		<aui:input name="<%=Constantes.CAMPO_CEP %>" fieldParam='<%= Constantes.CAMPO_CEP+enderecosIndex %>' id='<%= Constantes.CAMPO_CEP + enderecosIndex %>' label=""/>
+		<c:if test="<%=!Constantes.VIEW.equals(acao) %>">
+			<liferay-ui:icon
+				iconCssClass="icon-search"
+				id='<%= "selectCepLink"+enderecosIndex %>'
+				linkCssClass="btn"
+				message="select"
+				url="<%=cmd %>"
+			/>
+		</c:if>
+	</aui:field-wrapper>
+	<aui:input name="<%=Constantes.CAMPO_LOGRADOURO %>" fieldParam='<%= Constantes.CAMPO_LOGRADOURO+enderecosIndex %>' id='<%= Constantes.CAMPO_LOGRADOURO + enderecosIndex %>' label="label.endereco.logradouro" />
+	<aui:input name="<%=Constantes.CAMPO_NUMERO %>" fieldParam='<%= Constantes.CAMPO_NUMERO+enderecosIndex %>' id='<%= Constantes.CAMPO_NUMERO + enderecosIndex %>' label="label.endereco.numero" />
+	<aui:input name="<%=Constantes.CAMPO_COMPLEMENTO %>" fieldParam='<%= Constantes.CAMPO_COMPLEMENTO+enderecosIndex %>' id='<%= Constantes.CAMPO_COMPLEMENTO + enderecosIndex %>' label="label.endereco.complemento" />
+</aui:col>
+
+<aui:col width="<%= 50 %>">
+	<aui:input name="<%=Constantes.CAMPO_BAIRRO %>" fieldParam='<%= Constantes.CAMPO_BAIRRO+enderecosIndex %>' id='<%= Constantes.CAMPO_BAIRRO + enderecosIndex %>' label="label.endereco.bairro" />
+	<aui:select label="label.endereco.uf" name='<%= Constantes.CAMPO_UF + enderecosIndex %>' id='<%= Constantes.CAMPO_UF + enderecosIndex %>'>
+		<aui:option label=""
+			selected='<%=Validator.isNull(endereco.getUf())%>' value="" />
+		<aui:option label="AC" selected='<%="AC".equals(endereco.getUf())%>'
+			value="AC" />
+		<aui:option label="AL" selected='<%="AL".equals(endereco.getUf())%>'
+			value="AL" />
+		<aui:option label="AM" selected='<%="AM".equals(endereco.getUf())%>'
+			value="AM" />
+		<aui:option label="AP" selected='<%="AP".equals(endereco.getUf())%>'
+			value="AP" />
+		<aui:option label="BA" selected='<%="BA".equals(endereco.getUf())%>'
+			value="BA" />
+		<aui:option label="CE" selected='<%="CE".equals(endereco.getUf())%>'
+			value="CE" />
+		<aui:option label="DF" selected='<%="DF".equals(endereco.getUf())%>'
+			value="DF" />
+		<aui:option label="ES" selected='<%="ES".equals(endereco.getUf())%>'
+			value="ES" />
+		<aui:option label="GO" selected='<%="GO".equals(endereco.getUf())%>'
+			value="GO" />
+		<aui:option label="MA" selected='<%="MA".equals(endereco.getUf())%>'
+			value="MA" />
+		<aui:option label="MT" selected='<%="MT".equals(endereco.getUf())%>'
+			value="MT" />
+		<aui:option label="MG" selected='<%="MS".equals(endereco.getUf())%>'
+			value="MS" />
+		<aui:option label="PA" selected='<%="PA".equals(endereco.getUf())%>'
+			value="PA" />
+		<aui:option label="PB" selected='<%="PB".equals(endereco.getUf())%>'
+			value="PB" />
+		<aui:option label="PE" selected='<%="PE".equals(endereco.getUf())%>'
+			value="PE" />
+		<aui:option label="PR" selected='<%="PR".equals(endereco.getUf())%>'
+			value="PR" />
+		<aui:option label="PI" selected='<%="PI".equals(endereco.getUf())%>'
+			value="PJ" />
+		<aui:option label="RJ" selected='<%="RJ".equals(endereco.getUf())%>'
+			value="RJ" />
+		<aui:option label="RN" selected='<%="RN".equals(endereco.getUf())%>'
+			value="RN" />
+		<aui:option label="RO" selected='<%="RO".equals(endereco.getUf())%>'
+			value="RO" />
+		<aui:option label="RS" selected='<%="RS".equals(endereco.getUf())%>'
+			value="RS" />
+		<aui:option label="RR" selected='<%="RR".equals(endereco.getUf())%>'
+			value="RR" />
+		<aui:option label="SC" selected='<%="SC".equals(endereco.getUf())%>'
+			value="SC" />
+		<aui:option label="SE" selected='<%="SE".equals(endereco.getUf())%>'
+			value="SE" />
+		<aui:option label="SP" selected='<%="SP".equals(endereco.getUf())%>'
+			value="SP" />
+		<aui:option label="TO" selected='<%="TO".equals(endereco.getUf())%>'
+			value="TO" />
+	</aui:select>
+	<aui:select name="<%=Constantes.CAMPO_CIDADE %>" fieldParam='<%= Constantes.CAMPO_CIDADE+enderecosIndex %>' id='<%= Constantes.CAMPO_CIDADE + enderecosIndex %>' label="label.endereco.cidade">
+		<aui:option value=""></aui:option>
+	</aui:select>
+	<aui:input name='<%= "cidadeComSelecionada" + enderecosIndex %>' id='<%= "cidadeComSelecionada" + enderecosIndex %>' type="hidden" value="<%= endereco.getCidadeId() %>" />
+	<aui:input name="<%=Constantes.CAMPO_PAIS %>" label="label.endereco.pais" />
+</aui:col>
+
+<aui:script>
+
+AUI.add('enderecoutil', function(A){
+    
+    A.namespace('enderecoutil');
+
+    A.enderecoutil.carregarCepAction = function(event) {
+    
+        var targetName = event.target.attr('id');
+        alert(targetName);
+        var controleCampos = '<%=controleCampos%>';
+        var startPos = targetName.indexOf(controleCampos)+controleCampos.length;
+        var enderecosIndex = targetName.substring(startPos);
+        var cep = A.one('#<portlet:namespace />cep' + enderecosIndex).val();
+        
+        alert(cep);
+     }
+     
+},
+'',
+{
+    requires: ['aui-base']
+}
+);
+
+function teste(indice) {
+	alert(indice);
+}
+
+</aui:script>
+
+<aui:script use="aui-io-request, enderecoutil">
+	A.one('#<portlet:namespace /><%= Constantes.CAMPO_UF + enderecosIndex %>').on(
+		'change',
+		function() {
+			var uf = document.<portlet:namespace />fm.<portlet:namespace /><%= Constantes.CAMPO_UF + enderecosIndex %>.value;
+			var mySelect = A.one('#<portlet:namespace /><%= Constantes.CAMPO_CIDADE + enderecosIndex %>');
+			atualizarMunicipios(uf, 0, mySelect);
+		}
+	);
+
+	function atualizarMunicipios(uf, cidade, mySelect) {
+ 			A.io.request('<%=ufResourceURL%>',{
+                        dataType: 'json',
+                        method: 'GET',
+                        data: { <portlet:namespace />uf : uf},
+                        on: {
+                              success: function() {
+                              		var data=this.get('responseData');
+                              		var options;
+                              		mySelect.empty();
+                              		options  = A.Node.create( '<option value=""></option>');
+                              		mySelect.append(options);
+                              		A.Array.each(data, function(obj, idx) {
+                              			if (cidade == obj.codigo) {
+	                              			options  = A.Node.create( '<option value='+obj.codigo+' selected>'+obj.cidade+'</option>');
+                              			} else {
+	                              			options  = A.Node.create( '<option value='+obj.codigo+'>'+obj.cidade+'</option>');
+                              			}
+	                              		mySelect.append(options);
+                              		})
+                              		
+                              }
+                        }
+            });			
+	}
+</aui:script>

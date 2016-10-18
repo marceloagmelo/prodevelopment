@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.com.prodevelopment.cliente.service.ClienteLocalService" class="br.com.prodevelopment.cliente.service.impl.ClienteLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.cliente.service.ClienteService" class="br.com.prodevelopment.cliente.service.impl.ClienteServiceImpl" />
+	<bean id="br.com.prodevelopment.cliente.service.persistence.ClientePersistence" class="br.com.prodevelopment.cliente.service.persistence.ClientePersistenceImpl" parent="basePersistence" />
+	<bean id="br.com.prodevelopment.cliente.service.ClienteLimCreditoLocalService" class="br.com.prodevelopment.cliente.service.impl.ClienteLimCreditoLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.cliente.service.ClienteLimCreditoService" class="br.com.prodevelopment.cliente.service.impl.ClienteLimCreditoServiceImpl" />
+	<bean id="br.com.prodevelopment.cliente.service.persistence.ClienteLimCreditoPersistence" class="br.com.prodevelopment.cliente.service.persistence.ClienteLimCreditoPersistenceImpl" parent="basePersistence" />
+	<bean id="br.com.prodevelopment.cliente.service.ClienteUsuarioLocalService" class="br.com.prodevelopment.cliente.service.impl.ClienteUsuarioLocalServiceImpl" />
+	<bean id="br.com.prodevelopment.cliente.service.ClienteUsuarioService" class="br.com.prodevelopment.cliente.service.impl.ClienteUsuarioServiceImpl" />
+	<bean id="br.com.prodevelopment.cliente.service.persistence.ClienteUsuarioPersistence" class="br.com.prodevelopment.cliente.service.persistence.ClienteUsuarioPersistenceImpl" parent="basePersistence" />
+</beans>

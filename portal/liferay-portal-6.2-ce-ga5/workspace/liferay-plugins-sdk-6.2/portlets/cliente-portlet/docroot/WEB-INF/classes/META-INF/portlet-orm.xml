@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="br.com.prodevelopment.cliente.model.impl.ClienteModelImpl">
+		<attributes>
+			<id name="clienteId" />
+			<basic name="uuid">
+				<column name="UUID_" />
+			</basic>
+			<basic name="companyId" />
+			<basic name="groupId" />
+			<basic name="createUserId" />
+			<basic name="modifiedUserId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="nome" />
+			<basic name="rgInscricaoMun" />
+			<basic name="rgOrgaoEmissor" />
+			<basic name="rgDataEmissao">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="tipoPessoa" />
+			<basic name="cpfCnpj" />
+			<basic name="sexo" />
+			<basic name="estadoCivil" />
+			<basic name="dataNascimento">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endComLogradouro" />
+			<basic name="endComNumero" />
+			<basic name="endComComplemento" />
+			<basic name="endComCep" />
+			<basic name="endComBairro" />
+			<basic name="endComCidade" />
+			<basic name="endComUf" />
+			<basic name="endComPais" />
+			<basic name="endResLogradouro" />
+			<basic name="endResNumero" />
+			<basic name="endResComplemento" />
+			<basic name="endResCep" />
+			<basic name="endResBairro" />
+			<basic name="endResCidade" />
+			<basic name="endResUf" />
+			<basic name="endResPais" />
+			<basic name="telComDdd" />
+			<basic name="versao" />
+			<basic name="logoTipoId" />
+			<basic name="observacao" />
+			<transient name="createUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="modifiedUserUuid" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.com.prodevelopment.cliente.model.impl.ClienteLimCreditoModelImpl">
+		<attributes>
+			<id name="clienteLimCreditoId" />
+			<basic name="valorLimiteMaximoCredito" />
+			<basic name="dataLimiteMaximoCredito">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="valorLimiteMaximoCheque" />
+			<basic name="qtdeLimiteMaximoCheque" />
+			<basic name="clienteId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="br.com.prodevelopment.cliente.model.impl.ClienteUsuarioModelImpl">
+		<attributes>
+			<id name="clienteUsuarioId" />
+			<basic name="userId" />
+			<basic name="clienteId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="br.com.prodevelopment.cliente.model.impl.ClienteImpl" name="Cliente">
+		<table name="Cliente" />
+		<attributes />
+	</entity>
+	<entity class="br.com.prodevelopment.cliente.model.impl.ClienteLimCreditoImpl" name="ClienteLimCredito">
+		<table name="ClienteLimCredito" />
+		<attributes />
+	</entity>
+	<entity class="br.com.prodevelopment.cliente.model.impl.ClienteUsuarioImpl" name="ClienteUsuario">
+		<table name="ClienteUsuario" />
+		<attributes />
+	</entity>
+</entity-mappings>

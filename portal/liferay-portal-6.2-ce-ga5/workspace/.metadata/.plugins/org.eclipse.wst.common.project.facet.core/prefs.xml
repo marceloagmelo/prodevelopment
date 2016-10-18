@@ -20,4 +20,11 @@
       </node>
     </node>
   </facet>
+  <facet id="liferay.theme">
+    <node name="libprov">
+      <node name="last-provider-used">
+        <attribute name="6.0" value="com.liferay.ide.eclipse.plugin.theme.libraryProvider"/>
+      </node>
+    </node>
+  </facet>
 </root>

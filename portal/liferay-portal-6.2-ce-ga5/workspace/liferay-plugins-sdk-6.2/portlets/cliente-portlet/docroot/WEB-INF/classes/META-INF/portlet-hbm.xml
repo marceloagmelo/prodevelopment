@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="br.com.prodevelopment.cliente.model.Cliente" />
+	<import class="br.com.prodevelopment.cliente.model.ClienteLimCredito" />
+	<import class="br.com.prodevelopment.cliente.model.ClienteUsuario" />
+	<class name="br.com.prodevelopment.cliente.model.impl.ClienteImpl" table="Cliente">
+		<cache usage="read-write" />
+		<id name="clienteId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="modifiedUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="nome" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rgInscricaoMun" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rgOrgaoEmissor" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rgDataEmissao" type="org.hibernate.type.TimestampType" />
+		<property name="tipoPessoa" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="cpfCnpj" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sexo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="estadoCivil" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dataNascimento" type="org.hibernate.type.TimestampType" />
+		<property name="endComLogradouro" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComNumero" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComComplemento" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComCep" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComBairro" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComCidade" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="endComUf" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endComPais" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResLogradouro" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResNumero" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResComplemento" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResCep" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResBairro" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResCidade" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="endResUf" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="endResPais" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="telComDdd" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="versao" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="logoTipoId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="observacao" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="br.com.prodevelopment.cliente.model.impl.ClienteLimCreditoImpl" table="ClienteLimCredito">
+		<cache usage="read-write" />
+		<id name="clienteLimCreditoId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="valorLimiteMaximoCredito" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="dataLimiteMaximoCredito" type="org.hibernate.type.TimestampType" />
+		<property name="valorLimiteMaximoCheque" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="qtdeLimiteMaximoCheque" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="clienteId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="br.com.prodevelopment.cliente.model.impl.ClienteUsuarioImpl" table="ClienteUsuario">
+		<cache usage="read-write" />
+		<id name="clienteUsuarioId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="clienteId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

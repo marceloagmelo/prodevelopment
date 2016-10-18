@@ -1,0 +1,7 @@
+<liferay-ui:success key="mensagem.cliente.adicionado.sucesso"
+	message="mensagem.cliente.adicionado.sucesso" />
+<liferay-ui:success key="mensagem.cliente.alterado.sucesso"
+	message="mensagem.cliente.alterado.sucesso" />
+<liferay-ui:success key="mensagem.portlet.configurado.sucesso"
+	message="mensagem.portlet.configurado.sucesso" />
+	

@@ -6451,3 +6451,16 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.ui 4 4 2015-08-18 08:13:04.734
 !MESSAGE Plug-in 'org.eclipse.pde.ui' contributed an invalid Menu Extension (Path: 'org.eclipse.ui.projectConfigure' is invalid): org.eclipse.pde.ui.ConvertedProjectWizard
+!SESSION 2016-08-16 23:02:18.848 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.osgi 2 1 2016-08-16 23:02:50.798
+!MESSAGE NLS unused message: serverEditorBrowseDeployMessage in: com.liferay.ide.server.tomcat.ui.editor.LiferayServerSettingsEditorSection
+
+!ENTRY org.eclipse.osgi 2 1 2016-08-16 23:02:50.821
+!MESSAGE NLS unused message: specifyAutoDeployInterval in: com.liferay.ide.server.tomcat.ui.editor.LiferayServerSettingsEditorSection

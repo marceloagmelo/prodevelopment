@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="br.com.prodevelopment.cliente" auto-namespace-tables="false">
+	<author>marcelo</author>
+	<namespace>cliente</namespace>
+
+	<entity name="Cliente" uuid="true" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="clienteId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="createUserId" type="long" />
+		<column name="modifiedUserId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="nome" type="String" />
+		<column name="rgInscricaoMun" type="String" />
+		<column name="rgOrgaoEmissor" type="String" />
+		<column name="rgDataEmissao" type="Date" />
+		<column name="tipoPessoa" type="String" />
+		<column name="cpfCnpj" type="String" />
+		<column name="sexo" type="String" />
+		<column name="estadoCivil" type="String" />
+		<column name="dataNascimento" type="Date" />
+		<column name="endComLogradouro" type="String" />
+		<column name="endComNumero" type="String" />
+		<column name="endComComplemento" type="String" />
+		<column name="endComCep" type="String" />
+		<column name="endComBairro" type="String" />
+		<column name="endComCidade" type="long" />
+		<column name="endComUf" type="String" />
+		<column name="endComPais" type="String" />
+		<column name="endResLogradouro" type="String" />
+		<column name="endResNumero" type="String" />
+		<column name="endResComplemento" type="String" />
+		<column name="endResCep" type="String" />
+		<column name="endResBairro" type="String" />
+		<column name="endResCidade" type="long" />
+		<column name="endResUf" type="String" />
+		<column name="endResPais" type="String" />
+		<column name="telComDdd" type="String" />
+		<column name="versao" type="double" />
+		<column name="logoTipoId" type="long" />
+		<column name="observacao" type="String" />
+		
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="nome" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Company" return-type="Collection">
+			<finder-column name="companyId" />
+		</finder>
+		<finder name="C_G" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+		</finder>
+
+		<finder name="C_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+
+		<finder name="C_G_NOME" return-type="Collection">
+			<finder-column name="companyId" />
+			<finder-column name="groupId" />
+			<finder-column name="nome" comparator="LIKE" />
+		</finder>
+
+		<finder name="CPF_CNPJ" return-type="Cliente">
+			<finder-column name="cpfCnpj" />
+		</finder>
+
+		<finder name="RG_INSCRICAO" return-type="Cliente">
+			<finder-column name="rgInscricaoMun" />
+		</finder>
+
+		<finder name="DT_NASCIMENTO" return-type="Collection">
+			<finder-column name="dataNascimento" />
+		</finder>
+
+		<!-- References -->
+		<reference package-path="com.liferay.portlet.social" entity="SocialActivity" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+		<reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+		
+	</entity>
+
+	<entity name="ClienteLimCredito" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="clienteLimCreditoId" type="long" primary="true" />
+
+		<!-- Other fields -->
+
+		<column name="valorLimiteMaximoCredito" type="double" />
+		<column name="dataLimiteMaximoCredito" type="Date" />
+		<column name="valorLimiteMaximoCheque" type="double" />
+		<column name="qtdeLimiteMaximoCheque" type="int" />
+		
+		<!-- Foreign Keys -->
+		
+		<column name="clienteId" type="long" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="clienteLimCreditoId" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="Cliente" return-type="ClienteLimCredito">
+			<finder-column name="clienteId" />
+		</finder>
+	</entity>
+
+	<entity name="ClienteUsuario" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="clienteUsuarioId" type="long" primary="true" />
+
+		<!-- Other fields -->
+
+		<column name="userId" type="long" />
+		
+		<!-- Foreign Keys -->
+		
+		<column name="clienteId" type="long" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="clienteUsuarioId" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="ClienteUsuario" return-type="ClienteUsuario" unique="true">
+			<finder-column name="userId" />
+			<finder-column name="clienteId" />
+		</finder>
+	</entity>
+
+	<exceptions>
+		<exception>ClienteNomeObrigatorio</exception>
+		<exception>ClienteCPFInvalido</exception>
+		<exception>ClienteCPFDuplicado</exception>
+		<exception>ClienteCNPJInvalido</exception>
+		<exception>ClienteCNPJDuplicado</exception>
+		<exception>ClienteDataNascimentoInvalida</exception>
+		<exception>ClienteRGDataEmissaoInvalida</exception>
+		<exception>ClienteRGInscricaoMunDuplicado</exception>
+		<exception>ClienteValorLimiteMaxCreditoInvalido</exception>
+		<exception>ClienteDataLimiteMaxCreditoInvalida</exception>
+		<exception>ClienteValorLimiteMaxChequeInvalido</exception>
+		<exception>ClienteQtdeLimiteMaxChequeInvalido</exception>
+		<exception>ClientePaisResTemQueSerNumerico</exception>
+		<exception>ClienteCidadeResTemQueSerNumerica</exception>
+		<exception>ClientePaisComTemQueSerNumerico</exception>
+		<exception>ClienteCidadeComTemQueSerNumerica</exception>
+		<exception>ClienteEmailInvalido</exception>
+		<exception>ClienteUsuarioDuplicado</exception>
+		<exception>ClienteAlteradoOutroUsuario</exception>
+	</exceptions>
+</service-builder>

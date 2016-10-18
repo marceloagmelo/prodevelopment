@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.com.prodevelopment.cliente.model.Cliente">
+		<field name="uuid" type="String" />
+		<field name="clienteId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="createUserId" type="long" />
+		<field name="modifiedUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="nome" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="rgInscricaoMun" type="String">
+			<hint name="max-length">20</hint>
+		</field>
+		<field name="rgOrgaoEmissor" type="String">
+			<hint name="max-length">20</hint>
+		</field>
+		<field name="rgDataEmissao" type="Date" />
+		<field name="tipoPessoa" type="String">
+			<hint name="max-length">2</hint>
+		</field>
+		<field name="cpfCnpj" type="String">
+			<hint name="max-length">20</hint>
+		</field>
+		<field name="sexo" type="String">
+			<hint name="max-length">1</hint>
+		</field>
+		<field name="estadoCivil" type="String">
+			<hint name="max-length">20</hint>
+		</field>
+		<field name="dataNascimento" type="Date" />
+		<field name="endComLogradouro" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="endComNumero" type="String">
+			<hint name="max-length">10</hint>
+		</field>
+		<field name="endComComplemento" type="String">
+			<hint name="max-length">50</hint>
+		</field>
+		<field name="endComCep" type="String">
+			<hint name="max-length">10</hint>
+		</field>
+		<field name="endComBairro" type="String">
+			<hint name="max-length">80</hint>
+		</field>
+		<field name="endComCidade" type="long">
+			<hint name="max-length">80</hint>
+		</field>
+		<field name="endComUf" type="String">
+			<hint name="max-length">2</hint>
+		</field>
+		<field name="endComPais" type="String">
+			<hint name="max-length">80</hint>
+		</field>
+		<field name="endResLogradouro" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="endResNumero" type="String">
+			<hint name="max-length">10</hint>
+		</field>
+		<field name="endResComplemento" type="String">
+			<hint name="max-length">50</hint>
+		</field>
+		<field name="endResCep" type="String">
+			<hint name="max-length">10</hint>
+		</field>
+		<field name="endResBairro" type="String">
+			<hint name="max-length">80</hint>
+		</field>
+		<field name="endResCidade" type="long">
+			<hint name="max-length">80</hint>
+		</field>
+		<field name="endResUf" type="String">
+			<hint name="max-length">2</hint>
+		</field>
+		<field name="endResPais" type="String">
+			<hint name="max-length">80</hint>
+		</field>
+		<field name="telComDdd" type="String">
+			<hint name="max-length">10</hint>
+		</field>
+		<field name="versao" type="double" />
+		<field name="logoTipoId" type="long" />
+		<field name="observacao" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+	</model>
+	<model name="br.com.prodevelopment.cliente.model.ClienteLimCredito">
+		<field name="clienteLimCreditoId" type="long" />
+		<field name="valorLimiteMaximoCredito" type="double" />
+		<field name="dataLimiteMaximoCredito" type="Date" />
+		<field name="valorLimiteMaximoCheque" type="double" />
+		<field name="qtdeLimiteMaximoCheque" type="int" />
+		<field name="clienteId" type="long" />
+	</model>
+	<model name="br.com.prodevelopment.cliente.model.ClienteUsuario">
+		<field name="clienteUsuarioId" type="long" />
+		<field name="userId" type="long" />
+		<field name="clienteId" type="long" />
+	</model>
+</model-hints>
